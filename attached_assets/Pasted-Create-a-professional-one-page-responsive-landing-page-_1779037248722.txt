@@ -1,0 +1,254 @@
+Create a professional one-page responsive landing page for my freelance business: Huss Tech.
+
+Use TypeScript, React, and Tailwind CSS.
+
+Business name: Huss Tech
+Domain: huss-tech.fr
+Location: Marseille, France
+Language: French.
+Audience: small local businesses, especially small shops and barbers.
+Main positioning line: Helping Marseille businesses look professional.
+
+Design style:
+Elegant local tech brand. Premium, calm, trustworthy, minimal. Do NOT make it look like a generic developer portfolio. Avoid cyberpunk, neon, heavy animations, skill bars, GitHub sections, or “passionate developer” text.
+
+Use colors inspired by my business card:
+- Deep burgundy: #5A0505
+- Off-white / warm white: #F8F5EF
+- Soft gold accent: #D8C777
+- Dark taupe / gray-brown: #514640
+- Light gray: #EDEDED
+
+Typography:
+- Elegant serif font for headings, similar to Cinzel, Cormorant Garamond, or Playfair Display.
+- Clean modern sans-serif for body text, similar to Inter or Manrope.
+- Wide spacing for headings, but readable body text.
+
+Build a one-page website with smooth scrolling and mobile-first responsive design.
+
+Sections:
+
+1. Header / Navigation
+- Logo text: HUSS TECH
+- Small tagline: Solutions informatiques à Marseille
+- Nav links: Services, Support, Tarifs, Contact
+- Button: Me contacter
+- On mobile, use a clean hamburger menu.
+
+2. Hero Section
+Use an off-white background with subtle burgundy/gold accents.
+Headline:
+Helping Marseille businesses look professional.
+
+Subheadline in French:
+Sites web modernes et support informatique pratique pour les commerces, barbiers et petites entreprises à Marseille.
+
+CTA buttons:
+- Voir mes services
+- Me contacter sur WhatsApp
+
+Add a visual card/mockup on the right side using burgundy background and an abstract network/node pattern inspired by my business card. It should feel elegant and tech-related, not futuristic.
+
+3. Services Section
+Title:
+Des solutions simples pour votre activité
+
+Create 2 main service cards:
+
+Card 1: Création de site web
+Text:
+Des sites propres, rapides et professionnels pour présenter votre activité, vos services et faciliter le contact avec vos clients.
+Include:
+- Landing page 1 page
+- Site vitrine 3–5 pages
+- Adapté mobile
+- Design professionnel
+
+Card 2: Support informatique
+Text:
+Assistance pratique pour ordinateurs, logiciels, lenteurs, virus, installation Windows et remplacement de pièces.
+Include:
+- Diagnostic
+- Dépannage logiciel
+- Réinstallation Windows
+- Remplacement de pièces
+
+4. Intervention & Support Section
+Title:
+Interventions informatiques
+
+Text:
+Un support simple et pratique pour résoudre les problèmes courants de vos ordinateurs personnels ou professionnels.
+
+Create 3 clean cards:
+- Diagnostic ordinateur
+  Text: Analyse du problème, vérification de l’état de l’ordinateur et proposition d’une solution claire.
+- Dépannage logiciel
+  Text: Résolution des lenteurs, bugs, virus, erreurs système et problèmes logiciels.
+- Installation & remplacement
+  Text: Réinstallation Windows, configuration de logiciels et remplacement de pièces selon le besoin.
+
+No videos.
+No image placeholders.
+Keep this section clean and text-based.
+
+5. Pricing Section
+Title:
+Tarifs simples et transparents
+
+Create clear pricing cards. Each card must have the service name as the main title.
+
+Pricing cards:
+
+Card 1:
+Service name: Création de site web
+Price: À partir de 300 €
+Details:
+- Forfait clair
+- Paiement possible en 2 fois
+
+Card 2:
+Service name: Landing page
+Price: 300–500 €
+Details:
+- Site 1 page
+- Idéal pour présenter rapidement une activité
+- Adapté aux petits commerces et indépendants
+
+Card 3:
+Service name: Site vitrine
+Price: 600–900 €
+Details:
+- 3 à 5 pages
+- Présentation complète de l’activité
+- Design professionnel et adapté mobile
+
+Card 4:
+Service name: Maintenance mensuelle
+Price: 30 €/mois
+Details:
+- Petites modifications
+- Suivi du site
+- Support de base
+
+Card 5:
+Service name: Ajout de contenu / modification
+Price: 30–40 €/h
+Details:
+- Modification de texte
+- Ajout d’images ou sections
+- Ajustements visuels
+
+Card 6:
+Service name: Diagnostic + devis
+Price: 25 €
+Details:
+- Analyse du problème
+- Devis clair avant intervention
+- Déduit si réparation effectuée
+
+Card 7:
+Service name: Dépannage logiciel / virus
+Price: 40–60 €
+Details:
+- Suppression virus
+- Résolution bugs logiciels
+- Optimisation système
+
+Card 8:
+Service name: Réinstallation Windows
+Price: 60–80 €
+Details:
+- Réinstallation propre
+- Configuration de base
+- Préparation de l’ordinateur à l’utilisation
+
+Card 9:
+Service name: Remplacement pièce
+Price: 40–60 € main d’œuvre + coût de la pièce
+Details:
+- Remplacement selon diagnostic
+- Main d’œuvre séparée du prix de la pièce
+- Intervention claire avant validation
+
+Card 10:
+Service name: Déplacement professionnel à Marseille
+Price: Gratuit
+Details:
+- Pour les professionnels à Marseille
+- Selon disponibilité
+- Sur rendez-vous
+
+Make pricing readable and professional. Do not make it look cheap.
+
+6. Why Work With Me Section
+Title:
+Pourquoi travailler avec Huss Tech ?
+
+Use 4 trust points:
+- Basé à Marseille
+- Communication simple et directe
+- Solutions adaptées aux petits commerces
+- Sites modernes et support pratique
+
+7. Contact Section
+Title:
+Besoin d’un site web ou d’un support informatique ?
+
+Text:
+Expliquez-moi votre besoin et je vous réponds avec une solution claire.
+
+Contact options:
+- WhatsApp button
+- Phone button
+- Email button
+
+Simple contact form:
+- Nom
+- Email
+- Téléphone
+- Message
+
+Use placeholder contact details that I can replace:
+Phone: +33 XX XX XX XX XX
+Email: contact@huss-tech.fr
+WhatsApp link placeholder: https://wa.me/33XXXXXXXXX
+
+8. Footer
+- HUSS TECH
+- Solutions informatiques à Marseille
+- Website creation and tech support for small local businesses
+- Links: Services, Support, Tarifs, Contact
+
+Visual requirements:
+- Use lots of off-white space.
+- Use burgundy for strong sections and buttons.
+- Use gold only as a subtle accent.
+- Use dark taupe for text.
+- Include subtle abstract node/network background patterns inspired by my business card.
+- Use rounded cards, soft shadows, clean spacing.
+- Make it premium and trustworthy, not flashy.
+- Ensure excellent mobile responsiveness.
+
+Technical requirements:
+- TypeScript
+- React
+- Tailwind CSS
+- Clean reusable components
+- No backend needed
+- Frontend-only contact form for now
+- Smooth scroll behavior
+- Hover effects on cards and buttons
+- Accessible contrast and readable font sizes
+- Fast-loading page
+
+Important:
+Do not include AI automation.
+Do not include SEO.
+Do not include Google Maps.
+Do not include demo projects for now.
+Do not include videos.
+Do not include image placeholders in the support section.
+Do not mention years of experience.
+Do not pretend to be an agency.
+The tone should be confident, simple, local, and professional.
