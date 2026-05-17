@@ -17,11 +17,13 @@ export default function Nav() {
     <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-background/80 border-b border-border/40">
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
         <a href="#" aria-label="Huss Tech — Accueil">
-          <img
-            src="/logo.png"
-            alt="Huss Tech logo"
-            className="h-12 w-auto"
-          />
+          <div className="h-11 w-11 rounded-full bg-background border border-border/60 shadow-sm flex items-center justify-center overflow-hidden">
+            <img
+              src="/logo.png"
+              alt="Huss Tech logo"
+              className="h-8 w-8 object-contain"
+            />
+          </div>
         </a>
 
         {/* Desktop Nav */}

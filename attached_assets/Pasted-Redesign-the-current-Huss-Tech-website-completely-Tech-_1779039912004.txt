@@ -1,0 +1,361 @@
+Redesign the current Huss Tech website completely.
+
+Tech stack:
+- React
+- TypeScript
+- Tailwind CSS
+
+IMPORTANT:
+The current design feels too decorative and feminine.
+I want a cleaner Apple-inspired design with a practical Marseille local-business feeling.
+
+The design direction should be:
+- Apple-like
+- Minimal
+- Calm
+- Premium
+- Local
+- Modern
+- Practical
+- Trustworthy
+
+Avoid:
+- Generic freelancer portfolio look
+- Serif fonts
+- Neon/cyberpunk style
+- Heavy gradients
+- Startup/SaaS feeling
+- Overly luxurious typography
+- Too many borders
+- Giant stacked pricing tables
+- Excessive animations
+
+====================================
+BRAND STYLE
+====================================
+
+Business:
+Huss Tech
+
+Tagline:
+Solutions informatiques à Marseille
+
+Main positioning:
+Helping Marseille businesses look professional.
+
+Tone:
+Simple street French.
+Professional but direct.
+Not corporate.
+Not luxury-agency style.
+
+====================================
+TYPOGRAPHY
+====================================
+
+Remove all serif fonts completely.
+
+Use:
+- Inter
+or
+- Manrope
+or
+- Geist
+
+Typography should feel:
+- modern
+- masculine
+- technical
+- practical
+- clean
+
+Large Apple-style spacing.
+Strong typography hierarchy.
+
+====================================
+COLORS
+====================================
+
+Main background:
+Warm off-white (#F8F5EF)
+
+Text:
+Dark gray / taupe (#514640)
+
+Accent color:
+Deep burgundy (#5A0505)
+
+Accent usage:
+- buttons
+- hover states
+- highlights
+- small details only
+
+Gold should barely appear.
+Only subtle tiny accents if needed.
+
+====================================
+LAYOUT STYLE
+====================================
+
+Use:
+- glassmorphism
+- subtle transparency
+- soft blur
+- rounded corners
+- floating cards
+- large spacing
+- minimal shadows
+- Apple-like clean sections
+
+Navbar:
+- floating
+- semi-transparent
+- blurred background
+- sticky
+- elegant and minimal
+
+====================================
+HERO SECTION
+====================================
+
+Completely redesign the hero section.
+
+Layout:
+- large left text content
+- right side visual
+
+Headline:
+Un site propre.
+Un ordinateur qui marche.
+Un contact direct à Marseille.
+
+Subheadline:
+Sites web modernes et support informatique pratique pour commerces, barbiers et petites entreprises.
+
+Buttons:
+Primary:
+- Voir mes services
+
+Secondary:
+- WhatsApp
+
+Add a small floating badge:
+À partir de 300 €
+
+IMPORTANT:
+Generate a realistic blurred tech workspace image for the hero section.
+
+The image should include:
+- modern workspace
+- laptop showing a website UI
+- subtle repair tools nearby
+- realistic lighting
+- shallow depth of field
+- elegant blur
+- warm neutral colors
+- soft burgundy lighting accents
+
+The image must feel:
+- premium
+- realistic
+- Apple-like
+- modern
+- calm
+
+NOT:
+- futuristic
+- gaming
+- cyberpunk
+- stock-photo cheesy
+
+====================================
+SERVICES SECTION
+====================================
+
+Completely redesign the services section.
+
+The current stacked list layout is bad.
+
+DO NOT use:
+- long vertical pricing boxes
+- invoice-style layouts
+- giant repetitive lists
+
+Instead:
+
+Create 2 large floating Apple-style service cards side by side.
+
+Section title:
+Services simples pour les commerces à Marseille
+
+Subtitle:
+Sites web modernes et support informatique rapide pour petites entreprises.
+
+------------------------------------
+CARD 1:
+Sites web
+------------------------------------
+
+Short text:
+Landing pages modernes et sites vitrines simples pour présenter votre activité.
+
+Add rounded service chips/tags:
+- Landing page
+- Site vitrine
+- Mobile friendly
+- À partir de 300 €
+
+Button:
+Voir les détails
+
+------------------------------------
+CARD 2:
+Support informatique
+------------------------------------
+
+Short text:
+Dépannage pratique pour ordinateurs personnels et professionnels.
+
+Add rounded chips/tags:
+- Virus
+- Windows
+- Diagnostic
+- Réparation
+
+Button:
+Voir les tarifs
+
+Service chips should look:
+- modern
+- rounded
+- glassy
+- soft hover effects
+- Apple-inspired
+
+====================================
+DETAILED SERVICES SECTION
+====================================
+
+Instead of giant pricing tables:
+
+Create elegant expandable cards or floating compact cards.
+
+Each service should have:
+- title
+- short description
+- small visible price
+
+Do NOT make prices dominate visually.
+
+Services:
+
+Création de site web
+À partir de 300 €
+
+Landing page
+300–500 €
+
+Site vitrine
+600–900 €
+
+Maintenance mensuelle
+30 €/mois
+
+Ajout de contenu
+30–40 €/h
+
+Diagnostic + devis
+25 €
+
+Dépannage logiciel / virus
+40–60 €
+
+Réinstallation Windows
+60–80 €
+
+Remplacement pièce
+40–60 € + pièce
+
+Déplacement Marseille
+Gratuit
+
+====================================
+WHY WORK WITH ME
+====================================
+
+Modern trust section with floating cards.
+
+Points:
+- Basé à Marseille
+- Communication directe
+- Solutions simples
+- Support rapide
+
+Minimal icons.
+No cheesy illustrations.
+
+====================================
+CONTACT SECTION
+====================================
+
+Apple-style contact section.
+
+Clean layout.
+Floating glass card.
+
+Include:
+- WhatsApp button
+- Phone
+- Email
+- Minimal contact form
+
+Form fields:
+- Nom
+- Email
+- Téléphone
+- Message
+
+====================================
+ANIMATIONS
+====================================
+
+Very subtle animations only:
+- fade in
+- slight hover lift
+- blur transition
+- smooth scrolling
+
+No flashy animations.
+
+====================================
+MOBILE DESIGN
+====================================
+
+The mobile version is extremely important.
+
+Make it:
+- clean
+- spacious
+- premium
+- easy to read
+- thumb-friendly
+
+Cards should stack beautifully.
+
+====================================
+FINAL DESIGN GOAL
+====================================
+
+The website should feel like:
+“Apple-inspired local tech freelancer in Marseille.”
+
+It should NOT feel like:
+- a coding portfolio
+- a startup SaaS
+- a luxury fashion brand
+- a cheap repair shop
+- a template website
+
+The final result should feel:
+clean, modern, local, premium, simple, and trustworthy.
