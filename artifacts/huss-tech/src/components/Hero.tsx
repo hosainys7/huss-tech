@@ -31,7 +31,7 @@ export default function Hero() {
             className="flex flex-col gap-6"
           >
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground tracking-wide leading-tight">
-              Helping Marseille businesses <span className="text-primary italic">look professional.</span>
+              Votre commerce mérite <span className="text-primary italic">une image professionnelle.</span>
             </h1>
             
             <p className="text-lg md:text-xl text-foreground/80 leading-relaxed max-w-xl font-sans">
