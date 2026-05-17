@@ -16,14 +16,13 @@ export default function Nav() {
   return (
     <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-background/80 border-b border-border/40">
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
-        <div className="flex flex-col">
-          <a href="#" className="font-serif text-2xl font-bold tracking-widest text-foreground leading-none">
-            HUSS TECH
-          </a>
-          <span className="text-[10px] text-muted-foreground uppercase tracking-wider font-medium mt-1">
-            Solutions informatiques à Marseille
-          </span>
-        </div>
+        <a href="#" aria-label="Huss Tech — Accueil">
+          <img
+            src="/logo.png"
+            alt="Huss Tech logo"
+            className="h-12 w-auto"
+          />
+        </a>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
