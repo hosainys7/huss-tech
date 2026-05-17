@@ -1,92 +1,78 @@
 import React from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden pt-20 pb-32 md:pt-32 md:pb-48">
-      {/* Subtle Background Pattern */}
-      <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
-        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="network" width="100" height="100" patternUnits="userSpaceOnUse">
-              <circle cx="50" cy="50" r="1" fill="#514640" />
-              <circle cx="10" cy="90" r="1.5" fill="#D8C777" />
-              <path d="M50 50 L10 90" stroke="#514640" strokeWidth="0.5" fill="none" opacity="0.5" />
-              <path d="M50 50 L90 10" stroke="#514640" strokeWidth="0.5" fill="none" opacity="0.5" />
-              <circle cx="90" cy="10" r="1" fill="#514640" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#network)" />
-        </svg>
-      </div>
+    <section className="relative overflow-hidden pt-8 pb-24 md:pt-12 md:pb-32">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-          
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="flex flex-col gap-6"
+            transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="flex flex-col gap-7"
           >
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground tracking-wide leading-tight">
-              Votre commerce mérite <span className="text-primary italic">une image professionnelle.</span>
+            <div className="inline-flex items-center gap-2 bg-primary/8 text-primary border border-primary/20 rounded-full px-4 py-1.5 text-xs font-semibold w-fit tracking-wide">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span>
+              À partir de 300 €
+            </div>
+
+            <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] font-semibold text-foreground leading-[1.12] tracking-tight">
+              Un site propre.<br />
+              Un ordinateur qui marche.<br />
+              <span className="text-primary">Un contact direct à Marseille.</span>
             </h1>
-            
-            <p className="text-lg md:text-xl text-foreground/80 leading-relaxed max-w-xl font-sans">
-              Sites web modernes et support informatique pratique pour les commerces, barbiers et petites entreprises à Marseille.
+
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-lg font-normal">
+              Sites web modernes et support informatique pratique pour commerces, barbiers et petites entreprises.
             </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 mt-4">
+
+            <div className="flex flex-col sm:flex-row gap-3 pt-1">
               <a
                 href="#services"
-                className="bg-primary text-primary-foreground px-8 py-3.5 rounded-full font-medium text-center hover:bg-primary/90 transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-xl font-semibold text-sm hover:bg-primary/90 transition-all hover:-translate-y-0.5 shadow-sm hover:shadow-md"
                 data-testid="btn-voir-services"
               >
                 Voir mes services
+                <ArrowRight size={16} />
               </a>
               <a
-                href="https://wa.me/33600000000" 
+                href="https://wa.me/33600000000"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border border-primary text-primary px-8 py-3.5 rounded-full font-medium text-center flex items-center justify-center gap-2 hover:bg-primary/5 transition-all shadow-sm hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 bg-background border border-border text-foreground px-6 py-3 rounded-xl font-semibold text-sm hover:bg-foreground/5 transition-all hover:-translate-y-0.5 shadow-sm"
                 data-testid="btn-whatsapp-hero"
               >
-                <FaWhatsapp className="text-xl" />
-                Me contacter sur WhatsApp
+                <FaWhatsapp size={17} className="text-[#25D366]" />
+                WhatsApp
               </a>
             </div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.97 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex justify-center lg:justify-end"
+            transition={{ duration: 0.6, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="relative flex justify-center lg:justify-end"
           >
-            <div className="bg-primary rounded-3xl p-8 md:p-12 w-full max-w-md aspect-[4/5] relative overflow-hidden shadow-2xl flex flex-col justify-end">
-              {/* Card Pattern */}
-              <div className="absolute inset-0 opacity-20 pointer-events-none">
-                <svg width="100%" height="100%" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M50 100 Q 150 50 250 150 T 350 200" stroke="#D8C777" strokeWidth="1" fill="none" />
-                  <path d="M100 250 Q 200 350 300 250 T 380 400" stroke="#D8C777" strokeWidth="0.5" fill="none" />
-                  <circle cx="50" cy="100" r="3" fill="#D8C777" />
-                  <circle cx="250" cy="150" r="2" fill="#D8C777" />
-                  <circle cx="350" cy="200" r="4" fill="#D8C777" />
-                  <circle cx="100" cy="250" r="2" fill="#D8C777" />
-                  <circle cx="300" cy="250" r="3" fill="#D8C777" />
-                </svg>
+            <div className="relative w-full max-w-lg">
+              <div className="rounded-2xl overflow-hidden shadow-2xl border border-border/30">
+                <img
+                  src="/hero-workspace.png"
+                  alt="Espace de travail tech moderne"
+                  className="w-full h-full object-cover aspect-[4/3]"
+                />
               </div>
-              
-              <div className="relative z-10">
-                <div className="w-12 h-1 bg-accent mb-6"></div>
-                <h2 className="font-serif text-3xl md:text-4xl text-primary-foreground tracking-widest uppercase mb-2">
-                  HUSS TECH
-                </h2>
-                <p className="text-accent font-medium tracking-wider text-sm font-sans">
-                  huss-tech.fr
-                </p>
+              <div className="absolute -bottom-4 -left-4 bg-background/90 backdrop-blur-md border border-border/60 rounded-2xl px-5 py-3.5 shadow-lg">
+                <p className="text-xs text-muted-foreground font-medium">Déplacement à Marseille</p>
+                <p className="text-sm font-bold text-primary mt-0.5">Gratuit</p>
+              </div>
+              <div className="absolute -top-4 -right-4 bg-background/90 backdrop-blur-md border border-border/60 rounded-2xl px-5 py-3.5 shadow-lg">
+                <p className="text-xs text-muted-foreground font-medium">Réponse rapide</p>
+                <p className="text-sm font-bold text-foreground mt-0.5">Sous 24h</p>
               </div>
             </div>
           </motion.div>

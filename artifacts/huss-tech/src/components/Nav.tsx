@@ -1,74 +1,76 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  const toggleMenu = () => setIsOpen(!isOpen);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const links = [
     { href: "#services", label: "Services" },
-    { href: "#support", label: "Support" },
     { href: "#tarifs", label: "Tarifs" },
+    { href: "#pourquoi", label: "Pourquoi moi" },
     { href: "#contact", label: "Contact" },
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-background/80 border-b border-border/40">
-      <div className="container mx-auto px-4 h-20 flex items-center justify-between">
-        <a href="#" aria-label="Huss Tech — Accueil">
-          <div className="h-11 w-11 rounded-full bg-background border border-border/60 shadow-sm flex items-center justify-center overflow-hidden">
-            <img
-              src="/logo.png"
-              alt="Huss Tech logo"
-              className="h-8 w-8 object-contain"
-            />
-          </div>
-        </a>
-
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          <ul className="flex items-center gap-6">
-            {links.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
-                  data-testid={`link-${link.label.toLowerCase()}`}
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-          <a
-            href="#contact"
-            className="bg-primary text-primary-foreground px-6 py-2.5 rounded-full text-sm font-medium hover:bg-primary/90 transition-colors shadow-sm"
-            data-testid="button-me-contacter"
-          >
-            Me contacter
+    <header className="sticky top-0 z-50 w-full px-4 pt-3">
+      <div
+        className={`max-w-5xl mx-auto rounded-2xl transition-all duration-300 ${
+          scrolled
+            ? "bg-background/80 backdrop-blur-xl shadow-md border border-border/60"
+            : "bg-background/60 backdrop-blur-md border border-border/40"
+        }`}
+      >
+        <div className="px-5 h-16 flex items-center justify-between">
+          <a href="#" aria-label="Huss Tech — Accueil" className="flex items-center gap-3">
+            <div className="h-9 w-9 rounded-full bg-background border border-border/60 shadow-sm flex items-center justify-center overflow-hidden">
+              <img src="/logo.png" alt="Huss Tech logo" className="h-6 w-6 object-contain" />
+            </div>
+            <span className="font-semibold text-foreground tracking-tight text-sm">Huss Tech</span>
           </a>
-        </nav>
 
-        {/* Mobile Nav Toggle */}
-        <button
-          className="md:hidden p-2 text-foreground"
-          onClick={toggleMenu}
-          aria-label="Toggle menu"
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
-
-      {/* Mobile Nav Panel */}
-      {isOpen && (
-        <div className="md:hidden absolute top-20 left-0 w-full bg-background border-b border-border shadow-lg">
-          <nav className="flex flex-col px-4 py-6 gap-4">
+          <nav className="hidden md:flex items-center gap-1">
             {links.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-lg font-medium text-foreground py-2 border-b border-border/50"
+                className="text-sm font-medium text-foreground/70 hover:text-foreground px-3 py-1.5 rounded-lg hover:bg-foreground/5 transition-all"
+                data-testid={`link-${link.label.toLowerCase()}`}
+              >
+                {link.label}
+              </a>
+            ))}
+            <a
+              href="#contact"
+              className="ml-2 bg-primary text-primary-foreground px-5 py-2 rounded-xl text-sm font-semibold hover:bg-primary/90 transition-colors"
+              data-testid="button-me-contacter"
+            >
+              Me contacter
+            </a>
+          </nav>
+
+          <button
+            className="md:hidden p-2 rounded-lg text-foreground hover:bg-foreground/5 transition-colors"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
+
+        {isOpen && (
+          <div className="md:hidden border-t border-border/40 px-5 py-4 flex flex-col gap-1">
+            {links.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-sm font-medium text-foreground/80 py-2.5 px-3 rounded-lg hover:bg-foreground/5 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
@@ -76,14 +78,14 @@ export default function Nav() {
             ))}
             <a
               href="#contact"
-              className="bg-primary text-primary-foreground px-6 py-3 rounded-full text-center font-medium mt-4 shadow-sm"
+              className="mt-2 bg-primary text-primary-foreground px-5 py-3 rounded-xl text-sm font-semibold text-center"
               onClick={() => setIsOpen(false)}
             >
               Me contacter
             </a>
-          </nav>
-        </div>
-      )}
+          </div>
+        )}
+      </div>
     </header>
   );
 }

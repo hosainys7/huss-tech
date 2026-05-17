@@ -26,15 +26,10 @@ const formSchema = z.object({
 
 export default function Contact() {
   const { toast } = useToast();
-  
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      nom: "",
-      email: "",
-      telephone: "",
-      message: "",
-    },
+    defaultValues: { nom: "", email: "", telephone: "", message: "" },
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
@@ -42,134 +37,137 @@ export default function Contact() {
     toast({
       title: "Message envoyé !",
       description: "Je vous réponds rapidement.",
-      className: "bg-primary text-primary-foreground border-none",
     });
     form.reset();
   }
 
   return (
-    <section id="contact" className="py-24 bg-card">
-      <div className="container mx-auto px-4 max-w-5xl">
-        
-        <div className="text-center mb-12">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="font-serif text-3xl md:text-4xl text-foreground tracking-wide mb-4"
-          >
-            Besoin d'un site web ou d'un support informatique ?
-          </motion.h2>
-          <p className="text-muted-foreground text-lg">
-            Expliquez-moi votre besoin et je vous réponds avec une solution claire.
-          </p>
-        </div>
+    <section id="contact" className="py-24 bg-background">
+      <div className="container mx-auto px-4 max-w-6xl">
 
-        <div className="flex flex-col md:flex-row gap-4 justify-center mb-16">
-          <a
-            href="https://wa.me/33600000000"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-primary text-primary-foreground px-6 py-3 rounded-full font-medium flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors shadow-sm"
-          >
-            <FaWhatsapp size={20} />
-            WhatsApp
-          </a>
-          <a
-            href="tel:+33600000000"
-            className="border border-primary text-primary px-6 py-3 rounded-full font-medium flex items-center justify-center gap-2 hover:bg-primary/5 transition-colors shadow-sm bg-background"
-          >
-            <Phone size={20} />
-            +33 6 00 00 00 00
-          </a>
-          <a
-            href="mailto:contact@huss-tech.fr"
-            className="border border-primary text-primary px-6 py-3 rounded-full font-medium flex items-center justify-center gap-2 hover:bg-primary/5 transition-colors shadow-sm bg-background"
-          >
-            <Mail size={20} />
-            contact@huss-tech.fr
-          </a>
-        </div>
-
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-background border border-border p-8 md:p-10 rounded-2xl shadow-sm max-w-2xl mx-auto"
+          className="text-center mb-14"
         >
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <FormField
-                  control={form.control}
-                  name="nom"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-foreground">Nom</FormLabel>
-                      <FormControl>
-                        <Input placeholder="Votre nom" className="bg-card border-border focus-visible:ring-primary" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-foreground">Email</FormLabel>
-                      <FormControl>
-                        <Input type="email" placeholder="votre@email.com" className="bg-card border-border focus-visible:ring-primary" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              </div>
-              
-              <FormField
-                control={form.control}
-                name="telephone"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="text-foreground">Téléphone <span className="text-muted-foreground font-normal">(Optionnel)</span></FormLabel>
-                    <FormControl>
-                      <Input type="tel" placeholder="06 00 00 00 00" className="bg-card border-border focus-visible:ring-primary" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="message"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="text-foreground">Message</FormLabel>
-                    <FormControl>
-                      <Textarea 
-                        placeholder="Expliquez-moi votre besoin..." 
-                        className="bg-card border-border min-h-[150px] resize-y focus-visible:ring-primary" 
-                        {...field} 
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <button 
-                type="submit"
-                className="w-full bg-primary text-primary-foreground py-4 rounded-xl font-medium hover:bg-primary/90 transition-colors shadow-sm"
-                data-testid="button-submit-form"
-              >
-                Envoyer le message
-              </button>
-            </form>
-          </Form>
+          <h2 className="text-3xl md:text-4xl font-semibold text-foreground tracking-tight mb-4">
+            Besoin d'un site ou d'un dépannage ?
+          </h2>
+          <p className="text-muted-foreground text-base max-w-xl mx-auto">
+            Expliquez-moi votre besoin. Je vous réponds avec une solution claire.
+          </p>
         </motion.div>
+
+        <div className="max-w-3xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-3 mb-10">
+            <a
+              href="https://wa.me/33600000000"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#25D366] text-white px-5 py-2.5 rounded-xl text-sm font-semibold hover:opacity-90 transition-opacity shadow-sm"
+            >
+              <FaWhatsapp size={18} />
+              WhatsApp
+            </a>
+            <a
+              href="tel:+33600000000"
+              className="inline-flex items-center gap-2 bg-background border border-border text-foreground px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-foreground/5 transition-colors shadow-sm"
+            >
+              <Phone size={16} />
+              +33 6 00 00 00 00
+            </a>
+            <a
+              href="mailto:contact@huss-tech.fr"
+              className="inline-flex items-center gap-2 bg-background border border-border text-foreground px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-foreground/5 transition-colors shadow-sm"
+            >
+              <Mail size={16} />
+              contact@huss-tech.fr
+            </a>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-card border border-border/60 rounded-2xl p-8 shadow-sm"
+          >
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  <FormField
+                    control={form.control}
+                    name="nom"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-sm font-medium text-foreground">Nom</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Votre nom" className="rounded-xl bg-background border-border/70 focus-visible:ring-primary" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-sm font-medium text-foreground">Email</FormLabel>
+                        <FormControl>
+                          <Input type="email" placeholder="votre@email.com" className="rounded-xl bg-background border-border/70 focus-visible:ring-primary" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+
+                <FormField
+                  control={form.control}
+                  name="telephone"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-sm font-medium text-foreground">
+                        Téléphone <span className="text-muted-foreground font-normal">(Optionnel)</span>
+                      </FormLabel>
+                      <FormControl>
+                        <Input type="tel" placeholder="06 00 00 00 00" className="rounded-xl bg-background border-border/70 focus-visible:ring-primary" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="message"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-sm font-medium text-foreground">Message</FormLabel>
+                      <FormControl>
+                        <Textarea
+                          placeholder="Décrivez votre besoin..."
+                          className="rounded-xl bg-background border-border/70 min-h-[130px] resize-none focus-visible:ring-primary"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <button
+                  type="submit"
+                  className="w-full bg-primary text-primary-foreground py-3 rounded-xl font-semibold text-sm hover:bg-primary/90 transition-colors shadow-sm"
+                  data-testid="button-submit-form"
+                >
+                  Envoyer le message
+                </button>
+              </form>
+            </Form>
+          </motion.div>
+        </div>
 
       </div>
     </section>
