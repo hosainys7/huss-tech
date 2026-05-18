@@ -5,19 +5,22 @@ import { ArrowRight } from "lucide-react";
 
 const slides = [
   {
+    // Clean MacBook on minimal desk showing website UI — web creation
     image:
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1600&q=80&fit=crop",
+      "https://images.unsplash.com/photo-1547658719-da2b51169166?w=1600&q=85&fit=crop",
     alt: "Création de site web moderne sur laptop",
   },
   {
+    // Technician hands working on open laptop with tools — repair
     image:
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1600&q=80&fit=crop",
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&q=85&fit=crop",
     alt: "Réparation d'ordinateur portable en atelier",
   },
   {
+    // Entrepreneur at clean desk with phone and laptop — local business
     image:
-      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1600&q=80&fit=crop",
-    alt: "Espace de travail numérique pour commerces locaux",
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1600&q=85&fit=crop",
+    alt: "Commerce local et communication digitale à Marseille",
   },
 ];
 
