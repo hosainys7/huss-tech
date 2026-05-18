@@ -1,18 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { MapPin, MessageCircle, Zap, ShieldCheck } from "lucide-react";
+import { Zap, ShieldCheck } from "lucide-react";
 
 const points = [
-  {
-    icon: <MapPin size={20} strokeWidth={1.8} />,
-    title: "Basé à Marseille",
-    desc: "Un interlocuteur local, pas un service à distance anonyme.",
-  },
-  {
-    icon: <MessageCircle size={20} strokeWidth={1.8} />,
-    title: "Communication directe",
-    desc: "Pas de jargon. Des réponses claires, par téléphone ou WhatsApp.",
-  },
   {
     icon: <ShieldCheck size={20} strokeWidth={1.8} />,
     title: "Solutions simples",
@@ -44,7 +34,7 @@ export default function WhyHussTech() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-2xl mx-auto">
           {points.map((point, i) => (
             <motion.div
               key={i}
@@ -52,7 +42,7 @@ export default function WhyHussTech() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="bg-background rounded-2xl border border-border/60 p-6 hover:-translate-y-1 transition-all hover:shadow-md"
+              className="bg-background rounded-2xl border border-border/60 p-7 hover:-translate-y-1 transition-all hover:shadow-md"
             >
               <div className="w-10 h-10 bg-primary/8 rounded-xl flex items-center justify-center text-primary mb-4">
                 {point.icon}

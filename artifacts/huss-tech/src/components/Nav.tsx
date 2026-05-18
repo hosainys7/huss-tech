@@ -46,13 +46,6 @@ export default function Nav() {
                 {link.label}
               </a>
             ))}
-            <a
-              href="#contact"
-              className="ml-2 bg-primary text-primary-foreground px-5 py-2 rounded-xl text-sm font-semibold hover:bg-primary/90 transition-colors"
-              data-testid="button-me-contacter"
-            >
-              Me contacter
-            </a>
           </nav>
 
           <button
@@ -76,13 +69,6 @@ export default function Nav() {
                 {link.label}
               </a>
             ))}
-            <a
-              href="#contact"
-              className="mt-2 bg-primary text-primary-foreground px-5 py-3 rounded-xl text-sm font-semibold text-center"
-              onClick={() => setIsOpen(false)}
-            >
-              Me contacter
-            </a>
           </div>
         )}
       </div>

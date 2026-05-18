@@ -1,0 +1,344 @@
+Redesign and polish the current Huss Tech website.
+
+Tech stack:
+- React
+- TypeScript
+- Tailwind CSS
+
+IMPORTANT:
+Do NOT rebuild the entire website.
+This prompt is ONLY for:
+- visual redesign
+- layout polish
+- hero redesign
+- typography
+- colors
+- navbar cleanup
+- contact cleanup
+- FAQ section
+- hours section
+- Apple-like premium styling
+
+Do NOT modify the interactive services architecture yet.
+
+==================================================
+DESIGN DIRECTION
+==================================================
+
+The website should feel like:
+- Apple-inspired
+- minimal
+- premium
+- clean
+- modern
+- local Marseille business
+- practical and trustworthy
+
+Avoid:
+- beige look
+- decorative luxury style
+- feminine typography
+- cyberpunk
+- startup SaaS style
+- generic developer portfolio look
+- excessive animations
+- large borders everywhere
+
+==================================================
+COLORS
+==================================================
+
+IMPORTANT:
+The background color is wrong currently.
+
+Replace the current beige/off-cream background with:
+#F2F0EF
+
+This should feel:
+- clean
+- neutral
+- Apple-like
+- modern off-white
+
+NOT:
+- yellowish
+- café beige
+- vintage cream
+
+Color palette:
+- Background: #F2F0EF
+- Text: dark taupe / dark gray
+- Accent color: deep burgundy (#5A0505)
+- Burgundy should ONLY be used for:
+  - buttons
+  - hover states
+  - highlights
+  - active states
+  - tiny accents
+
+Gold should barely appear.
+
+==================================================
+TYPOGRAPHY
+==================================================
+
+Remove all serif fonts completely.
+
+Use:
+- Inter
+or
+- Geist
+or
+- Manrope
+
+Typography should feel:
+- modern
+- masculine
+- technical
+- simple
+- practical
+
+Use:
+- large Apple-style spacing
+- clean hierarchy
+- strong readability
+- minimal text decoration
+
+==================================================
+NAVBAR
+==================================================
+
+Current issue:
+There are two contact buttons.
+
+Remove the burgundy “Me contacter” button completely.
+
+Navbar should become:
+- minimal
+- floating
+- semi-transparent
+- blurred glass effect
+- clean Apple-style
+
+Keep:
+- logo
+- navigation links only
+
+Navbar should feel elegant and lightweight.
+
+==================================================
+HERO SECTION
+==================================================
+
+Keep the current visual direction,
+BUT redesign the hero properly.
+
+The hero image should:
+- fill the ENTIRE hero section background
+- not stay boxed inside a card
+- feel immersive
+- slightly blurry with dark overlay for readability
+
+Use a rotating carousel/slider with 3 generated background images.
+
+==================================================
+HERO IMAGE 1
+==================================================
+
+Theme:
+Website creation
+
+Scene:
+- modern workspace
+- laptop showing elegant website UI
+- clean desk
+- premium lighting
+- subtle burgundy accents
+- shallow depth of field
+
+Style:
+Apple-inspired realistic photography.
+
+==================================================
+HERO IMAGE 2
+==================================================
+
+Theme:
+Laptop repair
+
+Scene:
+- professional laptop repair workspace
+- laptop open on desk
+- subtle repair tools nearby
+- realistic lighting
+- clean setup
+- not messy
+
+Style:
+premium realistic workshop aesthetic.
+
+==================================================
+HERO IMAGE 3
+==================================================
+
+Theme:
+Modern digital workspace for local businesses
+
+Scene:
+- laptop
+- smartphone
+- WhatsApp/customer communication atmosphere
+- minimal workspace
+- warm modern lighting
+- subtle Marseille local-business feeling
+
+Style:
+clean Apple-style realism.
+
+==================================================
+HERO CONTENT
+==================================================
+
+Headline:
+Un site propre.
+Un ordinateur qui marche.
+Un contact direct à Marseille.
+
+Subheadline:
+Sites web modernes et support informatique pratique pour commerces, barbiers et petites entreprises.
+
+Buttons:
+- Voir mes services
+- WhatsApp
+
+Replace the “À partir de 300 €” bubble.
+
+New bubble:
+- centered in hero section
+- glassmorphism style
+- green blinking dot
+- text: “Disponible”
+
+This should feel like:
+- live availability
+- modern support status
+- calm and premium
+
+==================================================
+WHY WORK WITH ME SECTION
+==================================================
+
+Remove these cards completely:
+- Basé à Marseille
+- Communication directe
+
+Keep the section minimal and cleaner.
+
+==================================================
+CONTACT SECTION
+==================================================
+
+Simplify the contact section.
+
+Remove:
+- phone number completely
+
+Keep only:
+- WhatsApp
+- email
+- contact form
+
+Style:
+- floating glass card
+- modern Apple-style inputs
+- soft shadows
+- spacious layout
+
+==================================================
+FAQ SECTION
+==================================================
+
+Add a modern FAQ section inspired by repare-tontel13.
+
+Use:
+- clean accordion dropdowns
+- smooth open/close animation
+- minimal Apple-style cards
+
+Questions:
+- Combien de temps pour créer un site ?
+- Est-ce que le déplacement est gratuit ?
+- Peut-on payer en plusieurs fois ?
+- Faites-vous les modifications après livraison ?
+- Intervenez-vous à Marseille et alentours ?
+
+Style:
+clean, modern, premium.
+
+==================================================
+HOURS / AVAILABILITY SECTION
+==================================================
+
+Add a modern “Disponibilité” section inspired by repare-tontel13.
+
+Style:
+- floating glass card
+- subtle green accents
+- modern Apple UI
+- rounded corners
+- clean spacing
+
+Include:
+- Disponible → 24h/24
+- Intervention → 7j/7
+- Zone → Marseille & alentours
+
+Add:
+green active indicators/blinking dots.
+
+This section should feel:
+- reassuring
+- modern
+- local
+- active
+
+==================================================
+ANIMATIONS
+==================================================
+
+Only subtle animations:
+- fade in
+- smooth hover
+- blur transitions
+- smooth scrolling
+
+No flashy motion.
+
+==================================================
+MOBILE EXPERIENCE
+==================================================
+
+Mobile responsiveness is extremely important.
+
+The mobile version should feel:
+- spacious
+- premium
+- easy to read
+- thumb-friendly
+- clean
+
+Avoid cramped layouts.
+
+==================================================
+FINAL GOAL
+==================================================
+
+The final design should feel like:
+“Apple-inspired local tech service platform for Marseille businesses.”
+
+NOT:
+- freelancer portfolio
+- luxury fashion site
+- startup SaaS
+- cyberpunk tech site
+- cheap repair shop template

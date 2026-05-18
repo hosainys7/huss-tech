@@ -4,6 +4,8 @@ import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import Pricing from "@/components/Pricing";
 import WhyHussTech from "@/components/WhyHussTech";
+import FAQ from "@/components/FAQ";
+import Availability from "@/components/Availability";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -16,6 +18,8 @@ export default function LandingPage() {
         <Services />
         <Pricing />
         <WhyHussTech />
+        <Availability />
+        <FAQ />
         <Contact />
       </main>
       <Footer />

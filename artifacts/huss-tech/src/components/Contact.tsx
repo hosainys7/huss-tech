@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FaWhatsapp } from "react-icons/fa";
-import { Phone, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import { motion } from "framer-motion";
 import { useToast } from "@/hooks/use-toast";
 import {
@@ -20,7 +20,6 @@ import { Textarea } from "@/components/ui/textarea";
 const formSchema = z.object({
   nom: z.string().min(2, "Le nom est requis"),
   email: z.string().email("Email invalide"),
-  telephone: z.string().optional(),
   message: z.string().min(10, "Le message doit contenir au moins 10 caractères"),
 });
 
@@ -29,7 +28,7 @@ export default function Contact() {
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: { nom: "", email: "", telephone: "", message: "" },
+    defaultValues: { nom: "", email: "", message: "" },
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
@@ -43,7 +42,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-24 bg-background">
-      <div className="container mx-auto px-4 max-w-6xl">
+      <div className="container mx-auto px-4 max-w-5xl">
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -59,38 +58,33 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-2xl mx-auto">
+          {/* Direct contact buttons */}
           <div className="flex flex-wrap justify-center gap-3 mb-10">
             <a
               href="https://wa.me/33600000000"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#25D366] text-white px-5 py-2.5 rounded-xl text-sm font-semibold hover:opacity-90 transition-opacity shadow-sm"
+              className="inline-flex items-center gap-2 bg-[#25D366] text-white px-6 py-3 rounded-xl text-sm font-semibold hover:opacity-90 transition-opacity shadow-sm"
             >
               <FaWhatsapp size={18} />
               WhatsApp
             </a>
             <a
-              href="tel:+33600000000"
-              className="inline-flex items-center gap-2 bg-background border border-border text-foreground px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-foreground/5 transition-colors shadow-sm"
-            >
-              <Phone size={16} />
-              +33 6 00 00 00 00
-            </a>
-            <a
               href="mailto:contact@huss-tech.fr"
-              className="inline-flex items-center gap-2 bg-background border border-border text-foreground px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-foreground/5 transition-colors shadow-sm"
+              className="inline-flex items-center gap-2 bg-background border border-border text-foreground px-6 py-3 rounded-xl text-sm font-semibold hover:bg-foreground/5 transition-colors shadow-sm"
             >
               <Mail size={16} />
               contact@huss-tech.fr
             </a>
           </div>
 
+          {/* Glass contact form */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-card border border-border/60 rounded-2xl p-8 shadow-sm"
+            className="bg-white/60 backdrop-blur-md border border-border/50 rounded-2xl p-8 shadow-lg"
           >
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
@@ -102,7 +96,11 @@ export default function Contact() {
                       <FormItem>
                         <FormLabel className="text-sm font-medium text-foreground">Nom</FormLabel>
                         <FormControl>
-                          <Input placeholder="Votre nom" className="rounded-xl bg-background border-border/70 focus-visible:ring-primary" {...field} />
+                          <Input
+                            placeholder="Votre nom"
+                            className="rounded-xl bg-background/70 border-border/60 focus-visible:ring-primary h-11"
+                            {...field}
+                          />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -115,29 +113,18 @@ export default function Contact() {
                       <FormItem>
                         <FormLabel className="text-sm font-medium text-foreground">Email</FormLabel>
                         <FormControl>
-                          <Input type="email" placeholder="votre@email.com" className="rounded-xl bg-background border-border/70 focus-visible:ring-primary" {...field} />
+                          <Input
+                            type="email"
+                            placeholder="votre@email.com"
+                            className="rounded-xl bg-background/70 border-border/60 focus-visible:ring-primary h-11"
+                            {...field}
+                          />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
                     )}
                   />
                 </div>
-
-                <FormField
-                  control={form.control}
-                  name="telephone"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-sm font-medium text-foreground">
-                        Téléphone <span className="text-muted-foreground font-normal">(Optionnel)</span>
-                      </FormLabel>
-                      <FormControl>
-                        <Input type="tel" placeholder="06 00 00 00 00" className="rounded-xl bg-background border-border/70 focus-visible:ring-primary" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
 
                 <FormField
                   control={form.control}
@@ -148,7 +135,7 @@ export default function Contact() {
                       <FormControl>
                         <Textarea
                           placeholder="Décrivez votre besoin..."
-                          className="rounded-xl bg-background border-border/70 min-h-[130px] resize-none focus-visible:ring-primary"
+                          className="rounded-xl bg-background/70 border-border/60 min-h-[140px] resize-none focus-visible:ring-primary"
                           {...field}
                         />
                       </FormControl>
@@ -159,7 +146,7 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className="w-full bg-primary text-primary-foreground py-3 rounded-xl font-semibold text-sm hover:bg-primary/90 transition-colors shadow-sm"
+                  className="w-full bg-primary text-white py-3.5 rounded-xl font-semibold text-sm hover:bg-primary/90 transition-colors shadow-sm"
                   data-testid="button-submit-form"
                 >
                   Envoyer le message
