@@ -17,10 +17,10 @@ const slides = [
     alt: "Réparation d'ordinateur portable en atelier",
   },
   {
-    // Entrepreneur at clean desk with phone and laptop — local business
+    // Clean minimal office desk with laptop — local business workspace
     image:
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1600&q=85&fit=crop",
-    alt: "Commerce local et communication digitale à Marseille",
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=85&fit=crop",
+    alt: "Espace de travail moderne pour commerce local",
   },
 ];
 
@@ -77,12 +77,6 @@ export default function Hero() {
           transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="flex flex-col items-center text-center gap-7"
         >
-          {/* Disponible badge */}
-          <div className="inline-flex items-center gap-2.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-5 py-2 text-sm font-medium text-white shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 blink-dot inline-block" />
-            Disponible
-          </div>
-
           <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-semibold text-white leading-[1.1] tracking-tight max-w-3xl">
             Un site propre.<br />
             Un ordinateur qui marche.<br />
