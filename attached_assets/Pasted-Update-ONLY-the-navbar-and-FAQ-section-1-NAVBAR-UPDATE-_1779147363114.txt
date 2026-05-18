@@ -1,0 +1,88 @@
+Update ONLY the navbar and FAQ section.
+
+1. NAVBAR UPDATE
+
+Update navbar links to match the real sections:
+
+- Accueil
+- Services
+- Disponibilité
+- Contact
+- FAQ
+
+Remove any outdated links.
+
+Add a hover dropdown under “Services”.
+
+When user hovers over “Services”, show a clean Apple-style dropdown menu.
+
+Dropdown structure:
+
+Sites web
+- Landing page
+- Site vitrine
+- Maintenance mensuelle
+- Ajout de contenu
+
+Support informatique
+- Diagnostic + devis
+- Dépannage logiciel / virus
+- Réinstallation Windows
+- Remplacement pièce
+
+Dropdown style:
+- glassmorphism
+- blurred background
+- soft shadow
+- rounded corners
+- clean spacing
+- burgundy hover accents
+- #F2F0EF / white card style
+- mobile friendly
+
+On click, each dropdown item should scroll to the services section and optionally preselect the related service if possible.
+
+2. FAQ UPDATE
+
+Move FAQ below Contact section if not already done.
+
+Replace current FAQ with these questions and answers:
+
+Q1: Combien de temps pour créer un site ?
+R: En général, une landing page peut être prête en 5 à 10 jours ouvrés selon le contenu fourni. Un site vitrine peut prendre plus de temps selon le nombre de pages et les modifications demandées.
+
+Q2: Qu’est-ce que je dois fournir pour créer mon site ?
+R: Il faut généralement votre logo, vos textes, vos photos si vous en avez, vos services, vos tarifs si vous voulez les afficher, et vos informations de contact. Si vous n’avez pas tout, je peux vous aider à structurer le contenu.
+
+Q3: Est-ce que le déplacement est gratuit ?
+R: Oui, le déplacement est gratuit pour les professionnels à Marseille, sur rendez-vous. Le prix est toujours annoncé avant l’intervention.
+
+Q4: Peut-on payer en plusieurs fois ?
+R: Oui, le paiement en 2 fois est possible pour les projets web. Les conditions sont définies avant le début du projet.
+
+Q5: Faites-vous les modifications après livraison ?
+R: Oui. Deux modifications simples sont incluses après la livraison. Pour les modifications supplémentaires, le tarif est clair : 30–40 €/h selon la demande.
+
+Q6: Est-ce que je suis propriétaire de mon site ?
+R: Oui. Une fois le projet payé, le site vous appartient. Je peux aussi vous accompagner pour le nom de domaine, l’hébergement et les petites mises à jour.
+
+Q7: Intervenez-vous seulement à Marseille ?
+R: Oui, pour l’instant les interventions physiques sont uniquement à Marseille. Certaines demandes peuvent être traitées à distance selon le problème.
+
+Q8: Pouvez-vous supprimer les virus ou réinstaller Windows ?
+R: Oui. Je peux faire un diagnostic, supprimer les virus, optimiser le système ou réinstaller Windows si nécessaire. Un devis clair est donné avant l’intervention.
+
+Q9: Est-ce que mes données sont conservées pendant une réparation ?
+R: Je fais attention aux données existantes, mais une sauvegarde est toujours recommandée avant toute intervention importante comme une réinstallation Windows ou un remplacement de pièce.
+
+Q10: Comment demander un devis ?
+R: Vous pouvez envoyer un message via WhatsApp ou le formulaire de contact. Expliquez simplement votre besoin, et je vous réponds avec une solution claire.
+
+FAQ style:
+- Apple-like accordion
+- clean cards
+- smooth open/close animation
+- burgundy active state
+- readable on mobile
+
+Do not modify the hero, availability, contact form, or services architecture except the navbar dropdown scroll behavior.
