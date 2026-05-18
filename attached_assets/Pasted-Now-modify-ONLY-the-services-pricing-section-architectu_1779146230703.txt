@@ -1,0 +1,289 @@
+Now modify ONLY the services/pricing section architecture.
+
+Do not redesign the full website.
+Do not change the hero, navbar, contact, FAQ, availability, or footer.
+
+Goal:
+Replace the current static services/pricing layout with an interactive service selection system inspired by repare-tontel13.fr.
+
+The UX should work like:
+1. User selects a main category
+2. Related options appear
+3. User selects an option
+4. Price/detail cards appear
+
+It should feel:
+- Apple-clean
+- modern
+- local service platform
+- simple
+- interactive
+- premium
+- not complicated
+
+Use:
+- React
+- TypeScript
+- Tailwind CSS
+- clean component structure
+- simple state management
+
+==================================================
+SECTION TITLE
+==================================================
+
+Title:
+Services simples pour les commerces à Marseille
+
+Subtitle:
+Choisissez un service pour voir les options et les tarifs.
+
+==================================================
+STEP 1 — MAIN SERVICE CATEGORIES
+==================================================
+
+Show 2 large clickable Apple-style cards:
+
+1. Sites web
+Description:
+Création de sites modernes pour présenter votre activité et faciliter le contact avec vos clients.
+
+Tags:
+- Landing page
+- Site vitrine
+- Maintenance
+
+2. Support informatique
+Description:
+Dépannage pratique pour ordinateurs, logiciels, lenteurs, virus et remplacement de pièces.
+
+Tags:
+- Logiciel
+- Matériel
+- Diagnostic
+
+Cards should:
+- be clickable
+- have hover lift
+- show active selected state
+- use burgundy for selected/active accents
+- use glass/white cards on #F2F0EF background
+- have rounded corners and soft shadow
+
+==================================================
+STEP 2 — OPTIONS AFTER CATEGORY CLICK
+==================================================
+
+When user clicks “Sites web”, show 3 option cards:
+
+1. Landing page
+Description:
+Site 1 page pour présenter rapidement votre activité, vos services et vos contacts.
+Price preview:
+300–500 €
+
+2. Site vitrine
+Description:
+Site de 3 à 5 pages pour une présence plus complète et professionnelle.
+Price preview:
+600–900 €
+
+3. Maintenance mensuelle
+Description:
+Petites modifications, suivi du site et support de base.
+Price preview:
+30 €/mois
+
+When user clicks “Support informatique”, show 4 option cards:
+
+1. Diagnostic + devis
+Description:
+Analyse du problème et proposition d’une solution claire avant intervention.
+Price preview:
+25 €
+
+2. Dépannage logiciel / virus
+Description:
+Suppression virus, résolution bugs logiciels, lenteurs et optimisation système.
+Price preview:
+40–60 €
+
+3. Réinstallation Windows
+Description:
+Réinstallation propre, configuration de base et préparation de l’ordinateur.
+Price preview:
+60–80 €
+
+4. Remplacement pièce
+Description:
+Remplacement de pièce après diagnostic, main d’œuvre séparée du coût de la pièce.
+Price preview:
+40–60 € + pièce
+
+Options should appear with a smooth transition/fade.
+They should look like selectable cards, similar to repair options appearing after model selection on repare-tontel13.fr.
+
+==================================================
+STEP 3 — DETAIL CARDS AFTER OPTION CLICK
+==================================================
+
+When an option is selected, show a detail panel/card below.
+
+The detail panel should include:
+- selected service name
+- short description
+- price
+- what is included
+- CTA button: Demander un devis
+- secondary CTA: WhatsApp
+
+Details:
+
+Landing page
+Price: 300–500 €
+Includes:
+- Site 1 page
+- Présentation de l’activité
+- Design adapté mobile
+- Bouton contact / WhatsApp
+- Paiement possible en 2 fois
+
+Site vitrine
+Price: 600–900 €
+Includes:
+- 3 à 5 pages
+- Présentation complète de l’activité
+- Pages services / contact
+- Design adapté mobile
+- Paiement possible en 2 fois
+
+Maintenance mensuelle
+Price: 30 €/mois
+Includes:
+- Petites modifications
+- Suivi du site
+- Support de base
+- Ajout simple de contenu
+
+Diagnostic + devis
+Price: 25 €
+Includes:
+- Analyse du problème
+- Vérification de l’état de l’ordinateur
+- Devis clair avant intervention
+- Déduit si réparation effectuée
+
+Dépannage logiciel / virus
+Price: 40–60 €
+Includes:
+- Suppression virus
+- Résolution bugs logiciels
+- Optimisation système
+- Nettoyage logiciel
+
+Réinstallation Windows
+Price: 60–80 €
+Includes:
+- Réinstallation propre
+- Configuration de base
+- Préparation de l’ordinateur
+- Conseils d’utilisation
+
+Remplacement pièce
+Price: 40–60 € + pièce
+Includes:
+- Diagnostic avant remplacement
+- Main d’œuvre séparée du prix de la pièce
+- Validation avant intervention
+- Installation de la pièce
+
+==================================================
+IMPORTANT PRICING RULE
+==================================================
+
+Do NOT show “Création de site web — À partir de 300 €” as a service card.
+
+“À partir de 300 €” should only be used as a general starting price idea, not as its own service.
+
+Do not create a giant pricing table.
+
+Prices should appear inside the interactive service flow only.
+
+==================================================
+INTERACTION BEHAVIOR
+==================================================
+
+Default state:
+- show the 2 main category cards
+- no option selected yet
+
+When category is clicked:
+- highlight selected category
+- show its related options
+- clear previous selected option
+
+When option is clicked:
+- highlight selected option
+- show detail panel
+
+If another category is clicked:
+- replace options
+- clear old detail panel
+
+All transitions should be smooth but subtle:
+- fade
+- slight slide
+- hover lift
+
+No flashy animations.
+
+==================================================
+VISUAL STYLE
+==================================================
+
+Use current website style:
+- background #F2F0EF
+- white/glass cards
+- burgundy #5A0505 for active states, buttons, and small accents
+- dark gray/taupe text
+- rounded corners
+- soft shadows
+- modern Apple-like spacing
+
+The section should feel like:
+- a clean service configurator
+- not a static price list
+- not an invoice
+- not a government form
+
+==================================================
+MOBILE DESIGN
+==================================================
+
+On mobile:
+- cards stack vertically
+- buttons are easy to tap
+- selected states are clear
+- detail panel appears directly below selected option
+- spacing remains clean and premium
+
+==================================================
+CODE REQUIREMENTS
+==================================================
+
+Use clean TypeScript data structures.
+
+Create reusable components if possible:
+- ServiceCategoryCard
+- ServiceOptionCard
+- ServiceDetailPanel
+
+Use state like:
+- selectedCategory
+- selectedOption
+
+Keep the code easy to edit later.
+
+Do not modify unrelated sections.
+Do not add AI automation.
+Do not add SEO or Google Maps.

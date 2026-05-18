@@ -1,8 +1,7 @@
 import React from "react";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import Services from "@/components/Services";
-import Pricing from "@/components/Pricing";
+import ServiceSelector from "@/components/ServiceSelector";
 import WhyHussTech from "@/components/WhyHussTech";
 import Availability from "@/components/Availability";
 import Contact from "@/components/Contact";
@@ -15,8 +14,7 @@ export default function LandingPage() {
       <Nav />
       <main className="flex-1">
         <Hero />
-        <Services />
-        <Pricing />
+        <ServiceSelector />
         <WhyHussTech />
         <Availability />
         <Contact />
