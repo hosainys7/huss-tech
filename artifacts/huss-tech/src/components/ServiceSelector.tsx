@@ -1,11 +1,11 @@
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { Globe, Wrench, ChevronRight, Check } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-/* ─── Data ─────────────────────────────────────────────────── */
+/* ─── Types ─────────────────────────────────────────────────── */
 
-type ServiceOption = {
+export type ServiceOption = {
   id: string;
   title: string;
   description: string;
@@ -14,7 +14,7 @@ type ServiceOption = {
   includes: string[];
 };
 
-type ServiceCategory = {
+export type ServiceCategory = {
   id: string;
   title: string;
   description: string;
@@ -23,7 +23,9 @@ type ServiceCategory = {
   options: ServiceOption[];
 };
 
-const categories: ServiceCategory[] = [
+/* ─── Data ─────────────────────────────────────────────────── */
+
+export const categories: ServiceCategory[] = [
   {
     id: "web",
     title: "Sites web",
@@ -74,6 +76,20 @@ const categories: ServiceCategory[] = [
           "Suivi du site",
           "Support de base",
           "Ajout simple de contenu",
+        ],
+      },
+      {
+        id: "contenu",
+        title: "Ajout de contenu",
+        description:
+          "Ajout de textes, images ou nouvelles sections sur un site existant.",
+        pricePreview: "30–40 €/h",
+        price: "30–40 €/h",
+        includes: [
+          "Ajout de textes",
+          "Intégration d'images",
+          "Nouvelles sections",
+          "Facturation à l'heure",
         ],
       },
     ],
@@ -316,11 +332,23 @@ function ServiceDetailPanel({ option }: { option: ServiceOption }) {
   );
 }
 
+/* ─── Props ─────────────────────────────────────────────────── */
+
+type ServiceSelectorProps = {
+  selectedCategoryId: string | null;
+  selectedOptionId: string | null;
+  onCategorySelect: (categoryId: string) => void;
+  onOptionSelect: (optionId: string) => void;
+};
+
 /* ─── Main Component ────────────────────────────────────────── */
 
-export default function ServiceSelector() {
-  const [selectedCategoryId, setSelectedCategoryId] = useState<string | null>(null);
-  const [selectedOptionId, setSelectedOptionId] = useState<string | null>(null);
+export default function ServiceSelector({
+  selectedCategoryId,
+  selectedOptionId,
+  onCategorySelect,
+  onOptionSelect,
+}: ServiceSelectorProps) {
   const optionsRef = useRef<HTMLDivElement>(null);
 
   const selectedCategory = categories.find((c) => c.id === selectedCategoryId) ?? null;
@@ -328,16 +356,14 @@ export default function ServiceSelector() {
     selectedCategory?.options.find((o) => o.id === selectedOptionId) ?? null;
 
   function handleCategoryClick(id: string) {
-    if (selectedCategoryId === id) return;
-    setSelectedCategoryId(id);
-    setSelectedOptionId(null);
+    onCategorySelect(id);
     setTimeout(() => {
       optionsRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
     }, 80);
   }
 
   function handleOptionClick(id: string) {
-    setSelectedOptionId((prev) => (prev === id ? null : id));
+    onOptionSelect(selectedOptionId === id ? "" : id);
   }
 
   return (

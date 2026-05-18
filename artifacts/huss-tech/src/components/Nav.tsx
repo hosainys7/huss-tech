@@ -1,37 +1,53 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Menu, X, ChevronDown, Globe, Wrench } from "lucide-react";
 
+/* ─── Dropdown data (mirrors ServiceSelector IDs) ──────────── */
+
 const servicesDropdown = [
   {
     group: "Sites web",
-    icon: <Globe size={14} strokeWidth={1.8} />,
+    categoryId: "web",
+    icon: <Globe size={13} strokeWidth={1.8} />,
     items: [
-      "Landing page",
-      "Site vitrine",
-      "Maintenance mensuelle",
-      "Ajout de contenu",
+      { label: "Landing page",          optionId: "landing" },
+      { label: "Site vitrine",          optionId: "vitrine" },
+      { label: "Maintenance mensuelle", optionId: "maintenance" },
+      { label: "Ajout de contenu",      optionId: "contenu" },
     ],
   },
   {
     group: "Support informatique",
-    icon: <Wrench size={14} strokeWidth={1.8} />,
+    categoryId: "support",
+    icon: <Wrench size={13} strokeWidth={1.8} />,
     items: [
-      "Diagnostic + devis",
-      "Dépannage logiciel / virus",
-      "Réinstallation Windows",
-      "Remplacement pièce",
+      { label: "Diagnostic + devis",          optionId: "diagnostic" },
+      { label: "Dépannage logiciel / virus",  optionId: "depannage" },
+      { label: "Réinstallation Windows",      optionId: "windows" },
+      { label: "Remplacement pièce",          optionId: "piece" },
     ],
   },
 ];
 
-const topLinks = [
-  { href: "#", label: "Accueil" },
-  { href: "#disponibilite", label: "Disponibilité" },
-  { href: "#contact", label: "Contact" },
-  { href: "#faq", label: "FAQ" },
-];
+/* ─── Scroll helper ─────────────────────────────────────────── */
 
-export default function Nav() {
+function scrollToId(id: string) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const navHeight = 80;
+  const top = el.getBoundingClientRect().top + window.scrollY - navHeight;
+  window.scrollTo({ top, behavior: "smooth" });
+}
+
+/* ─── Props ─────────────────────────────────────────────────── */
+
+type NavProps = {
+  onServiceSelect: (categoryId: string, optionId: string) => void;
+  onReset: () => void;
+};
+
+/* ─── Component ─────────────────────────────────────────────── */
+
+export default function Nav({ onServiceSelect, onReset }: NavProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -55,19 +71,34 @@ export default function Nav() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  function onMouseEnter() {
+  function openDropdown() {
     if (hoverTimeout.current) clearTimeout(hoverTimeout.current);
     setDropdownOpen(true);
   }
 
-  function onMouseLeave() {
+  function closeDropdown() {
     hoverTimeout.current = setTimeout(() => setDropdownOpen(false), 120);
   }
 
-  function handleDropdownItemClick() {
+  function handleReset() {
+    onReset();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    setIsOpen(false);
+    setDropdownOpen(false);
+  }
+
+  function handleDropdownItem(categoryId: string, optionId: string) {
+    onServiceSelect(categoryId, optionId);
     setDropdownOpen(false);
     setIsOpen(false);
-    document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
+    setMobileServicesOpen(false);
+    // Short delay so state updates before scrolling
+    setTimeout(() => scrollToId("services"), 60);
+  }
+
+  function handleServicesClick() {
+    setDropdownOpen(false);
+    scrollToId("services");
   }
 
   return (
@@ -80,30 +111,36 @@ export default function Nav() {
         }`}
       >
         <div className="px-5 h-16 flex items-center justify-between">
+
           {/* Logo */}
-          <a href="#" aria-label="Huss Tech — Accueil" className="flex items-center gap-3">
+          <button
+            onClick={handleReset}
+            aria-label="Huss Tech — Accueil"
+            className="flex items-center gap-3 focus:outline-none"
+          >
             <div className="h-9 w-9 rounded-full bg-background border border-border/60 shadow-sm flex items-center justify-center overflow-hidden">
               <img src="/logo.png" alt="Huss Tech logo" className="h-6 w-6 object-contain" />
             </div>
             <span className="font-semibold text-foreground tracking-tight text-sm">Huss Tech</span>
-          </a>
+          </button>
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-1">
+
             {/* Accueil */}
-            <a
-              href="#"
+            <button
+              onClick={handleReset}
               className="text-sm font-medium text-foreground/70 hover:text-foreground px-3 py-1.5 rounded-lg hover:bg-foreground/5 transition-all"
             >
               Accueil
-            </a>
+            </button>
 
             {/* Services with dropdown */}
             <div
               ref={dropdownRef}
               className="relative"
-              onMouseEnter={onMouseEnter}
-              onMouseLeave={onMouseLeave}
+              onMouseEnter={openDropdown}
+              onMouseLeave={closeDropdown}
             >
               <button
                 className={`inline-flex items-center gap-1 text-sm font-medium px-3 py-1.5 rounded-lg transition-all ${
@@ -111,7 +148,7 @@ export default function Nav() {
                     ? "text-primary bg-primary/6"
                     : "text-foreground/70 hover:text-foreground hover:bg-foreground/5"
                 }`}
-                onClick={() => setDropdownOpen((v) => !v)}
+                onClick={handleServicesClick}
                 aria-expanded={dropdownOpen}
               >
                 Services
@@ -124,27 +161,27 @@ export default function Nav() {
               {/* Dropdown panel */}
               {dropdownOpen && (
                 <div
-                  className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-72 bg-background/90 backdrop-blur-xl border border-border/60 rounded-2xl shadow-xl p-4 z-50"
-                  onMouseEnter={onMouseEnter}
-                  onMouseLeave={onMouseLeave}
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-72 bg-background/92 backdrop-blur-xl border border-border/60 rounded-2xl shadow-xl p-4 z-50"
+                  onMouseEnter={openDropdown}
+                  onMouseLeave={closeDropdown}
                 >
                   <div className="flex flex-col gap-4">
                     {servicesDropdown.map((group) => (
                       <div key={group.group}>
-                        <div className="flex items-center gap-1.5 mb-2 px-1">
+                        <div className="flex items-center gap-1.5 mb-1.5 px-1">
                           <span className="text-primary">{group.icon}</span>
-                          <span className="text-xs font-semibold text-foreground/60 uppercase tracking-widest">
+                          <span className="text-xs font-semibold text-foreground/50 uppercase tracking-widest">
                             {group.group}
                           </span>
                         </div>
                         <div className="flex flex-col gap-0.5">
                           {group.items.map((item) => (
                             <button
-                              key={item}
-                              onClick={handleDropdownItemClick}
-                              className="text-left text-sm text-foreground/80 hover:text-primary hover:bg-primary/6 px-3 py-2 rounded-xl transition-all w-full"
+                              key={item.optionId}
+                              onClick={() => handleDropdownItem(group.categoryId, item.optionId)}
+                              className="text-left text-sm text-foreground/75 hover:text-primary hover:bg-primary/6 px-3 py-2 rounded-xl transition-all w-full"
                             >
-                              {item}
+                              {item.label}
                             </button>
                           ))}
                         </div>
@@ -155,16 +192,22 @@ export default function Nav() {
               )}
             </div>
 
-            {/* Other links */}
-            {topLinks.slice(1).map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-foreground/70 hover:text-foreground px-3 py-1.5 rounded-lg hover:bg-foreground/5 transition-all"
-              >
-                {link.label}
-              </a>
-            ))}
+            {/* Contact */}
+            <button
+              onClick={() => scrollToId("contact")}
+              className="text-sm font-medium text-foreground/70 hover:text-foreground px-3 py-1.5 rounded-lg hover:bg-foreground/5 transition-all"
+            >
+              Contact
+            </button>
+
+            {/* FAQ */}
+            <button
+              onClick={() => scrollToId("faq")}
+              className="text-sm font-medium text-foreground/70 hover:text-foreground px-3 py-1.5 rounded-lg hover:bg-foreground/5 transition-all"
+            >
+              FAQ
+            </button>
+
           </nav>
 
           {/* Mobile burger */}
@@ -180,13 +223,12 @@ export default function Nav() {
         {/* Mobile menu */}
         {isOpen && (
           <div className="md:hidden border-t border-border/40 px-5 py-4 flex flex-col gap-1">
-            <a
-              href="#"
-              className="text-sm font-medium text-foreground/80 py-2.5 px-3 rounded-lg hover:bg-foreground/5 transition-colors"
-              onClick={() => setIsOpen(false)}
+            <button
+              onClick={handleReset}
+              className="text-left text-sm font-medium text-foreground/80 py-2.5 px-3 rounded-lg hover:bg-foreground/5 transition-colors"
             >
               Accueil
-            </a>
+            </button>
 
             {/* Mobile Services accordion */}
             <div>
@@ -201,7 +243,7 @@ export default function Nav() {
                 />
               </button>
               {mobileServicesOpen && (
-                <div className="pl-3 mt-1 flex flex-col gap-3">
+                <div className="pl-3 mt-1 flex flex-col gap-3 pb-1">
                   {servicesDropdown.map((group) => (
                     <div key={group.group}>
                       <div className="flex items-center gap-1.5 mb-1 px-3">
@@ -212,11 +254,11 @@ export default function Nav() {
                       </div>
                       {group.items.map((item) => (
                         <button
-                          key={item}
-                          onClick={handleDropdownItemClick}
+                          key={item.optionId}
+                          onClick={() => handleDropdownItem(group.categoryId, item.optionId)}
                           className="w-full text-left text-sm text-foreground/70 hover:text-primary py-2 px-3 rounded-lg hover:bg-primary/6 transition-all"
                         >
-                          {item}
+                          {item.label}
                         </button>
                       ))}
                     </div>
@@ -225,16 +267,19 @@ export default function Nav() {
               )}
             </div>
 
-            {topLinks.slice(1).map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-foreground/80 py-2.5 px-3 rounded-lg hover:bg-foreground/5 transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                {link.label}
-              </a>
-            ))}
+            <button
+              onClick={() => { scrollToId("contact"); setIsOpen(false); }}
+              className="text-left text-sm font-medium text-foreground/80 py-2.5 px-3 rounded-lg hover:bg-foreground/5 transition-colors"
+            >
+              Contact
+            </button>
+
+            <button
+              onClick={() => { scrollToId("faq"); setIsOpen(false); }}
+              className="text-left text-sm font-medium text-foreground/80 py-2.5 px-3 rounded-lg hover:bg-foreground/5 transition-colors"
+            >
+              FAQ
+            </button>
           </div>
         )}
       </div>

@@ -1,0 +1,109 @@
+Fix ONLY the navbar behavior and service navigation logic.
+
+Do not redesign the full site.
+Do not change the hero, FAQ, contact, availability, or general styling.
+
+Current problems:
+1. Clicking dropdown service items does not update the selected service state.
+2. Clicking dropdown items does not scroll correctly to the selected service/details.
+3. Clicking the logo or Accueil does not reset the services section.
+4. Disponibilité should be removed from the navbar.
+5. Navbar feels disconnected from the page behavior.
+
+Navbar links should be:
+- Accueil
+- Services
+- Contact
+- FAQ
+
+Remove:
+- Disponibilité from navbar
+
+Required behavior:
+
+1. Logo click
+When user clicks the logo:
+- scroll to top / hero section
+- reset selectedCategory to null
+- reset selectedOption to null
+- close any open dropdown
+
+2. Accueil click
+When user clicks Accueil:
+- scroll to top / hero section
+- reset selectedCategory to null
+- reset selectedOption to null
+- close dropdown
+
+3. Services click
+When user clicks Services:
+- scroll to the services section
+- do not auto-select an option unless a dropdown item is clicked
+
+4. Services hover dropdown
+Keep the dropdown, but make it functional.
+
+Dropdown structure:
+
+Sites web
+- Landing page
+- Site vitrine
+- Maintenance mensuelle
+- Ajout de contenu
+
+Support informatique
+- Diagnostic + devis
+- Dépannage logiciel / virus
+- Réinstallation Windows
+- Remplacement pièce
+
+When user clicks a dropdown item:
+- close dropdown
+- scroll smoothly to the services section
+- set selectedCategory correctly
+- set selectedOption correctly
+- show the detail panel for that selected option
+
+Example:
+Click “Landing page”:
+selectedCategory = "websites"
+selectedOption = "landing-page"
+
+Click “Dépannage logiciel / virus”:
+selectedCategory = "support"
+selectedOption = "software-virus"
+
+5. Services section state
+Make sure navbar and services section share the same state.
+
+Do not keep separate state inside navbar and services section.
+
+The parent component should control:
+- selectedCategory
+- selectedOption
+
+Pass handlers to navbar and services section.
+
+6. Active styling
+If a dropdown item is clicked:
+- the relevant main service card should appear selected
+- the relevant option card should appear selected
+- the detail panel should appear below the options
+
+7. Mobile behavior
+On mobile:
+- dropdown/menu items should also trigger the same state changes
+- menu should close after selection
+
+8. Smooth scrolling
+Use refs or IDs:
+- hero section: #home
+- services section: #services
+- contact section: #contact
+- FAQ section: #faq
+
+Scrolling should account for sticky navbar height so content is not hidden behind the navbar.
+
+9. Do not break visual design
+Keep the current Apple/glass style.
+Only fix structure, state, navbar links, and scrolling behavior.
