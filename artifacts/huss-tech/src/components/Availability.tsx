@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const items = [
+const rows = [
   {
     label: "Disponible",
     value: "24h / 24",
@@ -14,7 +14,7 @@ const items = [
   },
   {
     label: "Zone",
-    value: "Marseille & alentours",
+    value: "Marseille",
     dot: false,
   },
 ];
@@ -22,7 +22,7 @@ const items = [
 export default function Availability() {
   return (
     <section className="py-20 bg-background">
-      <div className="container mx-auto px-4 max-w-4xl">
+      <div className="container mx-auto px-4 max-w-2xl">
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -42,28 +42,32 @@ export default function Availability() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-white/60 backdrop-blur-md border border-border/50 rounded-2xl p-8 md:p-10 shadow-lg max-w-2xl mx-auto"
+          className="bg-white/60 backdrop-blur-md border border-border/50 rounded-3xl p-6 shadow-lg flex flex-col gap-3"
         >
-          <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-border/40">
-            {items.map((item, i) => (
-              <div
-                key={i}
-                className="flex flex-col items-center gap-3 py-6 sm:py-0 sm:px-6 first:pt-0 last:pb-0 sm:first:pl-0 sm:last:pr-0"
-              >
-                <div className="flex items-center gap-2">
-                  {item.dot && (
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 blink-dot inline-block" />
-                  )}
-                  <span className="text-xs font-medium text-muted-foreground uppercase tracking-widest">
-                    {item.label}
-                  </span>
-                </div>
-                <span className="text-xl font-semibold text-foreground tracking-tight">
-                  {item.value}
+          {rows.map((row, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.08 }}
+              className="flex items-center justify-between bg-background/70 rounded-2xl px-6 py-4 shadow-sm border border-border/40"
+            >
+              <div className="flex items-center gap-3">
+                {row.dot ? (
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 blink-dot shrink-0" />
+                ) : (
+                  <span className="w-2.5 h-2.5 rounded-full bg-foreground/20 shrink-0" />
+                )}
+                <span className="text-sm font-medium text-muted-foreground">
+                  {row.label}
                 </span>
               </div>
-            ))}
-          </div>
+              <span className="text-sm font-semibold text-foreground tracking-tight">
+                {row.value}
+              </span>
+            </motion.div>
+          ))}
         </motion.div>
 
       </div>
