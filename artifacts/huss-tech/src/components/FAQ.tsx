@@ -11,47 +11,22 @@ const faqs = [
   {
     question: "Qu'est-ce que je dois fournir pour créer mon site ?",
     answer:
-      "Il faut généralement votre logo, vos textes, vos photos si vous en avez, vos services, vos tarifs si vous voulez les afficher, et vos informations de contact. Si vous n'avez pas tout, je peux vous aider à structurer le contenu.",
-  },
-  {
-    question: "Est-ce que le déplacement est gratuit ?",
-    answer:
-      "Oui, le déplacement est gratuit pour les professionnels à Marseille, sur rendez-vous. Le prix est toujours annoncé avant l'intervention.",
+      "Il faut généralement votre logo, vos textes, vos photos si vous en avez, vos services et vos informations de contact. Si vous n'avez pas tout, je peux vous aider à organiser le contenu simplement.",
   },
   {
     question: "Peut-on payer en plusieurs fois ?",
     answer:
-      "Oui, le paiement en 2 fois est possible pour les projets web. Les conditions sont définies avant le début du projet.",
+      "Oui, le paiement en 2 fois est possible pour les projets web. Les modalités sont définies avant le début du projet.",
   },
   {
     question: "Faites-vous les modifications après livraison ?",
     answer:
-      "Oui. Deux modifications simples sont incluses après la livraison. Pour les modifications supplémentaires, le tarif est clair : 30–40 €/h selon la demande.",
-  },
-  {
-    question: "Est-ce que je suis propriétaire de mon site ?",
-    answer:
-      "Oui. Une fois le projet payé, le site vous appartient. Je peux aussi vous accompagner pour le nom de domaine, l'hébergement et les petites mises à jour.",
-  },
-  {
-    question: "Intervenez-vous seulement à Marseille ?",
-    answer:
-      "Oui, pour l'instant les interventions physiques sont uniquement à Marseille. Certaines demandes peuvent être traitées à distance selon le problème.",
+      "Oui. Deux modifications simples sont incluses après la livraison. Pour les demandes supplémentaires, un tarif clair est appliqué selon le besoin.",
   },
   {
     question: "Pouvez-vous supprimer les virus ou réinstaller Windows ?",
     answer:
       "Oui. Je peux faire un diagnostic, supprimer les virus, optimiser le système ou réinstaller Windows si nécessaire. Un devis clair est donné avant l'intervention.",
-  },
-  {
-    question: "Est-ce que mes données sont conservées pendant une réparation ?",
-    answer:
-      "Je fais attention aux données existantes, mais une sauvegarde est toujours recommandée avant toute intervention importante comme une réinstallation Windows ou un remplacement de pièce.",
-  },
-  {
-    question: "Comment demander un devis ?",
-    answer:
-      "Vous pouvez envoyer un message via WhatsApp ou le formulaire de contact. Expliquez simplement votre besoin, et je vous réponds avec une solution claire.",
   },
 ];
 
@@ -85,7 +60,7 @@ export default function FAQ() {
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.04 }}
+              transition={{ delay: i * 0.06 }}
               className={`rounded-2xl border overflow-hidden transition-colors ${
                 openIndex === i
                   ? "bg-background border-primary/25 shadow-sm"

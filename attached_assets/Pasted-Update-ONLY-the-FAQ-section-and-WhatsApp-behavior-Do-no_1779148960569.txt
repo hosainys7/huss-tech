@@ -1,0 +1,138 @@
+Update ONLY the FAQ section and WhatsApp behavior.
+
+Do not redesign the website.
+Do not modify unrelated sections.
+
+==================================================
+FAQ CLEANUP
+==================================================
+
+Reduce the FAQ section to ONLY 5 questions.
+
+Remove all other FAQ entries.
+
+Keep these questions and answers:
+
+1.
+
+Question:
+Combien de temps pour créer un site ?
+
+Answer:
+En général, une landing page peut être prête en 5 à 10 jours ouvrés selon le contenu fourni. Un site vitrine peut prendre plus de temps selon le nombre de pages et les modifications demandées.
+
+2.
+
+Question:
+Qu’est-ce que je dois fournir pour créer mon site ?
+
+Answer:
+Il faut généralement votre logo, vos textes, vos photos si vous en avez, vos services et vos informations de contact. Si vous n’avez pas tout, je peux vous aider à organiser le contenu simplement.
+
+3.
+
+Question:
+Peut-on payer en plusieurs fois ?
+
+Answer:
+Oui, le paiement en 2 fois est possible pour les projets web. Les modalités sont définies avant le début du projet.
+
+4.
+
+Question:
+Faites-vous les modifications après livraison ?
+
+Answer:
+Oui. Deux modifications simples sont incluses après la livraison. Pour les demandes supplémentaires, un tarif clair est appliqué selon le besoin.
+
+5.
+
+Question:
+Pouvez-vous supprimer les virus ou réinstaller Windows ?
+
+Answer:
+Oui. Je peux faire un diagnostic, supprimer les virus, optimiser le système ou réinstaller Windows si nécessaire. Un devis clair est donné avant l’intervention.
+
+==================================================
+FAQ STYLE
+==================================================
+
+Keep:
+- Apple-style accordion
+- smooth open/close animation
+- rounded cards
+- clean spacing
+- burgundy active states
+- modern typography
+
+The FAQ section should feel:
+- simple
+- reassuring
+- easy to scan
+
+==================================================
+WHATSAPP UPDATE
+==================================================
+
+Replace all WhatsApp links and placeholders with:
+
++33773148264
+
+Use:
+https://wa.me/33773148264
+
+==================================================
+PERSONALIZED WHATSAPP MESSAGES
+==================================================
+
+IMPORTANT:
+When user clicks WhatsApp from a selected service/detail card,
+generate a personalized pre-filled message depending on the selected service.
+
+The messages should feel:
+- natural
+- human
+- local
+- not robotic
+- not corporate
+
+Examples:
+
+Landing page:
+Bonjour, je voudrais avoir plus d’informations pour une landing page pour mon activité.
+
+Site vitrine:
+Bonjour, je suis intéressé par un site vitrine pour mon commerce à Marseille.
+
+Maintenance mensuelle:
+Bonjour, je voudrais des informations concernant la maintenance mensuelle du site.
+
+Diagnostic + devis:
+Bonjour, j’ai un problème avec mon ordinateur et je voudrais un diagnostic.
+
+Dépannage logiciel / virus:
+Bonjour, mon ordinateur a un problème logiciel / virus. Est-ce possible d’avoir un devis ?
+
+Réinstallation Windows:
+Bonjour, je voudrais une réinstallation Windows pour mon ordinateur.
+
+Remplacement pièce:
+Bonjour, je voudrais des informations pour un remplacement de pièce sur mon ordinateur.
+
+==================================================
+BEHAVIOR
+==================================================
+
+When user clicks WhatsApp from:
+- service detail card
+- contact section
+- CTA buttons
+
+Use the correct WhatsApp URL with encoded personalized message.
+
+Use encodeURIComponent for the message text.
+
+Do not use generic robotic messages like:
+“Hello I am interested in your services.”
+
+The messages should feel like a real local person contacting another person.

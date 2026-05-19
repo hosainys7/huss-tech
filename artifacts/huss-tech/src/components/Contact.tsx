@@ -62,7 +62,7 @@ export default function Contact() {
           {/* Direct contact buttons */}
           <div className="flex flex-wrap justify-center gap-3 mb-10">
             <a
-              href="https://wa.me/33600000000"
+              href={`https://wa.me/33773148264?text=${encodeURIComponent("Bonjour, j'aurais besoin d'aide. Pouvez-vous me contacter ?")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#25D366] text-white px-6 py-3 rounded-xl text-sm font-semibold hover:opacity-90 transition-opacity shadow-sm"

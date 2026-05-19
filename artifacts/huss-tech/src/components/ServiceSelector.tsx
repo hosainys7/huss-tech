@@ -3,6 +3,12 @@ import { FaWhatsapp } from "react-icons/fa";
 import { Globe, Wrench, ChevronRight, Check } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
+const WA_NUMBER = "33773148264";
+
+function waUrl(message: string) {
+  return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
+}
+
 /* ─── Types ─────────────────────────────────────────────────── */
 
 export type ServiceOption = {
@@ -12,6 +18,7 @@ export type ServiceOption = {
   pricePreview: string;
   price: string;
   includes: string[];
+  whatsappMessage: string;
 };
 
 export type ServiceCategory = {
@@ -48,6 +55,8 @@ export const categories: ServiceCategory[] = [
           "Bouton contact / WhatsApp",
           "Paiement possible en 2 fois",
         ],
+        whatsappMessage:
+          "Bonjour, je voudrais avoir plus d'informations pour une landing page pour mon activité.",
       },
       {
         id: "vitrine",
@@ -63,6 +72,8 @@ export const categories: ServiceCategory[] = [
           "Design adapté mobile",
           "Paiement possible en 2 fois",
         ],
+        whatsappMessage:
+          "Bonjour, je suis intéressé par un site vitrine pour mon commerce à Marseille.",
       },
       {
         id: "maintenance",
@@ -77,6 +88,8 @@ export const categories: ServiceCategory[] = [
           "Support de base",
           "Ajout simple de contenu",
         ],
+        whatsappMessage:
+          "Bonjour, je voudrais des informations concernant la maintenance mensuelle du site.",
       },
       {
         id: "contenu",
@@ -91,6 +104,8 @@ export const categories: ServiceCategory[] = [
           "Nouvelles sections",
           "Facturation à l'heure",
         ],
+        whatsappMessage:
+          "Bonjour, je voudrais ajouter du contenu sur mon site existant. Est-ce possible d'avoir un devis ?",
       },
     ],
   },
@@ -115,6 +130,8 @@ export const categories: ServiceCategory[] = [
           "Devis clair avant intervention",
           "Déduit si réparation effectuée",
         ],
+        whatsappMessage:
+          "Bonjour, j'ai un problème avec mon ordinateur et je voudrais un diagnostic.",
       },
       {
         id: "depannage",
@@ -129,6 +146,8 @@ export const categories: ServiceCategory[] = [
           "Optimisation système",
           "Nettoyage logiciel",
         ],
+        whatsappMessage:
+          "Bonjour, mon ordinateur a un problème logiciel / virus. Est-ce possible d'avoir un devis ?",
       },
       {
         id: "windows",
@@ -143,6 +162,8 @@ export const categories: ServiceCategory[] = [
           "Préparation de l'ordinateur",
           "Conseils d'utilisation",
         ],
+        whatsappMessage:
+          "Bonjour, je voudrais une réinstallation Windows pour mon ordinateur.",
       },
       {
         id: "piece",
@@ -157,6 +178,8 @@ export const categories: ServiceCategory[] = [
           "Validation avant intervention",
           "Installation de la pièce",
         ],
+        whatsappMessage:
+          "Bonjour, je voudrais des informations pour un remplacement de pièce sur mon ordinateur.",
       },
     ],
   },
@@ -190,19 +213,11 @@ function ServiceCategoryCard({
         {category.icon}
       </div>
 
-      <h3
-        className={`text-lg font-semibold mb-2 ${
-          isSelected ? "text-white" : "text-foreground"
-        }`}
-      >
+      <h3 className={`text-lg font-semibold mb-2 ${isSelected ? "text-white" : "text-foreground"}`}>
         {category.title}
       </h3>
 
-      <p
-        className={`text-sm leading-relaxed mb-5 ${
-          isSelected ? "text-white/75" : "text-muted-foreground"
-        }`}
-      >
+      <p className={`text-sm leading-relaxed mb-5 ${isSelected ? "text-white/75" : "text-muted-foreground"}`}>
         {category.description}
       </p>
 
@@ -244,11 +259,7 @@ function ServiceOptionCard({
     >
       <div className="flex items-start justify-between gap-3">
         <div className="flex-1 min-w-0">
-          <p
-            className={`text-sm font-semibold mb-1 ${
-              isSelected ? "text-primary" : "text-foreground"
-            }`}
-          >
+          <p className={`text-sm font-semibold mb-1 ${isSelected ? "text-primary" : "text-foreground"}`}>
             {option.title}
           </p>
           <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2">
@@ -282,15 +293,11 @@ function ServiceDetailPanel({ option }: { option: ServiceOption }) {
       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
         <div>
           <h4 className="text-lg font-semibold text-foreground">{option.title}</h4>
-          <p className="text-sm text-muted-foreground mt-1 max-w-md">
-            {option.description}
-          </p>
+          <p className="text-sm text-muted-foreground mt-1 max-w-md">{option.description}</p>
         </div>
         <div className="shrink-0 text-right">
           <p className="text-xs text-muted-foreground font-medium mb-0.5">Prix</p>
-          <p className="text-2xl font-bold text-primary tracking-tight">
-            {option.price}
-          </p>
+          <p className="text-2xl font-bold text-primary tracking-tight">{option.price}</p>
         </div>
       </div>
 
@@ -319,7 +326,7 @@ function ServiceDetailPanel({ option }: { option: ServiceOption }) {
           <ChevronRight size={15} />
         </a>
         <a
-          href="https://wa.me/33600000000"
+          href={waUrl(option.whatsappMessage)}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center gap-2 bg-background border border-border text-foreground px-6 py-3 rounded-xl font-semibold text-sm hover:bg-foreground/5 transition-all hover:-translate-y-0.5 shadow-sm flex-1 sm:flex-none"
@@ -352,8 +359,7 @@ export default function ServiceSelector({
   const optionsRef = useRef<HTMLDivElement>(null);
 
   const selectedCategory = categories.find((c) => c.id === selectedCategoryId) ?? null;
-  const selectedOption =
-    selectedCategory?.options.find((o) => o.id === selectedOptionId) ?? null;
+  const selectedOption = selectedCategory?.options.find((o) => o.id === selectedOptionId) ?? null;
 
   function handleCategoryClick(id: string) {
     onCategorySelect(id);
@@ -370,7 +376,6 @@ export default function ServiceSelector({
     <section id="services" className="py-24 bg-card/60">
       <div className="container mx-auto px-4 max-w-5xl">
 
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -385,7 +390,6 @@ export default function ServiceSelector({
           </p>
         </motion.div>
 
-        {/* Step 1 — Category cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
           {categories.map((cat, i) => (
             <motion.div
@@ -404,7 +408,6 @@ export default function ServiceSelector({
           ))}
         </div>
 
-        {/* Step 2 — Options */}
         <AnimatePresence mode="wait">
           {selectedCategory && (
             <motion.div
@@ -433,7 +436,6 @@ export default function ServiceSelector({
           )}
         </AnimatePresence>
 
-        {/* Step 3 — Detail panel */}
         <AnimatePresence mode="wait">
           {selectedOption && (
             <ServiceDetailPanel key={selectedOption.id} option={selectedOption} />

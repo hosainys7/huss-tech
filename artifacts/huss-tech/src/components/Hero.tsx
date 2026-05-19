@@ -97,7 +97,7 @@ export default function Hero() {
               <ArrowRight size={16} />
             </a>
             <a
-              href="https://wa.me/33600000000"
+              href={`https://wa.me/33773148264?text=${encodeURIComponent("Bonjour, je voudrais avoir des informations sur vos services.")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-md border border-white/25 text-white px-7 py-3.5 rounded-xl font-semibold text-sm hover:bg-white/20 transition-all hover:-translate-y-0.5 shadow-sm"
