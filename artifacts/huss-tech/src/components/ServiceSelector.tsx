@@ -346,6 +346,7 @@ type ServiceSelectorProps = {
   selectedOptionId: string | null;
   onCategorySelect: (categoryId: string) => void;
   onOptionSelect: (optionId: string) => void;
+  onReset: () => void;
 };
 
 /* ─── Main Component ────────────────────────────────────────── */
@@ -355,6 +356,7 @@ export default function ServiceSelector({
   selectedOptionId,
   onCategorySelect,
   onOptionSelect,
+  onReset,
 }: ServiceSelectorProps) {
   const optionsRef = useRef<HTMLDivElement>(null);
 
@@ -419,9 +421,17 @@ export default function ServiceSelector({
               transition={{ duration: 0.28, ease: [0.25, 0.46, 0.45, 0.94] }}
               className="mb-6"
             >
-              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-4 px-1">
-                Options — {selectedCategory.title}
-              </p>
+              <div className="flex items-center justify-between mb-4 px-1">
+                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">
+                  Options — {selectedCategory.title}
+                </p>
+                <button
+                  onClick={onReset}
+                  className="text-xs text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 px-2 py-1 rounded-lg hover:bg-primary/6"
+                >
+                  ↩ Réinitialiser
+                </button>
+              </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {selectedCategory.options.map((opt) => (
                   <ServiceOptionCard

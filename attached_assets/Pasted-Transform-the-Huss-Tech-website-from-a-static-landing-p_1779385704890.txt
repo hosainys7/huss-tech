@@ -1,0 +1,252 @@
+Transform the Huss Tech website from a static landing page into an interactive local service platform.
+
+Do NOT redesign the visual identity.
+Keep the current:
+- Apple-inspired clean aesthetic
+- background color #F2F0EF
+- burgundy accent #5A0505
+- glassmorphism style
+- typography
+- hero section
+- FAQ section
+- contact section
+- availability section
+- footer
+
+The goal is to improve:
+- interaction flow
+- navigation behavior
+- service selection UX
+- state management
+- transitions
+- smoothness
+- overall app feeling
+
+The website should feel:
+- alive
+- connected
+- responsive
+- interactive
+- premium
+- smooth
+
+Not like separate static sections.
+
+==================================================
+1. GLOBAL STATE MANAGEMENT
+==================================================
+
+Create a shared parent state for:
+
+- selectedCategory
+- selectedOption
+- activeSection
+- isMenuOpen
+
+Navbar and Services section must use the SAME state.
+
+Do NOT keep separate local states that feel disconnected.
+
+The website should behave like one connected experience.
+
+==================================================
+2. NAVBAR AS INTERACTIVE CONTROL
+==================================================
+
+Navbar links:
+- Accueil
+- Services
+- Contact
+- FAQ
+
+Remove “Disponibilité” from navbar.
+
+Navbar should control the Services section behavior.
+
+When clicking Logo or Accueil:
+- scroll smoothly to hero section
+- reset selectedCategory
+- reset selectedOption
+- close dropdown/menu
+
+When clicking Services:
+- scroll smoothly to #services
+- keep current selection unless reset manually
+
+==================================================
+3. SERVICES DROPDOWN MENU
+==================================================
+
+Add a functional dropdown under “Services”.
+
+Structure:
+
+Sites web
+- Landing page
+- Site vitrine
+- Maintenance mensuelle
+- Ajout de contenu
+
+Support informatique
+- Diagnostic + devis
+- Dépannage logiciel / virus
+- Réinstallation Windows
+- Remplacement pièce
+
+Dropdown should:
+- open smoothly
+- use blur/glass effect
+- have rounded corners
+- feel lightweight and premium
+- use subtle burgundy hover states
+
+When user clicks a dropdown item:
+- close dropdown
+- scroll to #services
+- automatically set selectedCategory
+- automatically set selectedOption
+- automatically open the related detail panel
+
+Example:
+Click “Landing page”:
+selectedCategory = websites
+selectedOption = landing-page
+
+==================================================
+4. SERVICES SECTION = INTERACTIVE FLOW
+==================================================
+
+The Services section should behave like a service configurator.
+
+Flow:
+
+STEP 1
+User selects:
+- Sites web
+- Support informatique
+
+STEP 2
+Related options appear dynamically.
+
+For Sites web:
+- Landing page
+- Site vitrine
+- Maintenance mensuelle
+- Ajout de contenu
+
+For Support informatique:
+- Diagnostic + devis
+- Dépannage logiciel / virus
+- Réinstallation Windows
+- Remplacement pièce
+
+STEP 3
+When an option is selected:
+show a detail panel with:
+- service title
+- short description
+- included features
+- pricing
+- CTA buttons
+- WhatsApp button
+
+The experience should feel progressive and interactive.
+
+==================================================
+5. RESET BEHAVIOR
+==================================================
+
+Add:
+“Réinitialiser le choix”
+
+When clicked:
+- selectedCategory = null
+- selectedOption = null
+- return to initial services view
+
+Logo click and Accueil click should also fully reset the Services section.
+
+==================================================
+6. TRANSITIONS & MICRO INTERACTIONS
+==================================================
+
+Improve smoothness across the website.
+
+Add subtle:
+- fade transitions
+- slide-up reveals
+- smooth dropdown animation
+- hover lift
+- active state transitions
+- blur transitions
+- service reveal animation
+
+Avoid flashy animations.
+
+The website should feel:
+- controlled
+- smooth
+- Apple-like
+- premium
+
+==================================================
+7. WHATSAPP SMART MESSAGES
+==================================================
+
+Use WhatsApp number:
++33773148264
+
+Use:
+https://wa.me/33773148264
+
+Each service should generate its own natural pre-filled message.
+
+Examples:
+
+Landing page:
+Bonjour, je voudrais avoir plus d’informations pour une landing page pour mon activité.
+
+Site vitrine:
+Bonjour, je suis intéressé par un site vitrine pour mon commerce à Marseille.
+
+Maintenance:
+Bonjour, je voudrais des informations concernant la maintenance mensuelle du site.
+
+Diagnostic:
+Bonjour, j’ai un problème avec mon ordinateur et je voudrais un diagnostic.
+
+Virus / software:
+Bonjour, mon ordinateur a un problème logiciel ou virus. Est-ce possible d’avoir un devis ?
+
+Windows reinstall:
+Bonjour, je voudrais une réinstallation Windows pour mon ordinateur.
+
+Part replacement:
+Bonjour, je voudrais des informations pour un remplacement de pièce sur mon ordinateur.
+
+Use encodeURIComponent for messages.
+
+==================================================
+8. MOBILE EXPERIENCE
+==================================================
+
+The mobile experience is extremely important.
+
+On mobile:
+- menu opens smoothly
+- selecting a service closes the menu
+- service selection scrolls correctly
+- selected service opens automatically
+- cards stack cleanly
+- interactions remain smooth
+- buttons are thumb-friendly
+
+==================================================
+9. FINAL GOAL
+==================================================
+
+The final website should feel less like:
+“a freelancer landing page”
+
+And more like:
+“an interactive local service platform where business owners quickly choose a service, understand it, and contact Huss Tech naturally.”

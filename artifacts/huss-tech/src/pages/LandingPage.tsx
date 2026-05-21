@@ -47,6 +47,7 @@ export default function LandingPage() {
           selectedOptionId={selectedOptionId}
           onCategorySelect={handleCategorySelect}
           onOptionSelect={handleOptionSelect}
+          onReset={handleReset}
         />
         <WhyHussTech />
         <Availability />
