@@ -1,0 +1,238 @@
+Update the Huss Tech services section and remove the availability section.
+
+Do NOT redesign the full website.
+Keep the current visual identity:
+- Apple-clean
+- #F2F0EF background
+- burgundy accent #5A0505
+- glass cards
+- smooth transitions
+- premium local service platform feeling
+
+==================================================
+1. REMOVE AVAILABILITY SECTION
+==================================================
+
+Remove the entire “Disponibilité” section from the website.
+
+Do not keep:
+- Disponible 24h/24
+- Intervention 7j/7
+- Zone Marseille
+
+Also make sure there is no navbar link pointing to availability.
+
+==================================================
+2. UPDATE WEBSITE CREATION SERVICES
+==================================================
+
+For “Sites web”, keep ONLY 2 options:
+
+1. Landing page
+Price:
+À partir de 300 €
+
+Description:
+Une page claire et professionnelle pour présenter rapidement votre activité, vos services et faciliter le contact.
+
+Includes:
+- Site 1 page
+- Design adapté mobile
+- Présentation de l’activité
+- Bouton WhatsApp / contact
+- Paiement possible en 2 fois
+
+2. Site vitrine
+Price:
+À partir de 600 €
+
+Description:
+Un site plus complet pour présenter votre activité, vos services, vos pages importantes et renforcer votre image professionnelle.
+
+Includes:
+- 3 à 5 pages
+- Design adapté mobile
+- Pages services / contact
+- Présentation complète de l’activité
+- Paiement possible en 2 fois
+
+Remove completely:
+- Maintenance mensuelle
+- Ajout de contenu
+- Any pricing cards related to maintenance or content edits
+
+These services should not appear on the public website.
+
+==================================================
+3. UPDATE SUPPORT INFORMATIQUE STRUCTURE
+==================================================
+
+Support informatique should NOT directly show all repair options.
+
+It should work like this:
+
+Step 1:
+Main category:
+- Support informatique
+
+Step 2:
+After selecting Support informatique, show 2 cards:
+- Logiciel
+- Matériel
+
+Step 3:
+If user selects “Logiciel”, show these options:
+- Diagnostic + devis
+- Dépannage logiciel / virus
+- Réinstallation Windows
+
+Step 4:
+If user selects “Matériel”, show these options:
+- Diagnostic + devis
+- Remplacement pièce
+
+==================================================
+4. SUPPORT PRICING
+==================================================
+
+Use price card style inspired by repare-tontel13.fr:
+- service name on top
+- price clearly visible
+- rounded card
+- simple short description
+- CTA button
+- not a big pricing table
+- price should feel like a selectable repair/service option
+
+Prices:
+
+Diagnostic + devis
+25 €
+
+Dépannage logiciel / virus
+40–60 €
+
+Réinstallation Windows
+60–80 €
+
+Remplacement pièce
+40–60 € + pièce
+
+Important:
+Make prices visually similar in structure to repair price cards:
+- clean card
+- title
+- short description
+- price badge or price line
+- “Demander un devis” / WhatsApp CTA
+
+Do NOT make the pricing look like an invoice or long list.
+
+==================================================
+5. NAVBAR DROPDOWN UPDATE
+==================================================
+
+Update Services dropdown.
+
+Sites web:
+- Landing page
+- Site vitrine
+
+Support informatique:
+- Logiciel
+  - Diagnostic + devis
+  - Dépannage logiciel / virus
+  - Réinstallation Windows
+
+- Matériel
+  - Diagnostic + devis
+  - Remplacement pièce
+
+When clicking a dropdown item:
+- scroll to #services
+- select the correct category
+- select the correct subcategory if needed
+- open the correct detail/pricing card
+
+==================================================
+6. STATE MANAGEMENT UPDATE
+==================================================
+
+The services section now needs 3 levels of state:
+
+selectedCategory
+selectedSubCategory
+selectedOption
+
+Example:
+
+Landing page:
+selectedCategory = "websites"
+selectedSubCategory = null
+selectedOption = "landing-page"
+
+Dépannage logiciel / virus:
+selectedCategory = "support"
+selectedSubCategory = "software"
+selectedOption = "software-virus"
+
+Remplacement pièce:
+selectedCategory = "support"
+selectedSubCategory = "hardware"
+selectedOption = "part-replacement"
+
+When switching category:
+- clear selectedSubCategory
+- clear selectedOption
+
+When switching support subcategory:
+- clear selectedOption
+
+Reset button:
+- clear selectedCategory
+- clear selectedSubCategory
+- clear selectedOption
+
+==================================================
+7. WHATSAPP MESSAGES
+==================================================
+
+Use:
+https://wa.me/33773148264
+
+Use encodeURIComponent.
+
+Messages:
+
+Landing page:
+Bonjour, je voudrais avoir plus d’informations pour une landing page pour mon activité.
+
+Site vitrine:
+Bonjour, je suis intéressé par un site vitrine pour mon commerce à Marseille.
+
+Diagnostic:
+Bonjour, j’ai un problème avec mon ordinateur et je voudrais faire un diagnostic.
+
+Dépannage logiciel / virus:
+Bonjour, mon ordinateur a un problème logiciel ou virus. Est-ce possible d’avoir un devis ?
+
+Réinstallation Windows:
+Bonjour, je voudrais une réinstallation Windows pour mon ordinateur.
+
+Remplacement pièce:
+Bonjour, je voudrais des informations pour un remplacement de pièce sur mon ordinateur.
+
+==================================================
+8. FINAL GOAL
+==================================================
+
+The services section should feel like:
+- choose a service
+- choose a type
+- see the price clearly
+- contact via WhatsApp naturally
+
+It should feel closer to a repair-service selector like repare-tontel13.fr, but with Huss Tech’s Apple-clean design.
+
+Do not make it look like a static pricing table.
+Do not show unnecessary services publicly.

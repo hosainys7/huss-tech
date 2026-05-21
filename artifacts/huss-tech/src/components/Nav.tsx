@@ -4,27 +4,53 @@ import { motion, AnimatePresence } from "framer-motion";
 
 /* ─── Dropdown data ─────────────────────────────────────────── */
 
-const servicesDropdown = [
+type DropdownItem = {
+  label: string;
+  categoryId: string;
+  subCategoryId: string | null;
+  optionId: string | null;
+};
+
+type DropdownSubGroup = {
+  label: string;
+  items: DropdownItem[];
+};
+
+type DropdownGroup = {
+  group: string;
+  icon: React.ReactNode;
+  items?: DropdownItem[];
+  subGroups?: DropdownSubGroup[];
+};
+
+const servicesDropdown: DropdownGroup[] = [
   {
     group: "Sites web",
-    categoryId: "web",
     icon: <Globe size={13} strokeWidth={1.8} />,
     items: [
-      { label: "Landing page",          optionId: "landing" },
-      { label: "Site vitrine",          optionId: "vitrine" },
-      { label: "Maintenance mensuelle", optionId: "maintenance" },
-      { label: "Ajout de contenu",      optionId: "contenu" },
+      { label: "Landing page", categoryId: "web", subCategoryId: null, optionId: "landing" },
+      { label: "Site vitrine",  categoryId: "web", subCategoryId: null, optionId: "vitrine" },
     ],
   },
   {
     group: "Support informatique",
-    categoryId: "support",
     icon: <Wrench size={13} strokeWidth={1.8} />,
-    items: [
-      { label: "Diagnostic + devis",         optionId: "diagnostic" },
-      { label: "Dépannage logiciel / virus", optionId: "depannage" },
-      { label: "Réinstallation Windows",     optionId: "windows" },
-      { label: "Remplacement pièce",         optionId: "piece" },
+    subGroups: [
+      {
+        label: "Logiciel",
+        items: [
+          { label: "Diagnostic + devis",        categoryId: "support", subCategoryId: "logiciel", optionId: "diagnostic-log" },
+          { label: "Dépannage logiciel / virus", categoryId: "support", subCategoryId: "logiciel", optionId: "depannage" },
+          { label: "Réinstallation Windows",    categoryId: "support", subCategoryId: "logiciel", optionId: "windows" },
+        ],
+      },
+      {
+        label: "Matériel",
+        items: [
+          { label: "Diagnostic + devis",  categoryId: "support", subCategoryId: "materiel", optionId: "diagnostic-mat" },
+          { label: "Remplacement pièce",  categoryId: "support", subCategoryId: "materiel", optionId: "piece" },
+        ],
+      },
     ],
   },
 ];
@@ -43,7 +69,11 @@ function scrollToId(id: string) {
 /* ─── Props ─────────────────────────────────────────────────── */
 
 type NavProps = {
-  onServiceSelect: (categoryId: string, optionId: string) => void;
+  onServiceSelect: (
+    categoryId: string,
+    subCategoryId: string | null,
+    optionId: string | null
+  ) => void;
   onReset: () => void;
 };
 
@@ -54,11 +84,11 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
   const [scrolled, setScrolled] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [activeMobileSub, setActiveMobileSub] = useState<string | null>(null);
   const [activeSection, setActiveSection] = useState("home");
   const dropdownRef = useRef<HTMLDivElement>(null);
   const hoverTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  /* Scroll shadow + active section via IntersectionObserver */
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -80,7 +110,6 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
     return () => observers.forEach((o) => o.disconnect());
   }, []);
 
-  /* Close dropdown on outside click */
   useEffect(() => {
     function handler(e: MouseEvent) {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
@@ -107,11 +136,12 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
     setDropdownOpen(false);
   }
 
-  function handleDropdownItem(categoryId: string, optionId: string) {
-    onServiceSelect(categoryId, optionId);
+  function handleDropdownItem(item: DropdownItem) {
+    onServiceSelect(item.categoryId, item.subCategoryId, item.optionId);
     setDropdownOpen(false);
     setIsOpen(false);
     setMobileServicesOpen(false);
+    setActiveMobileSub(null);
     setTimeout(() => scrollToId("services"), 60);
   }
 
@@ -121,6 +151,57 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
         ? "text-foreground bg-foreground/8"
         : "text-foreground/60 hover:text-foreground hover:bg-foreground/5"
     }`;
+
+  /* Render a flat list of items for each dropdown group */
+  function renderDropdownContent() {
+    return servicesDropdown.map((group) => (
+      <div key={group.group}>
+        <div className="flex items-center gap-1.5 mb-1.5 px-1">
+          <span className="text-primary">{group.icon}</span>
+          <span className="text-xs font-semibold text-foreground/45 uppercase tracking-widest">
+            {group.group}
+          </span>
+        </div>
+
+        {/* Flat items (web) */}
+        {group.items && (
+          <div className="flex flex-col gap-0.5">
+            {group.items.map((item) => (
+              <button
+                key={item.optionId}
+                onClick={() => handleDropdownItem(item)}
+                className="text-left text-sm text-foreground/75 hover:text-primary hover:bg-primary/6 px-3 py-2 rounded-xl transition-all w-full"
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+        )}
+
+        {/* Sub-grouped items (support) */}
+        {group.subGroups && (
+          <div className="flex flex-col gap-2.5">
+            {group.subGroups.map((sub) => (
+              <div key={sub.label}>
+                <p className="text-xs text-foreground/35 font-medium px-3 mb-0.5">{sub.label}</p>
+                <div className="flex flex-col gap-0.5">
+                  {sub.items.map((item) => (
+                    <button
+                      key={`${item.subCategoryId}-${item.optionId}`}
+                      onClick={() => handleDropdownItem(item)}
+                      className="text-left text-sm text-foreground/75 hover:text-primary hover:bg-primary/6 px-3 py-2 rounded-xl transition-all w-full"
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    ));
+  }
 
   return (
     <header className="sticky top-0 z-50 w-full px-4 pt-3">
@@ -187,27 +268,7 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
                     onMouseLeave={closeDropdown}
                   >
                     <div className="flex flex-col gap-4">
-                      {servicesDropdown.map((group) => (
-                        <div key={group.group}>
-                          <div className="flex items-center gap-1.5 mb-1.5 px-1">
-                            <span className="text-primary">{group.icon}</span>
-                            <span className="text-xs font-semibold text-foreground/45 uppercase tracking-widest">
-                              {group.group}
-                            </span>
-                          </div>
-                          <div className="flex flex-col gap-0.5">
-                            {group.items.map((item) => (
-                              <button
-                                key={item.optionId}
-                                onClick={() => handleDropdownItem(group.categoryId, item.optionId)}
-                                className="text-left text-sm text-foreground/75 hover:text-primary hover:bg-primary/6 px-3 py-2 rounded-xl transition-all w-full"
-                              >
-                                {item.label}
-                              </button>
-                            ))}
-                          </div>
-                        </div>
-                      ))}
+                      {renderDropdownContent()}
                     </div>
                   </motion.div>
                 )}
@@ -258,7 +319,7 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
           </button>
         </div>
 
-        {/* Mobile menu — animated */}
+        {/* Mobile menu */}
         <AnimatePresence initial={false}>
           {isOpen && (
             <motion.div
@@ -270,6 +331,7 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
               className="md:hidden overflow-hidden"
             >
               <div className="border-t border-border/40 px-5 py-4 flex flex-col gap-1">
+
                 <button
                   onClick={handleReset}
                   className="text-left text-sm font-medium text-foreground/80 py-2.5 px-3 rounded-lg hover:bg-foreground/5 transition-colors"
@@ -303,23 +365,68 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
                         transition={{ duration: 0.22, ease: "easeInOut" }}
                         className="overflow-hidden"
                       >
-                        <div className="pl-3 mt-1 flex flex-col gap-3 pb-1">
+                        <div className="pl-2 mt-1 flex flex-col gap-2 pb-1">
                           {servicesDropdown.map((group) => (
                             <div key={group.group}>
-                              <div className="flex items-center gap-1.5 mb-1 px-3">
+                              <div className="flex items-center gap-1.5 px-3 py-1">
                                 <span className="text-primary">{group.icon}</span>
                                 <span className="text-xs font-semibold text-foreground/45 uppercase tracking-widest">
                                   {group.group}
                                 </span>
                               </div>
-                              {group.items.map((item) => (
+
+                              {/* Flat items */}
+                              {group.items && group.items.map((item) => (
                                 <button
                                   key={item.optionId}
-                                  onClick={() => handleDropdownItem(group.categoryId, item.optionId)}
-                                  className="w-full text-left text-sm text-foreground/70 hover:text-primary py-2 px-3 rounded-lg hover:bg-primary/6 transition-all"
+                                  onClick={() => handleDropdownItem(item)}
+                                  className="w-full text-left text-sm text-foreground/70 hover:text-primary py-2 px-4 rounded-lg hover:bg-primary/6 transition-all"
                                 >
                                   {item.label}
                                 </button>
+                              ))}
+
+                              {/* Sub-grouped */}
+                              {group.subGroups && group.subGroups.map((sub) => (
+                                <div key={sub.label}>
+                                  <button
+                                    className="w-full text-left flex items-center justify-between text-xs font-medium text-foreground/50 py-1.5 px-4 rounded-lg hover:bg-foreground/5 transition-colors"
+                                    onClick={() => setActiveMobileSub(
+                                      activeMobileSub === sub.label ? null : sub.label
+                                    )}
+                                  >
+                                    {sub.label}
+                                    <motion.span
+                                      animate={{ rotate: activeMobileSub === sub.label ? 180 : 0 }}
+                                      transition={{ duration: 0.18 }}
+                                      className="inline-flex"
+                                    >
+                                      <ChevronDown size={11} />
+                                    </motion.span>
+                                  </button>
+                                  <AnimatePresence initial={false}>
+                                    {activeMobileSub === sub.label && (
+                                      <motion.div
+                                        key={sub.label}
+                                        initial={{ height: 0, opacity: 0 }}
+                                        animate={{ height: "auto", opacity: 1 }}
+                                        exit={{ height: 0, opacity: 0 }}
+                                        transition={{ duration: 0.18 }}
+                                        className="overflow-hidden"
+                                      >
+                                        {sub.items.map((item) => (
+                                          <button
+                                            key={`${item.subCategoryId}-${item.optionId}`}
+                                            onClick={() => handleDropdownItem(item)}
+                                            className="w-full text-left text-sm text-foreground/70 hover:text-primary py-2 px-6 rounded-lg hover:bg-primary/6 transition-all"
+                                          >
+                                            {item.label}
+                                          </button>
+                                        ))}
+                                      </motion.div>
+                                    )}
+                                  </AnimatePresence>
+                                </div>
                               ))}
                             </div>
                           ))}
