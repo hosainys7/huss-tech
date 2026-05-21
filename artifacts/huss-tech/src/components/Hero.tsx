@@ -5,21 +5,15 @@ import { ArrowRight } from "lucide-react";
 
 const slides = [
   {
-    // Clean MacBook on minimal desk showing website UI — web creation
-    image:
-      "https://images.unsplash.com/photo-1547658719-da2b51169166?w=1600&q=85&fit=crop",
+    image: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=1600&q=85&fit=crop",
     alt: "Création de site web moderne sur laptop",
   },
   {
-    // Technician hands working on open laptop with tools — repair
-    image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&q=85&fit=crop",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&q=85&fit=crop",
     alt: "Réparation d'ordinateur portable en atelier",
   },
   {
-    // Clean minimal office desk with laptop — local business workspace
-    image:
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=85&fit=crop",
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=85&fit=crop",
     alt: "Espace de travail moderne pour commerce local",
   },
 ];
@@ -83,15 +77,16 @@ export default function Hero() {
             <span className="text-white/90">Un contact direct à Marseille.</span>
           </h1>
 
-          <p className="text-base md:text-lg text-white/70 leading-relaxed max-w-xl font-normal">
-            Sites web modernes et support informatique pratique pour commerces, barbiers et petites entreprises.
+          <p className="text-base md:text-lg text-white/70 leading-relaxed max-w-2xl font-normal">
+            Vos clients cherchent vos services, vos horaires ou vos coordonnées.
+            Huss Tech vous aide à présenter votre activité clairement et à rester facilement
+            joignable grâce à un site professionnel et un support informatique fiable.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 pt-1">
             <a
               href="#services"
               className="inline-flex items-center justify-center gap-2 bg-primary text-white px-7 py-3.5 rounded-xl font-semibold text-sm hover:bg-primary/90 transition-all hover:-translate-y-0.5 shadow-md"
-              data-testid="btn-voir-services"
             >
               Voir mes services
               <ArrowRight size={16} />
@@ -101,7 +96,6 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-md border border-white/25 text-white px-7 py-3.5 rounded-xl font-semibold text-sm hover:bg-white/20 transition-all hover:-translate-y-0.5 shadow-sm"
-              data-testid="btn-whatsapp-hero"
             >
               <FaWhatsapp size={17} className="text-[#25D366]" />
               WhatsApp

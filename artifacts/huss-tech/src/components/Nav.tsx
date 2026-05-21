@@ -55,7 +55,7 @@ const servicesDropdown: DropdownGroup[] = [
   },
 ];
 
-const sectionIds = ["home", "services", "contact", "faq"];
+const sectionIds = ["home", "services", "apropos", "contact", "faq"];
 
 /* ─── Scroll helper ─────────────────────────────────────────── */
 
@@ -132,6 +132,7 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
   function handleReset() {
     onReset();
     window.scrollTo({ top: 0, behavior: "smooth" });
+    window.history.replaceState(null, "", window.location.pathname);
     setIsOpen(false);
     setDropdownOpen(false);
   }
@@ -234,6 +235,7 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
             </button>
 
             {/* Services + dropdown */}
+
             <div
               ref={dropdownRef}
               className="relative"
@@ -274,6 +276,10 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
                 )}
               </AnimatePresence>
             </div>
+
+            <button onClick={() => scrollToId("apropos")} className={linkClass("apropos")}>
+              À propos
+            </button>
 
             <button onClick={() => scrollToId("contact")} className={linkClass("contact")}>
               Contact
@@ -435,6 +441,13 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
                     )}
                   </AnimatePresence>
                 </div>
+
+                <button
+                  onClick={() => { scrollToId("apropos"); setIsOpen(false); }}
+                  className="text-left text-sm font-medium text-foreground/80 py-2.5 px-3 rounded-lg hover:bg-foreground/5 transition-colors"
+                >
+                  À propos
+                </button>
 
                 <button
                   onClick={() => { scrollToId("contact"); setIsOpen(false); }}

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import ServiceSelector from "@/components/ServiceSelector";
-import WhyHussTech from "@/components/WhyHussTech";
+import AboutHussTech from "@/components/AboutHussTech";
 import Contact from "@/components/Contact";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
@@ -61,7 +61,7 @@ export default function LandingPage() {
           onOptionSelect={handleOptionSelect}
           onReset={handleReset}
         />
-        <WhyHussTech />
+        <AboutHussTech />
         <Contact />
         <FAQ />
       </main>

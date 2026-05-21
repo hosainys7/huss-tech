@@ -1,0 +1,251 @@
+Update the Huss Tech website content, navigation behavior, footer, and services UX.
+
+Do NOT redesign the visual style.
+Keep:
+- Apple-inspired aesthetic
+- #F2F0EF background
+- burgundy accents
+- typography
+- hero images
+- glassmorphism
+- overall branding
+
+The goal is to make the website feel more complete, more useful for local businesses, and more interactive.
+
+==================================================
+1. FOOTER CLEANUP
+==================================================
+
+Remove the phone number completely from the footer.
+
+Keep only:
+- WhatsApp
+- Email (contact@huss-tech.fr)
+- Marseille
+
+Update footer navigation links:
+
+- Accueil
+- Services
+- À propos
+- Contact
+- FAQ
+
+Remove any outdated links.
+
+Footer text:
+
+Huss Tech
+Solutions informatiques & création de sites web à Marseille.
+
+==================================================
+2. REPLACE "POURQUOI TRAVAILLER AVEC MOI"
+==================================================
+
+Remove the entire "Pourquoi travailler avec moi" section.
+
+Replace it with:
+
+# À propos
+
+Title:
+À propos de Huss Tech
+
+Content:
+
+Huss Tech accompagne les commerces, salons de coiffure, restaurants, hôtels et petites entreprises de Marseille dans leur présence en ligne et leurs besoins informatiques du quotidien.
+
+L’objectif est simple : rendre votre activité plus visible, plus professionnelle et plus facile à contacter.
+
+Qu’il s’agisse d’une landing page, d’un site vitrine ou d’un dépannage informatique, Huss Tech privilégie des solutions simples, rapides et adaptées aux besoins réels des petites entreprises.
+
+==================================================
+3. IMPROVE HERO CONTENT
+==================================================
+
+The current hero feels visually good but lacks business value.
+
+Update the hero content so it focuses on real business problems.
+
+Headline:
+Un site propre.
+Un ordinateur qui marche.
+Un contact direct à Marseille.
+
+Subheadline:
+
+Vos clients cherchent vos services, vos horaires ou vos coordonnées.
+Huss Tech vous aide à présenter votre activité clairement et à rester facilement joignable grâce à un site professionnel et un support informatique fiable.
+
+Keep:
+- Disponible badge
+- WhatsApp CTA
+- Services CTA
+
+==================================================
+4. IMPROVE SERVICES INTRODUCTION
+==================================================
+
+Current services section feels empty.
+
+Add an introduction above the service selector.
+
+Title:
+Des solutions simples pour votre activité
+
+Text:
+
+Un site professionnel aide vos clients à comprendre rapidement ce que vous proposez, comment vous contacter et pourquoi vous choisir.
+
+Choisissez un service pour découvrir les options disponibles et les tarifs associés.
+
+==================================================
+5. WEBSITE SERVICES CONTENT
+==================================================
+
+Landing page
+
+Description:
+
+Idéale pour présenter rapidement votre activité, vos services, vos horaires et vos coordonnées sur une seule page claire et moderne.
+
+Price:
+À partir de 300 €
+
+Included:
+- Site 1 page
+- Design adapté mobile
+- Présentation de l’activité
+- Bouton WhatsApp / contact
+- Paiement possible en 2 fois
+
+--------------------------------------------------
+
+Site vitrine
+
+Description:
+
+Une présence en ligne plus complète pour expliquer vos services, rassurer vos clients et mettre en valeur votre activité avec plusieurs pages dédiées.
+
+Price:
+À partir de 600 €
+
+Included:
+- 3 à 5 pages
+- Design adapté mobile
+- Présentation complète de l’activité
+- Pages services et contact
+- Paiement possible en 2 fois
+
+==================================================
+6. SUPPORT CONTENT
+==================================================
+
+Logiciel
+
+Description:
+
+Résolution des problèmes logiciels, lenteurs système, virus et réinstallation Windows afin de retrouver un ordinateur stable et fonctionnel.
+
+--------------------------------------------------
+
+Matériel
+
+Description:
+
+Diagnostic et remplacement de composants pour prolonger la durée de vie de votre ordinateur et éviter les interruptions de travail.
+
+==================================================
+7. SERVICES RESET BUTTON
+==================================================
+
+Add a clear reset button inside the services section.
+
+Text:
+Réinitialiser le choix
+
+Behavior:
+- clear selectedCategory
+- clear selectedSubCategory
+- clear selectedOption
+- return to initial services view
+
+Style:
+- subtle
+- premium
+- Apple-like
+- not a primary CTA
+
+==================================================
+8. FIX URL / HASH NAVIGATION BUG
+==================================================
+
+Current problem:
+
+When user is on:
+huss-tech.fr/#services
+
+and clicks:
+- Logo
+- Accueil
+
+the page scrolls to the hero but the URL still remains:
+#services
+
+Fix this behavior.
+
+When clicking:
+- Logo
+- Accueil
+
+the application must:
+- scroll to top
+- reset services state
+- clear the hash
+- update browser URL
+
+Use:
+window.history.replaceState()
+
+or equivalent routing solution.
+
+The URL should become:
+
+https://www.huss-tech.fr/
+
+instead of:
+
+https://www.huss-tech.fr/#services
+
+==================================================
+9. NAVBAR / SITE SYNCHRONIZATION
+==================================================
+
+Make sure navigation and service selector share the same state.
+
+When user selects a service from navbar:
+- scroll to services
+- open correct category
+- open correct option
+- show correct detail card
+
+When user resets:
+- navbar active states update correctly
+
+The site should behave as one connected application.
+
+==================================================
+10. FINAL OBJECTIVE
+==================================================
+
+The website should no longer feel like a mostly empty freelancer landing page.
+
+It should feel like a professional local service platform helping:
+
+- commerces
+- salons de coiffure
+- restaurants
+- hôtels
+- petites entreprises
+
+understand their options, find information quickly, and contact Huss Tech easily.

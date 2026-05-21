@@ -52,7 +52,7 @@ export const categories: ServiceCategory[] = [
         id: "landing",
         title: "Landing page",
         description:
-          "Une page claire et professionnelle pour présenter rapidement votre activité, vos services et faciliter le contact.",
+          "Idéale pour présenter rapidement votre activité, vos services, vos horaires et vos coordonnées sur une seule page claire et moderne.",
         price: "À partir de 300 €",
         includes: [
           "Site 1 page",
@@ -68,7 +68,7 @@ export const categories: ServiceCategory[] = [
         id: "vitrine",
         title: "Site vitrine",
         description:
-          "Un site plus complet pour présenter votre activité, vos services et renforcer votre image professionnelle.",
+          "Une présence en ligne plus complète pour expliquer vos services, rassurer vos clients et mettre en valeur votre activité avec plusieurs pages dédiées.",
         price: "À partir de 600 €",
         includes: [
           "3 à 5 pages",
@@ -93,7 +93,7 @@ export const categories: ServiceCategory[] = [
       {
         id: "logiciel",
         title: "Logiciel",
-        description: "Virus, bugs, lenteurs, réinstallation du système.",
+        description: "Résolution des problèmes logiciels, lenteurs système, virus et réinstallation Windows afin de retrouver un ordinateur stable et fonctionnel.",
         icon: <Laptop size={22} strokeWidth={1.5} />,
         options: [
           {
@@ -146,7 +146,7 @@ export const categories: ServiceCategory[] = [
       {
         id: "materiel",
         title: "Matériel",
-        description: "Diagnostic hardware et remplacement de composants.",
+        description: "Diagnostic et remplacement de composants pour prolonger la durée de vie de votre ordinateur et éviter les interruptions de travail.",
         icon: <HardDrive size={22} strokeWidth={1.5} />,
         options: [
           {
@@ -439,10 +439,13 @@ export default function ServiceSelector({
           className="text-center mb-14"
         >
           <h2 className="text-3xl md:text-4xl font-semibold text-foreground tracking-tight mb-4">
-            Services simples pour les commerces à Marseille
+            Des solutions simples pour votre activité
           </h2>
-          <p className="text-muted-foreground text-base max-w-xl mx-auto">
-            Choisissez un service pour voir les options et les tarifs.
+          <p className="text-muted-foreground text-base max-w-2xl mx-auto leading-relaxed">
+            Un site professionnel aide vos clients à comprendre rapidement ce que vous proposez,
+            comment vous contacter et pourquoi vous choisir.
+            <br className="hidden sm:block" />
+            Choisissez un service pour découvrir les options disponibles et les tarifs associés.
           </p>
         </motion.div>
 
@@ -487,7 +490,7 @@ export default function ServiceSelector({
                     onClick={onReset}
                     className="text-xs text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 px-2 py-1 rounded-lg hover:bg-primary/6"
                   >
-                    ↩ Réinitialiser
+                    Réinitialiser le choix
                   </button>
                 )}
               </div>
