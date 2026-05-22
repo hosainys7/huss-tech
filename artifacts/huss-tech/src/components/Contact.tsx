@@ -2,8 +2,6 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { FaWhatsapp } from "react-icons/fa";
-import { Mail } from "lucide-react";
 import { motion } from "framer-motion";
 import { useToast } from "@/hooks/use-toast";
 import {
@@ -59,26 +57,6 @@ export default function Contact() {
         </motion.div>
 
         <div className="max-w-2xl mx-auto">
-          {/* Direct contact buttons */}
-          <div className="flex flex-wrap justify-center gap-3 mb-10">
-            <a
-              href={`https://wa.me/33773148264?text=${encodeURIComponent("Bonjour, j'aurais besoin d'aide. Pouvez-vous me contacter ?")}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#25D366] text-white px-6 py-3 rounded-xl text-sm font-semibold hover:opacity-90 transition-opacity shadow-sm"
-            >
-              <FaWhatsapp size={18} />
-              WhatsApp
-            </a>
-            <a
-              href="mailto:contact@huss-tech.fr"
-              className="inline-flex items-center gap-2 bg-background border border-border text-foreground px-6 py-3 rounded-xl text-sm font-semibold hover:bg-foreground/5 transition-colors shadow-sm"
-            >
-              <Mail size={16} />
-              contact@huss-tech.fr
-            </a>
-          </div>
-
           {/* Glass contact form */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
