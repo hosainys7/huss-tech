@@ -42,9 +42,9 @@ export type ServiceCategory = {
 export const categories: ServiceCategory[] = [
   {
     id: "web",
-    title: "Sites web",
+    title: "Être plus visible en ligne",
     description:
-      "Création de sites modernes pour présenter votre activité et faciliter le contact avec vos clients.",
+      "Présentez votre activité avec un site professionnel accessible sur mobile, permettant à vos clients de trouver rapidement vos services, vos informations et vos coordonnées.",
     tags: ["Landing page", "Site vitrine"],
     icon: <Globe size={26} strokeWidth={1.5} />,
     options: [
@@ -86,7 +86,7 @@ export const categories: ServiceCategory[] = [
     id: "support",
     title: "Support informatique",
     description:
-      "Dépannage pratique pour ordinateurs, logiciels, virus et remplacement de pièces à Marseille.",
+      "Diagnostic, assistance et dépannage pour retrouver un ordinateur fiable et fonctionnel rapidement.",
     tags: ["Logiciel", "Matériel", "Diagnostic"],
     icon: <Wrench size={26} strokeWidth={1.5} />,
     subCategories: [
@@ -439,13 +439,10 @@ export default function ServiceSelector({
           className="text-center mb-14"
         >
           <h2 className="text-3xl md:text-4xl font-semibold text-foreground tracking-tight mb-4">
-            Des solutions simples pour votre activité
+            Que souhaitez-vous améliorer ?
           </h2>
-          <p className="text-muted-foreground text-base max-w-2xl mx-auto leading-relaxed">
-            Un site professionnel aide vos clients à comprendre rapidement ce que vous proposez,
-            comment vous contacter et pourquoi vous choisir.
-            <br className="hidden sm:block" />
-            Choisissez un service pour découvrir les options disponibles et les tarifs associés.
+          <p className="text-muted-foreground text-base max-w-xl mx-auto leading-relaxed">
+            Choisissez l'objectif qui correspond à votre besoin et découvrez les solutions disponibles.
           </p>
         </motion.div>
 

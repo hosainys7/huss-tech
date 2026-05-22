@@ -72,15 +72,14 @@ export default function Hero() {
           className="flex flex-col items-center text-center gap-7"
         >
           <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-semibold text-white leading-[1.1] tracking-tight max-w-3xl">
-            Un site propre.<br />
-            Un ordinateur qui marche.<br />
-            <span className="text-white/90">Un contact direct à Marseille.</span>
+            Une présence en ligne simple et claire.
           </h1>
 
           <p className="text-base md:text-lg text-white/70 leading-relaxed max-w-2xl font-normal">
-            Vos clients cherchent vos services, vos horaires ou vos coordonnées.
-            Huss Tech vous aide à présenter votre activité clairement et à rester facilement
-            joignable grâce à un site professionnel et un support informatique fiable.
+            Aujourd'hui, de nombreux commerces dépendent uniquement des réseaux sociaux ou d'informations dispersées.
+            Huss Tech aide les commerces, restaurants, hôtels, salons de coiffure et petites entreprises à présenter leurs
+            services clairement, renforcer leur image professionnelle et faciliter le contact avec leurs clients grâce à un
+            site web moderne.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 pt-1">
@@ -88,17 +87,14 @@ export default function Hero() {
               href="#services"
               className="inline-flex items-center justify-center gap-2 bg-primary text-white px-7 py-3.5 rounded-xl font-semibold text-sm hover:bg-primary/90 transition-all hover:-translate-y-0.5 shadow-md"
             >
-              Voir mes services
+              Découvrir les solutions
               <ArrowRight size={16} />
             </a>
             <a
-              href={`https://wa.me/33773148264?text=${encodeURIComponent("Bonjour, je voudrais avoir des informations sur vos services.")}`}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#contact"
               className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-md border border-white/25 text-white px-7 py-3.5 rounded-xl font-semibold text-sm hover:bg-white/20 transition-all hover:-translate-y-0.5 shadow-sm"
             >
-              <FaWhatsapp size={17} className="text-[#25D366]" />
-              WhatsApp
+              Parler de mon projet
             </a>
           </div>
         </motion.div>

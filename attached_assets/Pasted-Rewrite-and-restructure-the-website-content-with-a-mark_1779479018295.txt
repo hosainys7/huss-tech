@@ -1,0 +1,218 @@
+Rewrite and restructure the website content with a marketing-first approach.
+
+Do NOT redesign the visual layout.
+Do NOT modify the service selector architecture.
+Do NOT change colors, typography, animations or components.
+
+This update is ONLY about messaging, positioning and content.
+
+==================================================
+CORE POSITIONING
+==================================================
+
+Huss Tech's primary activity is:
+
+Helping local businesses improve their online presence through professional websites.
+
+IT support remains a secondary service.
+
+The website should communicate:
+
+- more visibility
+- better business image
+- clearer communication
+- easier customer contact
+- stronger credibility
+
+Do NOT lead with:
+- website creation
+- landing pages
+- technical services
+
+Lead with:
+business outcomes.
+
+==================================================
+HERO SECTION
+==================================================
+
+Replace current hero copy.
+
+Current messaging is too service-focused.
+
+The hero must focus on the customer's problem.
+
+New headline:
+
+Une présence en ligne simple et claire.
+
+Subheadline:
+
+Aujourd’hui, de nombreux commerces dépendent uniquement des réseaux sociaux ou d’informations dispersées.
+
+Huss Tech aide les commerces, restaurants, hôtels, salons de coiffure et petites entreprises à présenter leurs services clairement, renforcer leur image professionnelle et faciliter le contact avec leurs clients grâce à un site web moderne.
+
+Primary CTA:
+Découvrir les solutions
+
+Secondary CTA:
+Parler de mon projet
+
+The hero should immediately answer:
+
+"Why should I care?"
+
+Not:
+
+"What services do you offer?"
+
+==================================================
+SERVICES INTRODUCTION
+==================================================
+
+Remove:
+
+Des solutions simples pour votre activité
+
+Un site professionnel aide vos clients à comprendre rapidement ce que vous proposez, comment vous contacter et pourquoi vous choisir.
+
+Choisissez un service pour découvrir les options disponibles et les tarifs associés.
+
+Replace with:
+
+Title:
+
+Que souhaitez-vous améliorer ?
+
+Subtitle:
+
+Choisissez l’objectif qui correspond à votre besoin et découvrez les solutions disponibles.
+
+==================================================
+SERVICE CARD 1
+==================================================
+
+Current title:
+Sites web
+
+Replace with:
+
+Être plus visible en ligne
+
+Description:
+
+Présentez votre activité avec un site professionnel accessible sur mobile, permettant à vos clients de trouver rapidement vos services, vos informations et vos coordonnées.
+
+The internal options remain:
+- Landing page
+- Site vitrine
+
+Do not change service architecture.
+
+==================================================
+SERVICE CARD 2
+==================================================
+
+Current title:
+Support informatique
+
+Keep title:
+
+Support informatique
+
+Replace description with:
+
+Diagnostic, assistance et dépannage pour retrouver un ordinateur fiable et fonctionnel rapidement.
+
+==================================================
+ABOUT SECTION
+==================================================
+
+Replace current About content.
+
+Title:
+
+À propos de Huss Tech
+
+Content:
+
+Beaucoup de petites entreprises utilisent uniquement les réseaux sociaux ou disposent d’informations dispersées sur plusieurs plateformes.
+
+Le résultat est souvent le même : les clients trouvent difficilement les informations importantes, posent les mêmes questions ou hésitent à prendre contact.
+
+Huss Tech accompagne les commerces, salons de coiffure, restaurants, hôtels et petites entreprises de Marseille dans l’amélioration de leur présence en ligne grâce à des sites simples, modernes et adaptés à leurs besoins réels.
+
+L’objectif est de permettre à chaque activité de présenter clairement ses services, inspirer confiance et faciliter la prise de contact.
+
+==================================================
+REMOVE LOW-VALUE CONTENT
+==================================================
+
+Remove decorative business category cards such as:
+
+- Commerces & boutiques
+- Restaurants & hôtels
+- Petites entreprises locales
+- Salons de coiffure & barbiers
+
+They do not provide useful information.
+
+Replace them with benefit-oriented cards:
+
+1.
+Plus de visibilité
+
+Vos clients trouvent plus facilement votre activité et vos informations.
+
+2.
+Informations claires
+
+Services, horaires et coordonnées accessibles rapidement.
+
+3.
+Contact simplifié
+
+WhatsApp, téléphone ou formulaire de contact facilement accessibles.
+
+4.
+Image professionnelle
+
+Une présence en ligne cohérente qui inspire davantage confiance.
+
+==================================================
+COPYWRITING RULES
+==================================================
+
+Avoid:
+- agency jargon
+- corporate language
+- generic marketing phrases
+- "solutions digitales"
+- "innovation"
+- "transformation numérique"
+
+Use:
+- simple French
+- practical language
+- customer problems
+- customer outcomes
+
+Every section should answer:
+
+What problem does this solve for the customer?
+
+instead of:
+
+What service do we provide?
+
+==================================================
+FINAL GOAL
+==================================================
+
+The website should feel less like:
+
+"I build websites and fix computers."
+
+And more like:
+
+"I help local businesses become easier to find, easier to contact and more professional online."

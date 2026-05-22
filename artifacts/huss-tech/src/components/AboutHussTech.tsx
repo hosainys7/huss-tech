@@ -1,11 +1,35 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Eye, Info, MessageCircle, Star } from "lucide-react";
+
+const benefits = [
+  {
+    icon: <Eye size={18} strokeWidth={1.8} />,
+    title: "Plus de visibilité",
+    desc: "Vos clients trouvent plus facilement votre activité et vos informations.",
+  },
+  {
+    icon: <Info size={18} strokeWidth={1.8} />,
+    title: "Informations claires",
+    desc: "Services, horaires et coordonnées accessibles rapidement.",
+  },
+  {
+    icon: <MessageCircle size={18} strokeWidth={1.8} />,
+    title: "Contact simplifié",
+    desc: "WhatsApp, téléphone ou formulaire de contact facilement accessibles.",
+  },
+  {
+    icon: <Star size={18} strokeWidth={1.8} />,
+    title: "Image professionnelle",
+    desc: "Une présence en ligne cohérente qui inspire davantage confiance.",
+  },
+];
 
 export default function AboutHussTech() {
   return (
     <section id="apropos" className="py-24 bg-background">
       <div className="container mx-auto px-4 max-w-5xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-14 items-start">
 
           {/* Text */}
           <motion.div
@@ -22,49 +46,46 @@ export default function AboutHussTech() {
             </h2>
             <div className="flex flex-col gap-4 text-muted-foreground text-sm leading-relaxed">
               <p>
-                Huss Tech accompagne les commerces, salons de coiffure, restaurants, hôtels et
-                petites entreprises de Marseille dans leur présence en ligne et leurs besoins
-                informatiques du quotidien.
+                Beaucoup de petites entreprises utilisent uniquement les réseaux sociaux ou disposent
+                d'informations dispersées sur plusieurs plateformes.
               </p>
               <p>
-                L'objectif est simple : rendre votre activité plus visible, plus professionnelle
-                et plus facile à contacter.
+                Le résultat est souvent le même : les clients trouvent difficilement les informations
+                importantes, posent les mêmes questions ou hésitent à prendre contact.
               </p>
               <p>
-                Qu'il s'agisse d'une landing page, d'un site vitrine ou d'un dépannage
-                informatique, Huss Tech privilégie des solutions simples, rapides et adaptées aux
-                besoins réels des petites entreprises.
+                Huss Tech accompagne les commerces, salons de coiffure, restaurants, hôtels et petites
+                entreprises de Marseille dans l'amélioration de leur présence en ligne grâce à des sites
+                simples, modernes et adaptés à leurs besoins réels.
+              </p>
+              <p>
+                L'objectif est de permettre à chaque activité de présenter clairement ses services,
+                inspirer confiance et faciliter la prise de contact.
               </p>
             </div>
           </motion.div>
 
-          {/* Visual card stack */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="flex flex-col gap-4"
-          >
-            {[
-              { label: "Commerces & boutiques", emoji: "🛍️" },
-              { label: "Salons de coiffure & barbiers", emoji: "✂️" },
-              { label: "Restaurants & hôtels", emoji: "🍽️" },
-              { label: "Petites entreprises locales", emoji: "🏢" },
-            ].map((item, i) => (
+          {/* Benefit cards */}
+          <div className="flex flex-col gap-4">
+            {benefits.map((item, i) => (
               <motion.div
-                key={item.label}
+                key={item.title}
                 initial={{ opacity: 0, x: 16 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.1 + i * 0.07 }}
-                className="flex items-center gap-4 bg-card border border-border/60 rounded-2xl px-5 py-4 shadow-sm"
+                transition={{ duration: 0.4, delay: 0.08 * i }}
+                className="flex items-start gap-4 bg-card border border-border/60 rounded-2xl px-5 py-4 shadow-sm"
               >
-                <span className="text-xl">{item.emoji}</span>
-                <span className="text-sm font-medium text-foreground">{item.label}</span>
+                <div className="w-9 h-9 rounded-xl bg-primary/8 text-primary flex items-center justify-center shrink-0 mt-0.5">
+                  {item.icon}
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-foreground mb-1">{item.title}</p>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
+                </div>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
 
         </div>
       </div>
