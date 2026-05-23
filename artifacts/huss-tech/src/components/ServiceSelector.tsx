@@ -42,7 +42,7 @@ export type ServiceCategory = {
 export const categories: ServiceCategory[] = [
   {
     id: "web",
-    title: "Être plus visible en ligne",
+    title: "Création de site web",
     description:
       "Présentez votre activité avec un site professionnel accessible sur mobile, permettant à vos clients de trouver rapidement vos services, vos informations et vos coordonnées.",
     tags: ["Landing page", "Site vitrine"],
