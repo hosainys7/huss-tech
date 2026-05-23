@@ -83,6 +83,7 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [activeDesktopSub, setActiveDesktopSub] = useState<string | null>(null);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [activeMobileSub, setActiveMobileSub] = useState<string | null>(null);
   const [activeSection, setActiveSection] = useState("home");
@@ -126,7 +127,10 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
   }
 
   function closeDropdown() {
-    hoverTimeout.current = setTimeout(() => setDropdownOpen(false), 130);
+    hoverTimeout.current = setTimeout(() => {
+      setDropdownOpen(false);
+      setActiveDesktopSub(null);
+    }, 130);
   }
 
   function handleReset() {
@@ -135,11 +139,13 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
     window.history.replaceState(null, "", window.location.pathname);
     setIsOpen(false);
     setDropdownOpen(false);
+    setActiveDesktopSub(null);
   }
 
   function handleDropdownItem(item: DropdownItem) {
     onServiceSelect(item.categoryId, item.subCategoryId, item.optionId);
     setDropdownOpen(false);
+    setActiveDesktopSub(null);
     setIsOpen(false);
     setMobileServicesOpen(false);
     setActiveMobileSub(null);
@@ -179,25 +185,57 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
           </div>
         )}
 
-        {/* Sub-grouped items (support) */}
+        {/* Sub-grouped items (support) — accordion */}
         {group.subGroups && (
-          <div className="flex flex-col gap-2.5">
-            {group.subGroups.map((sub) => (
-              <div key={sub.label}>
-                <p className="text-xs text-foreground/35 font-medium px-3 mb-0.5">{sub.label}</p>
-                <div className="flex flex-col gap-0.5">
-                  {sub.items.map((item) => (
-                    <button
-                      key={`${item.subCategoryId}-${item.optionId}`}
-                      onClick={() => handleDropdownItem(item)}
-                      className="text-left text-sm text-foreground/75 hover:text-primary hover:bg-primary/6 px-3 py-2 rounded-xl transition-all w-full"
+          <div className="flex flex-col gap-1">
+            {group.subGroups.map((sub) => {
+              const isExpanded = activeDesktopSub === sub.label;
+              return (
+                <div key={sub.label}>
+                  <button
+                    onClick={() => setActiveDesktopSub(isExpanded ? null : sub.label)}
+                    className={`w-full text-left flex items-center justify-between px-3 py-2 rounded-xl text-sm transition-all ${
+                      isExpanded
+                        ? "text-primary bg-primary/6 font-medium"
+                        : "text-foreground/65 hover:text-foreground hover:bg-foreground/5"
+                    }`}
+                  >
+                    {sub.label}
+                    <motion.span
+                      animate={{ rotate: isExpanded ? 180 : 0 }}
+                      transition={{ duration: 0.18 }}
+                      className="inline-flex"
                     >
-                      {item.label}
-                    </button>
-                  ))}
+                      <ChevronDown size={12} />
+                    </motion.span>
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {isExpanded && (
+                      <motion.div
+                        key={sub.label + "-items"}
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.18, ease: "easeInOut" }}
+                        className="overflow-hidden"
+                      >
+                        <div className="pl-2 flex flex-col gap-0.5 py-1">
+                          {sub.items.map((item) => (
+                            <button
+                              key={`${item.subCategoryId}-${item.optionId}`}
+                              onClick={() => handleDropdownItem(item)}
+                              className="text-left text-sm text-foreground/70 hover:text-primary hover:bg-primary/6 px-3 py-1.5 rounded-xl transition-all w-full"
+                            >
+                              {item.label}
+                            </button>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         )}
       </div>

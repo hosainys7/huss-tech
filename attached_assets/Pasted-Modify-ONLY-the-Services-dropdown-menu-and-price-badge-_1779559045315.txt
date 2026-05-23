@@ -1,0 +1,118 @@
+Modify ONLY the Services dropdown menu and price badge sizing.
+
+Do not redesign the full website.
+Do not change the services section layout except price size.
+
+==================================================
+1. SERVICES DROPDOWN STRUCTURE
+==================================================
+
+Current problem:
+In the Services dropdown, Support informatique shows:
+- Logiciel
+- Diagnostic + devis
+- Dépannage logiciel / virus
+- Réinstallation Windows
+- Diagnostic + devis
+- Remplacement pièce
+
+This is messy because software and hardware options appear together.
+
+Change the dropdown structure to be hierarchical:
+
+Sites web
+- Landing page
+- Site vitrine
+
+Support informatique
+- Logiciel
+   - Diagnostic + devis
+   - Dépannage logiciel / virus
+   - Réinstallation Windows
+
+- Matériel
+   - Diagnostic + devis
+   - Remplacement pièce
+
+Behavior:
+- “Logiciel” and “Matériel” should appear as clickable/hoverable subcategories.
+- When hovering or clicking “Logiciel”, show only logiciel options.
+- When hovering or clicking “Matériel”, show only matériel options.
+- Do NOT show logiciel and matériel options all together in the same flat list.
+
+When user clicks a final option:
+- close dropdown
+- scroll to services section
+- set selectedCategory correctly
+- set selectedSubCategory correctly
+- set selectedOption correctly
+- open the correct detail panel
+
+Examples:
+
+Click “Dépannage logiciel / virus”:
+selectedCategory = "support"
+selectedSubCategory = "software"
+selectedOption = "software-virus"
+
+Click “Remplacement pièce”:
+selectedCategory = "support"
+selectedSubCategory = "hardware"
+selectedOption = "part-replacement"
+
+==================================================
+2. MOBILE DROPDOWN
+==================================================
+
+On mobile:
+- show Support informatique
+- then show two expandable groups:
+  - Logiciel
+  - Matériel
+
+Only show related options under the selected/expanded group.
+
+Keep the mobile menu clean and not too long.
+
+==================================================
+3. PRICE BADGE SIZE
+==================================================
+
+Current problem:
+The price badges are too large and visually aggressive.
+
+Make all service price badges smaller and more premium.
+
+Change price badge style:
+- smaller font size
+- less padding
+- softer background
+- less visual weight
+- keep burgundy text
+- keep rounded pill style
+
+Example style:
+- text-sm or text-xs
+- px-3 py-1
+- font-medium instead of bold
+- subtle light burgundy background
+
+The price should be readable but not dominate the service card.
+
+Do not remove prices.
+Only make them smaller and more refined.
+
+==================================================
+4. KEEP EVERYTHING ELSE
+==================================================
+
+Do not change:
+- hero
+- about
+- FAQ
+- footer
+- contact
+- services logic
+- WhatsApp messages
+- colors
+- typography

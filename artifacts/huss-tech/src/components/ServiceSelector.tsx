@@ -312,10 +312,10 @@ function PricingCard({
           </div>
           <div className="shrink-0 flex flex-col items-end gap-2">
             <span
-              className={`text-sm font-bold whitespace-nowrap px-3 py-1 rounded-full ${
+              className={`text-xs font-medium whitespace-nowrap px-2.5 py-0.5 rounded-full ${
                 isSelected
-                  ? "bg-primary text-white"
-                  : "bg-primary/8 text-primary"
+                  ? "bg-primary/15 text-primary"
+                  : "bg-primary/6 text-primary/80"
               }`}
             >
               {option.price}
