@@ -118,13 +118,24 @@ export default function EcosystemSection() {
               ))}
 
               {/* Center circle */}
-              <circle cx={CX} cy={CY} r={38} fill="white" stroke="#5A0505" strokeOpacity={0.15} strokeWidth={1.5} />
-              <image
-                href="/logo.png"
-                x={CX - 18} y={CY - 18}
-                width={36} height={36}
-                style={{ imageRendering: "crisp-edges" }}
-              />
+              <circle cx={CX} cy={CY} r={46} fill="white" stroke="#5A0505" strokeOpacity={0.15} strokeWidth={1.5} />
+              <foreignObject x={CX - 28} y={CY - 28} width={56} height={56}>
+                <div
+                  style={{
+                    width: 56,
+                    height: 56,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <img
+                    src="/logo.png"
+                    alt="Huss Tech"
+                    style={{ width: 44, height: 44, objectFit: "contain", display: "block" }}
+                  />
+                </div>
+              </foreignObject>
 
               {/* Node circles + icons */}
               {nodes.map((n, i) => {
