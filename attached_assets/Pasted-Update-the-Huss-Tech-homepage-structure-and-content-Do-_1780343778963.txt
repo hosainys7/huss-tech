@@ -1,0 +1,255 @@
+Update the Huss Tech homepage structure and content.
+
+Do NOT redesign the full visual identity.
+Keep:
+- Apple-clean style
+- #F2F0EF background
+- burgundy #5A0505 accents
+- glassmorphism
+- modern sans-serif font
+- smooth minimal animations
+
+The goal:
+Make the homepage primarily sell online presence through AI-powered website creation for local businesses in Marseille.
+
+Support informatique should remain, but it is secondary.
+
+==================================================
+1. HERO SECTION
+==================================================
+
+Update the hero so it focuses only on online presence and website creation.
+
+Remove IT support messaging from the hero.
+
+Hero main title:
+Une présence en ligne simple et claire.
+
+Hero secondary line:
+Attirer une clientèle locale.
+
+Hero paragraph:
+Présentez votre entreprise, vos prestations et facilitez le contact avec votre clientèle grâce à un site web moderne, clair et conçu avec des outils récents, y compris l’intelligence artificielle.
+
+CTA buttons:
+- Découvrir les solutions
+- Discuter du projet
+
+Do not show prices in the hero.
+Do not mention laptop repair in the hero.
+
+==================================================
+2. CIRCULAR ECOSYSTEM SECTION UNDER HERO
+==================================================
+
+Add a new section directly under the hero.
+
+Use the uploaded connected-circle ecosystem image as visual reference.
+
+Important:
+Do NOT copy the image exactly.
+Recreate the concept in Huss Tech’s brand style.
+
+Design:
+- large circular connected network
+- thin lines
+- small animated dots
+- subtle motion
+- Apple-clean
+- minimal
+- burgundy and dark neutral accents
+- no blue SaaS look
+- no colorful cartoon style
+
+Center:
+Use the Huss Tech logo in the middle.
+
+Around the circle, use icons and labels for:
+- Site web
+- IA
+- Mobile
+- Contact
+- Visibilité
+
+Do NOT include:
+- Croissance
+
+Section title:
+Pourquoi une présence en ligne claire compte ?
+
+Section text:
+Chaque jour, de nouvelles entreprises se créent en France et à Marseille. Dans un marché local actif, un site clair permet à votre activité d’être trouvée plus facilement, de présenter vos services sans confusion et de faciliter le contact avec vos futurs clients.
+
+==================================================
+3. SERVICE SECTION STRUCTURE
+==================================================
+
+Reorganize the services section.
+
+Website creation should be the main service area.
+
+Support informatique should appear below website creation, not beside it.
+
+Main section title:
+Que souhaitez-vous améliorer ?
+
+Subtitle:
+Choisissez une solution adaptée à votre activité.
+
+==================================================
+4. WEBSITE CREATION OPTIONS
+==================================================
+
+Inside the website creation area, show 3 options:
+
+1. Landing page
+Description:
+Une page claire pour présenter rapidement votre activité, vos services et vos moyens de contact.
+
+2. Site vitrine
+Description:
+Un site plus complet pour présenter votre entreprise, vos prestations et vos informations importantes sur plusieurs pages.
+
+3. Refonte / évolution de site web
+Description:
+Votre site existe déjà mais il ne reflète plus votre activité ? Une refonte permet de moderniser son apparence, d’améliorer ses performances et de rendre l’expérience plus claire pour vos visiteurs.
+
+Refonte included points:
+- Actualiser l’apparence du site
+- Améliorer la performance et la vitesse
+- Simplifier la navigation
+- Adapter l’expérience mobile
+
+For all website service options:
+Remove prices completely.
+Do not show price badges.
+Do not show “À partir de”.
+Use CTA:
+Discuter du projet
+
+==================================================
+5. SUPPORT INFORMATIQUE POSITIONING
+==================================================
+
+Move Support informatique below the website creation area.
+
+Support informatique should feel secondary.
+
+Title:
+Support informatique
+
+Text:
+Un service local pour résoudre les problèmes courants : diagnostic, lenteurs, virus, réinstallation Windows ou remplacement de pièce.
+
+Options remain:
+- Logiciel
+- Matériel
+
+But do not show support beside website creation as equal priority.
+
+==================================================
+6. REMOVE ALL PRICES
+==================================================
+
+Remove all public prices from the homepage.
+
+Remove:
+- À partir de 300 €
+- À partir de 600 €
+- 25 €
+- 40–60 €
+- 60–80 €
+- 40–60 € + pièce
+- any price pills or price badges
+
+Replace price areas with:
+Discuter du projet
+
+The site should sell value and clarity, not a price menu.
+
+==================================================
+7. À PROPOS CONTENT
+==================================================
+
+Update À propos content to be local, friendly and problem-based.
+
+Title:
+À propos de Huss Tech
+
+Content:
+Aujourd’hui, beaucoup de commerces, restaurants, hôtels et indépendants s’appuient principalement sur les réseaux sociaux pour présenter leur activité.
+
+Mais les informations importantes sont souvent dispersées, difficiles à retrouver ou incomplètes pour les clients.
+
+Huss Tech aide les entreprises locales à Marseille à construire une présence en ligne simple, claire et professionnelle grâce à des sites modernes, adaptés aux besoins réels du terrain.
+
+L’objectif est simple : permettre à vos futurs clients de comprendre rapidement ce que vous proposez et de vous contacter facilement.
+
+==================================================
+8. PROCESS SECTION AFTER À PROPOS
+==================================================
+
+Add a new section after À propos.
+
+Use the uploaded process/steps image as visual reference.
+
+Do NOT copy the blue style.
+Use Huss Tech’s Apple-clean brand style.
+
+Title:
+Comment se déroule un projet ?
+
+Subtitle:
+Un processus simple, clair et sans complication.
+
+Create 4 smooth step cards:
+
+1. Diagnostic du besoin
+Text:
+On échange sur votre activité, vos objectifs et les informations à mettre en avant.
+
+2. Création
+Text:
+Huss Tech prépare la structure, le design et les contenus du site.
+
+3. Validation
+Text:
+Vous vérifiez le rendu, puis les ajustements nécessaires sont appliqués.
+
+4. Livraison clé en main
+Text:
+Votre site est finalisé, prêt à être utilisé et partagé avec vos clients.
+
+Animation:
+- smooth scroll reveal
+- slight bounce effect
+- subtle hover lift
+- no flashy animation
+
+==================================================
+9. NAVBAR / LINKS
+==================================================
+
+Update navigation if needed:
+- Accueil
+- Services
+- À propos
+- Processus
+- Contact
+- FAQ
+
+Make sure links scroll to the correct sections.
+
+==================================================
+10. FINAL GOAL
+==================================================
+
+The homepage should feel like:
+
+Huss Tech helps local businesses in Marseille create a clear online presence using modern AI-powered website creation.
+
+It should NOT feel like:
+- a generic freelancer portfolio
+- a repair shop first
+- a price list
+- an agency with corporate jargon

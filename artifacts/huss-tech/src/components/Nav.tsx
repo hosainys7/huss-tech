@@ -28,8 +28,9 @@ const servicesDropdown: DropdownGroup[] = [
     group: "Sites web",
     icon: <Globe size={13} strokeWidth={1.8} />,
     items: [
-      { label: "Landing page", categoryId: "web", subCategoryId: null, optionId: "landing" },
-      { label: "Site vitrine",  categoryId: "web", subCategoryId: null, optionId: "vitrine" },
+      { label: "Landing page",        categoryId: "web", subCategoryId: null, optionId: "landing" },
+      { label: "Site vitrine",        categoryId: "web", subCategoryId: null, optionId: "vitrine" },
+      { label: "Refonte de site web", categoryId: "web", subCategoryId: null, optionId: "refonte" },
     ],
   },
   {
@@ -55,7 +56,7 @@ const servicesDropdown: DropdownGroup[] = [
   },
 ];
 
-const sectionIds = ["home", "services", "apropos", "contact", "faq"];
+const sectionIds = ["home", "services", "apropos", "processus", "contact", "faq"];
 
 /* ─── Scroll helper ─────────────────────────────────────────── */
 
@@ -319,6 +320,10 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
               À propos
             </button>
 
+            <button onClick={() => scrollToId("processus")} className={linkClass("processus")}>
+              Processus
+            </button>
+
             <button onClick={() => scrollToId("contact")} className={linkClass("contact")}>
               Contact
             </button>
@@ -485,6 +490,13 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
                   className="text-left text-sm font-medium text-foreground/80 py-2.5 px-3 rounded-lg hover:bg-foreground/5 transition-colors"
                 >
                   À propos
+                </button>
+
+                <button
+                  onClick={() => { scrollToId("processus"); setIsOpen(false); }}
+                  className="text-left text-sm font-medium text-foreground/80 py-2.5 px-3 rounded-lg hover:bg-foreground/5 transition-colors"
+                >
+                  Processus
                 </button>
 
                 <button

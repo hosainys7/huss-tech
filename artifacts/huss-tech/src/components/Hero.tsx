@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { FaWhatsapp } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
@@ -9,12 +8,12 @@ const slides = [
     alt: "Création de site web moderne sur laptop",
   },
   {
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&q=85&fit=crop",
-    alt: "Réparation d'ordinateur portable en atelier",
-  },
-  {
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=85&fit=crop",
     alt: "Espace de travail moderne pour commerce local",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600&q=85&fit=crop",
+    alt: "Site web vitrine sur écran moderne",
   },
 ];
 
@@ -75,11 +74,14 @@ export default function Hero() {
             Une présence en ligne simple et claire.
           </h1>
 
+          <p className="text-lg md:text-xl text-white/60 font-normal tracking-tight -mt-3">
+            Attirer une clientèle locale.
+          </p>
+
           <p className="text-base md:text-lg text-white/70 leading-relaxed max-w-2xl font-normal">
-            Aujourd'hui, de nombreux commerces dépendent uniquement des réseaux sociaux ou d'informations dispersées.
-            Huss Tech aide les commerces, restaurants, hôtels, salons de coiffure et petites entreprises à présenter leurs
-            services clairement, renforcer leur image professionnelle et faciliter le contact avec leurs clients grâce à un
-            site web moderne.
+            Présentez votre entreprise, vos prestations et facilitez le contact avec votre clientèle
+            grâce à un site web moderne, clair et conçu avec des outils récents, y compris
+            l'intelligence artificielle.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 pt-1">
@@ -94,7 +96,7 @@ export default function Hero() {
               href="#contact"
               className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-md border border-white/25 text-white px-7 py-3.5 rounded-xl font-semibold text-sm hover:bg-white/20 transition-all hover:-translate-y-0.5 shadow-sm"
             >
-              Parler de mon projet
+              Discuter du projet
             </a>
           </div>
         </motion.div>

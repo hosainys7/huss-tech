@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
+import EcosystemSection from "@/components/EcosystemSection";
 import ServiceSelector from "@/components/ServiceSelector";
 import AboutHussTech from "@/components/AboutHussTech";
+import ProcessSection from "@/components/ProcessSection";
 import Contact from "@/components/Contact";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
@@ -52,6 +54,7 @@ export default function LandingPage() {
         <div id="home">
           <Hero />
         </div>
+        <EcosystemSection />
         <ServiceSelector
           selectedCategoryId={selectedCategoryId}
           selectedSubCategoryId={selectedSubCategoryId}
@@ -62,6 +65,7 @@ export default function LandingPage() {
           onReset={handleReset}
         />
         <AboutHussTech />
+        <ProcessSection />
         <Contact />
         <FAQ />
       </main>

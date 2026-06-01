@@ -14,7 +14,6 @@ export type ServiceOption = {
   id: string;
   title: string;
   description: string;
-  price: string;
   includes: string[];
   whatsappMessage: string;
 };
@@ -42,18 +41,17 @@ export type ServiceCategory = {
 export const categories: ServiceCategory[] = [
   {
     id: "web",
-    title: "Site web",
+    title: "Création de site web",
     description:
       "Présentez votre activité avec un site professionnel accessible sur mobile, permettant à vos clients de trouver rapidement vos services, vos informations et vos coordonnées.",
-    tags: ["Landing page", "Site vitrine"],
+    tags: ["Landing page", "Site vitrine", "Refonte"],
     icon: <Globe size={26} strokeWidth={1.5} />,
     options: [
       {
         id: "landing",
         title: "Landing page",
         description:
-          "Idéale pour présenter rapidement votre activité, vos services, vos horaires et vos coordonnées sur une seule page claire et moderne.",
-        price: "À partir de 300 €",
+          "Une page claire pour présenter rapidement votre activité, vos services et vos moyens de contact.",
         includes: [
           "Site 1 page",
           "Design adapté mobile",
@@ -68,8 +66,7 @@ export const categories: ServiceCategory[] = [
         id: "vitrine",
         title: "Site vitrine",
         description:
-          "Une présence en ligne plus complète pour expliquer vos services, rassurer vos clients et mettre en valeur votre activité avec plusieurs pages dédiées.",
-        price: "À partir de 600 €",
+          "Un site plus complet pour présenter votre entreprise, vos prestations et vos informations importantes sur plusieurs pages.",
         includes: [
           "3 à 5 pages",
           "Design adapté mobile",
@@ -80,13 +77,27 @@ export const categories: ServiceCategory[] = [
         whatsappMessage:
           "Bonjour, je suis intéressé par un site vitrine pour mon commerce à Marseille.",
       },
+      {
+        id: "refonte",
+        title: "Refonte / évolution de site web",
+        description:
+          "Votre site existe déjà mais il ne reflète plus votre activité ? Une refonte permet de moderniser son apparence, d'améliorer ses performances et de rendre l'expérience plus claire pour vos visiteurs.",
+        includes: [
+          "Actualiser l'apparence du site",
+          "Améliorer la performance et la vitesse",
+          "Simplifier la navigation",
+          "Adapter l'expérience mobile",
+        ],
+        whatsappMessage:
+          "Bonjour, je voudrais faire une refonte de mon site web existant.",
+      },
     ],
   },
   {
     id: "support",
     title: "Support informatique",
     description:
-      "Diagnostic, assistance et dépannage pour retrouver un ordinateur fiable et fonctionnel rapidement.",
+      "Un service local pour résoudre les problèmes courants : diagnostic, lenteurs, virus, réinstallation Windows ou remplacement de pièce.",
     tags: ["Logiciel", "Matériel", "Diagnostic"],
     icon: <Wrench size={26} strokeWidth={1.5} />,
     subCategories: [
@@ -101,7 +112,6 @@ export const categories: ServiceCategory[] = [
             title: "Diagnostic + devis",
             description:
               "Analyse du problème et proposition d'une solution claire avant toute intervention.",
-            price: "25 €",
             includes: [
               "Analyse complète du problème",
               "Vérification de l'état du système",
@@ -116,7 +126,6 @@ export const categories: ServiceCategory[] = [
             title: "Dépannage logiciel / virus",
             description:
               "Suppression virus, résolution de bugs, lenteurs et optimisation du système.",
-            price: "40–60 €",
             includes: [
               "Suppression virus et malwares",
               "Résolution de bugs logiciels",
@@ -131,7 +140,6 @@ export const categories: ServiceCategory[] = [
             title: "Réinstallation Windows",
             description:
               "Réinstallation propre, configuration de base et mise en route de l'ordinateur.",
-            price: "60–80 €",
             includes: [
               "Réinstallation propre de Windows",
               "Configuration de base",
@@ -154,7 +162,6 @@ export const categories: ServiceCategory[] = [
             title: "Diagnostic + devis",
             description:
               "Identification du composant défaillant et devis avant toute intervention matérielle.",
-            price: "25 €",
             includes: [
               "Analyse matérielle complète",
               "Identification de la panne",
@@ -169,7 +176,6 @@ export const categories: ServiceCategory[] = [
             title: "Remplacement pièce",
             description:
               "Remplacement de composant après diagnostic. Main d'œuvre séparée du coût de la pièce.",
-            price: "40–60 € + pièce",
             includes: [
               "Diagnostic avant remplacement",
               "Main d'œuvre incluse",
@@ -191,28 +197,34 @@ function CategoryCard({
   category,
   isSelected,
   onClick,
+  featured,
 }: {
   category: ServiceCategory;
   isSelected: boolean;
   onClick: () => void;
+  featured?: boolean;
 }) {
   return (
     <button
       onClick={onClick}
-      className={`w-full text-left rounded-2xl p-7 border transition-all duration-200 hover:-translate-y-0.5 focus:outline-none ${
+      className={`w-full text-left rounded-2xl border transition-all duration-200 hover:-translate-y-0.5 focus:outline-none ${
+        featured ? "p-7" : "p-5"
+      } ${
         isSelected
           ? "bg-primary text-primary-foreground border-primary shadow-lg"
           : "bg-background border-border/60 shadow-sm hover:shadow-md hover:border-primary/30"
       }`}
     >
       <div
-        className={`w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-colors ${
+        className={`rounded-xl flex items-center justify-center mb-5 transition-colors ${
+          featured ? "w-12 h-12" : "w-10 h-10"
+        } ${
           isSelected ? "bg-white/15 text-white" : "bg-primary/8 text-primary"
         }`}
       >
         {category.icon}
       </div>
-      <h3 className={`text-lg font-semibold mb-2 ${isSelected ? "text-white" : "text-foreground"}`}>
+      <h3 className={`font-semibold mb-2 ${featured ? "text-lg" : "text-base"} ${isSelected ? "text-white" : "text-foreground"}`}>
         {category.title}
       </h3>
       <p className={`text-sm leading-relaxed mb-5 ${isSelected ? "text-white/75" : "text-muted-foreground"}`}>
@@ -277,9 +289,9 @@ function SubCategoryCard({
   );
 }
 
-/* ─── PricingCard ──────────────────────────────────────────── */
+/* ─── OptionCard ──────────────────────────────────────────── */
 
-function PricingCard({
+function OptionCard({
   option,
   isSelected,
   onClick,
@@ -299,32 +311,17 @@ function PricingCard({
       {/* Card header — always visible */}
       <button
         onClick={onClick}
-        className="w-full text-left p-5 hover:-translate-y-0 focus:outline-none"
+        className="w-full text-left p-5 focus:outline-none"
       >
-        <div className="flex items-start justify-between gap-3">
-          <div className="flex-1 min-w-0">
-            <p className={`text-sm font-semibold mb-1 ${isSelected ? "text-primary" : "text-foreground"}`}>
-              {option.title}
-            </p>
-            <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2">
-              {option.description}
-            </p>
-          </div>
-          <div className="shrink-0 flex flex-col items-end gap-2">
-            <span
-              className={`text-xs font-medium whitespace-nowrap px-2.5 py-0.5 rounded-full ${
-                isSelected
-                  ? "bg-primary/15 text-primary"
-                  : "bg-primary/6 text-primary/80"
-              }`}
-            >
-              {option.price}
-            </span>
-          </div>
-        </div>
+        <p className={`text-sm font-semibold mb-1 ${isSelected ? "text-primary" : "text-foreground"}`}>
+          {option.title}
+        </p>
+        <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2">
+          {option.description}
+        </p>
       </button>
 
-      {/* Expanded content — only when selected */}
+      {/* Expanded content */}
       <AnimatePresence initial={false}>
         {isSelected && (
           <motion.div
@@ -351,7 +348,7 @@ function PricingCard({
                   href="#contact"
                   className="inline-flex items-center justify-center gap-2 bg-primary text-white px-5 py-2.5 rounded-xl font-semibold text-xs hover:bg-primary/90 transition-all hover:-translate-y-0.5 shadow-sm flex-1"
                 >
-                  Demander un devis
+                  Discuter du projet
                   <ChevronRight size={13} />
                 </a>
                 <a
@@ -402,11 +399,6 @@ export default function ServiceSelector({
   const selectedSubCategory =
     selectedCategory?.subCategories?.find((s) => s.id === selectedSubCategoryId) ?? null;
 
-  const visibleOptions: ServiceOption[] =
-    selectedCategory?.options ??
-    selectedSubCategory?.options ??
-    [];
-
   function handleCategoryClick(id: string) {
     onCategorySelect(id);
     setTimeout(() => {
@@ -426,6 +418,8 @@ export default function ServiceSelector({
   }
 
   const hasSelection = !!selectedCategoryId;
+  const webCategory = categories.find((c) => c.id === "web")!;
+  const supportCategory = categories.find((c) => c.id === "support")!;
 
   return (
     <section id="services" className="py-24 bg-card/60">
@@ -439,33 +433,47 @@ export default function ServiceSelector({
           className="text-center mb-14"
         >
           <h2 className="text-3xl md:text-4xl font-semibold text-foreground tracking-tight mb-4">
-            Que souhaitez-vous améliorer ?
+            Que souhaitez-vous améliorer&nbsp;?
           </h2>
           <p className="text-muted-foreground text-base max-w-xl mx-auto leading-relaxed">
-            Choisissez l'objectif qui correspond à votre besoin et découvrez les solutions disponibles.
+            Choisissez une solution adaptée à votre activité.
           </p>
         </motion.div>
 
-        {/* Step 1 — Category cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
-          {categories.map((cat, i) => (
-            <motion.div
-              key={cat.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-            >
-              <CategoryCard
-                category={cat}
-                isSelected={selectedCategoryId === cat.id}
-                onClick={() => handleCategoryClick(cat.id)}
-              />
-            </motion.div>
-          ))}
+        {/* Step 1 — Category cards: web featured, support secondary below */}
+        <div className="flex flex-col gap-5 mb-10">
+
+          {/* Web — featured full-width */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0 }}
+          >
+            <CategoryCard
+              category={webCategory}
+              isSelected={selectedCategoryId === "web"}
+              onClick={() => handleCategoryClick("web")}
+              featured
+            />
+          </motion.div>
+
+          {/* Support — secondary */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.08 }}
+          >
+            <CategoryCard
+              category={supportCategory}
+              isSelected={selectedCategoryId === "support"}
+              onClick={() => handleCategoryClick("support")}
+            />
+          </motion.div>
         </div>
 
-        {/* Step 2 — SubCategory (support only) or Options (web) */}
+        {/* Step 2 — SubCategory (support) or Options (web) */}
         <AnimatePresence mode="wait">
           {selectedCategory && (
             <motion.div
@@ -477,7 +485,6 @@ export default function ServiceSelector({
               transition={{ duration: 0.28, ease: [0.25, 0.46, 0.45, 0.94] }}
               className="mb-6"
             >
-              {/* Row label + reset */}
               <div className="flex items-center justify-between mb-4 px-1">
                 <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">
                   {selectedCategory.subCategories ? "Type d'intervention" : `Options — ${selectedCategory.title}`}
@@ -506,11 +513,11 @@ export default function ServiceSelector({
                 </div>
               )}
 
-              {/* Web options (no subcategory) */}
+              {/* Web options */}
               {selectedCategory.options && (
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                   {selectedCategory.options.map((opt) => (
-                    <PricingCard
+                    <OptionCard
                       key={opt.id}
                       option={opt}
                       isSelected={selectedOptionId === opt.id}
@@ -541,7 +548,7 @@ export default function ServiceSelector({
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {selectedSubCategory.options.map((opt) => (
-                  <PricingCard
+                  <OptionCard
                     key={opt.id}
                     option={opt}
                     isSelected={selectedOptionId === opt.id}

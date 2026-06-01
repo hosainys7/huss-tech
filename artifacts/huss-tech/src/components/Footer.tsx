@@ -10,11 +10,12 @@ function scrollToId(id: string) {
 }
 
 const navLinks = [
-  { label: "Accueil",   id: "home" },
-  { label: "Services",  id: "services" },
-  { label: "À propos",  id: "apropos" },
-  { label: "Contact",   id: "contact" },
-  { label: "FAQ",       id: "faq" },
+  { label: "Accueil",    id: "home" },
+  { label: "Services",   id: "services" },
+  { label: "À propos",   id: "apropos" },
+  { label: "Processus",  id: "processus" },
+  { label: "Contact",    id: "contact" },
+  { label: "FAQ",        id: "faq" },
 ];
 
 export default function Footer() {

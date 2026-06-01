@@ -46,21 +46,21 @@ export default function AboutHussTech() {
             </h2>
             <div className="flex flex-col gap-4 text-muted-foreground text-sm leading-relaxed">
               <p>
-                Beaucoup de petites entreprises utilisent uniquement les réseaux sociaux ou disposent
-                d'informations dispersées sur plusieurs plateformes.
+                Aujourd'hui, beaucoup de commerces, restaurants, hôtels et indépendants s'appuient
+                principalement sur les réseaux sociaux pour présenter leur activité.
               </p>
               <p>
-                Le résultat est souvent le même : les clients trouvent difficilement les informations
-                importantes, posent les mêmes questions ou hésitent à prendre contact.
+                Mais les informations importantes sont souvent dispersées, difficiles à retrouver ou
+                incomplètes pour les clients.
               </p>
               <p>
-                Huss Tech accompagne les commerces, salons de coiffure, restaurants, hôtels et petites
-                entreprises de Marseille dans l'amélioration de leur présence en ligne grâce à des sites
-                simples, modernes et adaptés à leurs besoins réels.
+                Huss Tech aide les entreprises locales à Marseille à construire une présence en ligne
+                simple, claire et professionnelle grâce à des sites modernes, adaptés aux besoins
+                réels du terrain.
               </p>
               <p>
-                L'objectif est de permettre à chaque activité de présenter clairement ses services,
-                inspirer confiance et faciliter la prise de contact.
+                L'objectif est simple : permettre à vos futurs clients de comprendre rapidement ce
+                que vous proposez et de vous contacter facilement.
               </p>
             </div>
           </motion.div>
