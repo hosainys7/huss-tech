@@ -89,7 +89,7 @@ export default function Hero() {
               href="#services"
               className="inline-flex items-center justify-center gap-2 bg-primary text-white px-7 py-3.5 rounded-xl font-semibold text-sm hover:bg-primary/90 transition-all hover:-translate-y-0.5 shadow-md"
             >
-              Découvrir les solutions
+              Découvrir les services
               <ArrowRight size={16} />
             </a>
             <a

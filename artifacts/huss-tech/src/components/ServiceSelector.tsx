@@ -513,17 +513,19 @@ export default function ServiceSelector({
                 </div>
               )}
 
-              {/* Web options */}
+              {/* Web options — show all when none selected, only selected when one is active */}
               {selectedCategory.options && (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {selectedCategory.options.map((opt) => (
-                    <OptionCard
-                      key={opt.id}
-                      option={opt}
-                      isSelected={selectedOptionId === opt.id}
-                      onClick={() => handleOptionClick(opt.id)}
-                    />
-                  ))}
+                  {selectedCategory.options
+                    .filter((opt) => !selectedOptionId || selectedOptionId === opt.id)
+                    .map((opt) => (
+                      <OptionCard
+                        key={opt.id}
+                        option={opt}
+                        isSelected={selectedOptionId === opt.id}
+                        onClick={() => handleOptionClick(opt.id)}
+                      />
+                    ))}
                 </div>
               )}
             </motion.div>
@@ -547,14 +549,16 @@ export default function ServiceSelector({
                 </p>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {selectedSubCategory.options.map((opt) => (
-                  <OptionCard
-                    key={opt.id}
-                    option={opt}
-                    isSelected={selectedOptionId === opt.id}
-                    onClick={() => handleOptionClick(opt.id)}
-                  />
-                ))}
+                {selectedSubCategory.options
+                  .filter((opt) => !selectedOptionId || selectedOptionId === opt.id)
+                  .map((opt) => (
+                    <OptionCard
+                      key={opt.id}
+                      option={opt}
+                      isSelected={selectedOptionId === opt.id}
+                      onClick={() => handleOptionClick(opt.id)}
+                    />
+                  ))}
               </div>
             </motion.div>
           )}

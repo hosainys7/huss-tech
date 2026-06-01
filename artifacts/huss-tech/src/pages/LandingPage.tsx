@@ -25,14 +25,23 @@ export default function LandingPage() {
   }
 
   function handleCategorySelect(categoryId: string) {
-    if (selectedCategoryId === categoryId) return;
+    if (selectedCategoryId === categoryId) {
+      setSelectedCategoryId(null);
+      setSelectedSubCategoryId(null);
+      setSelectedOptionId(null);
+      return;
+    }
     setSelectedCategoryId(categoryId);
     setSelectedSubCategoryId(null);
     setSelectedOptionId(null);
   }
 
   function handleSubCategorySelect(subCategoryId: string) {
-    if (selectedSubCategoryId === subCategoryId) return;
+    if (selectedSubCategoryId === subCategoryId) {
+      setSelectedSubCategoryId(null);
+      setSelectedOptionId(null);
+      return;
+    }
     setSelectedSubCategoryId(subCategoryId);
     setSelectedOptionId(null);
   }
