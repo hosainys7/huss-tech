@@ -31,11 +31,36 @@ export default function Contact() {
     defaultValues: { nom: "", email: "", message: "" },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    toast({ title: "Message envoyé !", description: "Je vous réponds rapidement." });
-    form.reset();
-    setOpen(false);
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: "77ad15e5-7c9a-4c1c-8196-9e44af49726c",
+          subject: "Nouveau message de contact — Huss Tech",
+          from_name: "Site Huss Tech",
+          replyto: values.email,
+          name: values.nom,
+          email: values.email,
+          message: values.message,
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        toast({ title: "Message envoyé !", description: "Je vous réponds rapidement." });
+        form.reset();
+        setOpen(false);
+      } else {
+        throw new Error(data.message || "Erreur");
+      }
+    } catch {
+      toast({
+        title: "Erreur d'envoi",
+        description: "Veuillez réessayer ou me contacter via WhatsApp.",
+        variant: "destructive",
+      });
+    }
   }
 
   useEffect(() => {
@@ -222,13 +247,14 @@ export default function Contact() {
 
                     <button
                       type="submit"
-                      className="w-full py-3.5 rounded-xl font-semibold text-sm text-white transition-all hover:-translate-y-0.5"
+                      disabled={form.formState.isSubmitting}
+                      className="w-full py-3.5 rounded-xl font-semibold text-sm text-white transition-transform hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0"
                       style={{
                         background: "#5A0505",
                         boxShadow: "0 0 20px rgba(90,5,5,0.4)",
                       }}
                     >
-                      Envoyer le message
+                      {form.formState.isSubmitting ? "Envoi en cours…" : "Envoyer le message"}
                     </button>
                   </form>
                 </Form>
