@@ -74,19 +74,12 @@ export default function ProcessSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: i * 0.09, ease: [0.25, 0.46, 0.45, 0.94] }}
               whileHover={{ y: -4, transition: { duration: 0.2 } }}
-              className="relative rounded-2xl p-6 cursor-default group transition-all"
+              className="relative rounded-2xl p-6 cursor-default"
               style={{
                 background: "rgba(255,255,255,0.04)",
                 border: "1px solid rgba(200,55,55,0.18)",
                 boxShadow: "0 0 22px rgba(90,5,5,0.18)",
-              }}
-              onMouseEnter={e => {
-                (e.currentTarget as HTMLElement).style.borderColor = "rgba(200,55,55,0.4)";
-                (e.currentTarget as HTMLElement).style.boxShadow = "0 0 36px rgba(90,5,5,0.3)";
-              }}
-              onMouseLeave={e => {
-                (e.currentTarget as HTMLElement).style.borderColor = "rgba(200,55,55,0.18)";
-                (e.currentTarget as HTMLElement).style.boxShadow = "0 0 22px rgba(90,5,5,0.18)";
+                willChange: "transform",
               }}
             >
               <p className="text-2xl font-bold tracking-tight mb-4"
@@ -95,7 +88,7 @@ export default function ProcessSection() {
               </p>
 
               <div
-                className="w-10 h-10 rounded-xl flex items-center justify-center mb-4 transition-all duration-200"
+                className="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
                 style={{ background: "rgba(90,5,5,0.15)", color: "rgba(255,255,255,0.6)" }}
               >
                 {step.icon}

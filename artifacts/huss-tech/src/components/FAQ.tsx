@@ -72,7 +72,7 @@ export default function FAQ() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.06 }}
-              className="rounded-2xl overflow-hidden transition-all duration-200"
+              className="rounded-2xl overflow-hidden"
               style={openIndex === i ? {
                 background: "rgba(255,255,255,0.06)",
                 border: "1px solid rgba(200,55,55,0.42)",

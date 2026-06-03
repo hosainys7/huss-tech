@@ -83,7 +83,7 @@ export default function Hero() {
         <div className="h-cta flex flex-col sm:flex-row gap-3 justify-center">
           <a
             href="#services"
-            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-semibold text-sm text-white transition-all hover:-translate-y-0.5 active:scale-95"
+            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-semibold text-sm text-white transition-transform hover:-translate-y-0.5 active:scale-95"
             style={{
               background: "#5A0505",
               boxShadow: "0 0 28px rgba(90,5,5,0.5), 0 4px 12px rgba(0,0,0,0.3)",
@@ -94,7 +94,7 @@ export default function Hero() {
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-semibold text-sm transition-all hover:-translate-y-0.5 active:scale-95"
+            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-semibold text-sm transition-transform hover:-translate-y-0.5 active:scale-95"
             style={{
               background: "rgba(255,255,255,0.07)",
               border: "1px solid rgba(255,255,255,0.14)",

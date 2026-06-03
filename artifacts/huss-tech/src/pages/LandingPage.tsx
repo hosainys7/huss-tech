@@ -45,9 +45,9 @@ export default function LandingPage() {
           top: "75px",
           left: 0,
           right: 0,
-          height: "72px",
+          height: "110px",
           background:
-            "linear-gradient(to bottom, #080808 0%, rgba(8,8,8,0.82) 38%, rgba(8,8,8,0.38) 70%, transparent 100%)",
+            "linear-gradient(to bottom, #080808 0%, rgba(8,8,8,0.88) 30%, rgba(8,8,8,0.5) 60%, rgba(8,8,8,0.12) 85%, transparent 100%)",
           pointerEvents: "none",
           zIndex: 38,
         }}
