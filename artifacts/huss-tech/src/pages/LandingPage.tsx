@@ -5,7 +5,6 @@ import TickerBanner from "@/components/TickerBanner";
 import EcosystemSection from "@/components/EcosystemSection";
 import ServiceSelector from "@/components/ServiceSelector";
 import AboutHussTech from "@/components/AboutHussTech";
-import Realisations from "@/components/Realisations";
 import ProcessSection from "@/components/ProcessSection";
 import Contact from "@/components/Contact";
 import FAQ from "@/components/FAQ";
@@ -48,7 +47,6 @@ export default function LandingPage() {
           onReset={handleReset}
         />
         <AboutHussTech />
-        <Realisations />
         <ProcessSection />
         <Contact />
         <FAQ />

@@ -56,7 +56,7 @@ const servicesDropdown: DropdownGroup[] = [
   },
 ];
 
-const sectionIds = ["home", "services", "apropos", "realisations", "processus", "contact", "faq"];
+const sectionIds = ["home", "services", "apropos", "processus", "contact", "faq"];
 
 /* ─── Scroll helper ─────────────────────────────────────────── */
 
@@ -156,8 +156,8 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
   const linkClass = (section: string) =>
     `text-sm font-medium px-3 py-1.5 rounded-lg transition-all ${
       activeSection === section
-        ? "text-foreground bg-foreground/8"
-        : "text-foreground/60 hover:text-foreground hover:bg-foreground/5"
+        ? "text-white bg-white/12"
+        : "text-white/52 hover:text-white/90 hover:bg-white/8"
     }`;
 
   /* Render a flat list of items for each dropdown group */
@@ -246,11 +246,14 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
   return (
     <header className="sticky top-0 z-50 w-full px-4 pt-3">
       <div
-        className={`max-w-5xl mx-auto rounded-2xl transition-all duration-300 ${
-          scrolled
-            ? "bg-background/88 backdrop-blur-xl shadow-md border border-border/60"
-            : "bg-background/65 backdrop-blur-md border border-border/40"
-        }`}
+        className="max-w-5xl mx-auto rounded-2xl transition-all duration-300"
+        style={{
+          background: scrolled ? "rgba(28,28,33,0.94)" : "rgba(20,20,26,0.72)",
+          backdropFilter: "blur(20px)",
+          WebkitBackdropFilter: "blur(20px)",
+          border: `1px solid ${scrolled ? "rgba(255,255,255,0.11)" : "rgba(255,255,255,0.07)"}`,
+          boxShadow: scrolled ? "0 4px 32px rgba(0,0,0,0.45)" : "none",
+        }}
       >
         <div className="px-5 h-16 flex items-center justify-between">
 
@@ -260,10 +263,11 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
             aria-label="Huss Tech — Accueil"
             className="flex items-center gap-3 focus:outline-none group"
           >
-            <div className="h-9 w-9 rounded-full bg-background border border-border/60 shadow-sm flex items-center justify-center overflow-hidden group-hover:shadow-md transition-shadow">
+            <div className="h-9 w-9 rounded-full flex items-center justify-center overflow-hidden transition-all"
+              style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.18)" }}>
               <img src="/logo.png" alt="Huss Tech logo" className="h-6 w-6 object-contain" />
             </div>
-            <span className="font-semibold text-foreground tracking-tight text-sm">Huss Tech</span>
+            <span className="font-semibold tracking-tight text-sm" style={{ color: "rgba(255,255,255,0.9)" }}>Huss Tech</span>
           </button>
 
           {/* Desktop nav */}
@@ -320,10 +324,6 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
               À propos
             </button>
 
-            <button onClick={() => scrollToId("realisations")} className={linkClass("realisations")}>
-              Réalisations
-            </button>
-
             <button onClick={() => scrollToId("processus")} className={linkClass("processus")}>
               Processus
             </button>
@@ -340,7 +340,8 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
 
           {/* Mobile burger */}
           <button
-            className="md:hidden p-2 rounded-lg text-foreground hover:bg-foreground/5 transition-colors"
+            className="md:hidden p-2 rounded-lg hover:bg-white/8 transition-colors"
+            style={{ color: "rgba(255,255,255,0.75)" }}
             onClick={() => setIsOpen((v) => !v)}
             aria-label="Toggle menu"
           >
@@ -383,11 +384,12 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
               transition={{ duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] }}
               className="md:hidden overflow-hidden"
             >
-              <div className="border-t border-border/40 px-5 py-4 flex flex-col gap-1">
+              <div className="border-t border-white/10 px-5 py-4 flex flex-col gap-1">
 
                 <button
                   onClick={handleReset}
-                  className="text-left text-sm font-medium text-foreground/80 py-2.5 px-3 rounded-lg hover:bg-foreground/5 transition-colors"
+                  className="text-left text-sm font-medium py-2.5 px-3 rounded-lg hover:bg-white/8 transition-colors"
+                  style={{ color: "rgba(255,255,255,0.75)" }}
                 >
                   Accueil
                 </button>
@@ -491,35 +493,32 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
 
                 <button
                   onClick={() => { scrollToId("apropos"); setIsOpen(false); }}
-                  className="text-left text-sm font-medium text-foreground/80 py-2.5 px-3 rounded-lg hover:bg-foreground/5 transition-colors"
+                  className="text-left text-sm font-medium py-2.5 px-3 rounded-lg hover:bg-white/8 transition-colors"
+                  style={{ color: "rgba(255,255,255,0.75)" }}
                 >
                   À propos
                 </button>
 
                 <button
-                  onClick={() => { scrollToId("realisations"); setIsOpen(false); }}
-                  className="text-left text-sm font-medium text-foreground/80 py-2.5 px-3 rounded-lg hover:bg-foreground/5 transition-colors"
-                >
-                  Réalisations
-                </button>
-
-                <button
                   onClick={() => { scrollToId("processus"); setIsOpen(false); }}
-                  className="text-left text-sm font-medium text-foreground/80 py-2.5 px-3 rounded-lg hover:bg-foreground/5 transition-colors"
+                  className="text-left text-sm font-medium py-2.5 px-3 rounded-lg hover:bg-white/8 transition-colors"
+                  style={{ color: "rgba(255,255,255,0.75)" }}
                 >
                   Processus
                 </button>
 
                 <button
                   onClick={() => { scrollToId("contact"); setIsOpen(false); }}
-                  className="text-left text-sm font-medium text-foreground/80 py-2.5 px-3 rounded-lg hover:bg-foreground/5 transition-colors"
+                  className="text-left text-sm font-medium py-2.5 px-3 rounded-lg hover:bg-white/8 transition-colors"
+                  style={{ color: "rgba(255,255,255,0.75)" }}
                 >
                   Contact
                 </button>
 
                 <button
                   onClick={() => { scrollToId("faq"); setIsOpen(false); }}
-                  className="text-left text-sm font-medium text-foreground/80 py-2.5 px-3 rounded-lg hover:bg-foreground/5 transition-colors"
+                  className="text-left text-sm font-medium py-2.5 px-3 rounded-lg hover:bg-white/8 transition-colors"
+                  style={{ color: "rgba(255,255,255,0.75)" }}
                 >
                   FAQ
                 </button>

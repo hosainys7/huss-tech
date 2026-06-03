@@ -27,20 +27,20 @@ function AnimatedDot({ angle, delay }: { angle: number; delay: number }) {
   const { x: nx, y: ny } = nodePos(angle);
   return (
     <motion.circle
-      r={3}
-      fill="rgba(255,255,255,0.7)"
+      r={3.5}
+      fill="rgba(200,55,55,0.95)"
       initial={{ cx: CX, cy: CY, opacity: 0 }}
       animate={{
         cx: [CX, nx],
         cy: [CY, ny],
-        opacity: [0, 0.8, 0.8, 0],
+        opacity: [0, 1, 1, 0],
       }}
       transition={{
-        duration: 2.4,
+        duration: 2.2,
         repeat: Infinity,
         delay,
         ease: "easeInOut",
-        times: [0, 0.15, 0.85, 1],
+        times: [0, 0.15, 0.82, 1],
       }}
     />
   );
@@ -55,7 +55,6 @@ export default function EcosystemSection() {
       }}
     >
       <div className="container mx-auto px-4 max-w-5xl">
-
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           {/* Text */}
@@ -65,8 +64,10 @@ export default function EcosystemSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] mb-5"
-              style={{ color: "rgba(90,5,5,0.9)" }}>
+            <p
+              className="text-xs font-semibold uppercase tracking-[0.2em] mb-5"
+              style={{ color: "rgba(200,55,55,0.85)" }}
+            >
               Pourquoi ça compte
             </p>
             <h2
@@ -96,10 +97,9 @@ export default function EcosystemSection() {
           >
             <div className="relative w-full max-w-xs md:max-w-sm">
               <svg viewBox={`0 0 ${SIZE} ${SIZE}`} className="w-full" aria-hidden="true">
-                {/* Glow filter */}
                 <defs>
-                  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                    <feGaussianBlur stdDeviation="4" result="blur" />
+                  <filter id="dot-glow">
+                    <feGaussianBlur stdDeviation="3" result="blur" />
                     <feMerge>
                       <feMergeNode in="blur" />
                       <feMergeNode in="SourceGraphic" />
@@ -107,42 +107,54 @@ export default function EcosystemSection() {
                   </filter>
                 </defs>
 
-                {/* Outer ring */}
-                <circle cx={CX} cy={CY} r={ORBIT_R}
+                {/* Orbit ring */}
+                <circle
+                  cx={CX} cy={CY} r={ORBIT_R}
                   fill="none"
-                  stroke="rgba(255,255,255,0.1)"
+                  stroke="rgba(255,255,255,0.12)"
                   strokeWidth={1}
                 />
 
-                {/* Lines from center to nodes */}
+                {/* Lines center → nodes */}
                 {nodes.map((n) => {
                   const { x, y } = nodePos(n.angle);
                   return (
-                    <line key={n.label}
+                    <line
+                      key={n.label}
                       x1={CX} y1={CY} x2={x} y2={y}
-                      stroke="rgba(255,255,255,0.08)"
+                      stroke="rgba(255,255,255,0.09)"
                       strokeWidth={1}
-                      strokeDasharray="3 5"
+                      strokeDasharray="4 5"
                     />
                   );
                 })}
 
-                {/* Animated dots */}
+                {/* Animated dots — burgundy crimson */}
                 {nodes.map((n, i) => (
-                  <AnimatedDot key={n.label} angle={n.angle} delay={i * 0.48} />
+                  <AnimatedDot key={n.label} angle={n.angle} delay={i * 0.44} />
                 ))}
 
                 {/* Center circle */}
-                <circle cx={CX} cy={CY} r={46}
-                  fill="rgba(255,255,255,0.04)"
-                  stroke="rgba(255,255,255,0.15)"
-                  strokeWidth={1}
-                  filter="url(#glow)"
+                <circle
+                  cx={CX} cy={CY} r={46}
+                  fill="rgba(255,255,255,0.05)"
+                  stroke="rgba(200,55,55,0.35)"
+                  strokeWidth={1.5}
                 />
-                <foreignObject x={CX - 28} y={CY - 28} width={56} height={56}>
-                  <div style={{ width: 56, height: 56, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <img src="/logo.png" alt="Huss Tech"
-                      style={{ width: 42, height: 42, objectFit: "contain", filter: "brightness(2) saturate(0)" }} />
+                <foreignObject x={CX - 26} y={CY - 26} width={52} height={52}>
+                  <div style={{
+                    width: 52, height: 52,
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                  }}>
+                    <img
+                      src="/logo.png"
+                      alt="Huss Tech"
+                      style={{
+                        width: 40, height: 40,
+                        objectFit: "contain",
+                        filter: "brightness(0) invert(1)",
+                      }}
+                    />
                   </div>
                 </foreignObject>
 
@@ -152,25 +164,26 @@ export default function EcosystemSection() {
                   const Icon = n.Icon;
                   return (
                     <g key={n.label}>
-                      <circle cx={x} cy={y} r={30}
+                      <circle
+                        cx={x} cy={y} r={30}
                         fill="rgba(255,255,255,0.04)"
-                        stroke="rgba(255,255,255,0.12)"
-                        strokeWidth={1}
+                        stroke="rgba(200,55,55,0.28)"
+                        strokeWidth={1.2}
                       />
                       <foreignObject x={x - 12} y={y - 12} width={24} height={24}>
                         <div style={{
-                          width: 24, height: 24, display: "flex",
-                          alignItems: "center", justifyContent: "center",
-                          color: "rgba(255,255,255,0.6)",
+                          width: 24, height: 24,
+                          display: "flex", alignItems: "center", justifyContent: "center",
+                          color: "rgba(210,75,75,0.9)",
                         }}>
-                          <Icon size={14} strokeWidth={1.6} />
+                          <Icon size={14} strokeWidth={1.7} />
                         </div>
                       </foreignObject>
-                      <text x={x} y={y + 46}
+                      <text
+                        x={x} y={y + 46}
                         textAnchor="middle"
-                        fontSize={10}
-                        fontWeight={500}
-                        fill="rgba(255,255,255,0.4)"
+                        fontSize={10} fontWeight={500}
+                        fill="rgba(255,255,255,0.48)"
                         style={{ fontFamily: "inherit", letterSpacing: "0.03em" }}
                       >
                         {n.label}
