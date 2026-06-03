@@ -52,12 +52,16 @@ export default function Contact() {
         form.reset();
         setOpen(false);
       } else {
-        throw new Error(data.message || "Erreur");
+        toast({
+          title: "Erreur d'envoi",
+          description: data.message || "Veuillez réessayer ou me contacter via WhatsApp.",
+          variant: "destructive",
+        });
       }
-    } catch {
+    } catch (err) {
       toast({
-        title: "Erreur d'envoi",
-        description: "Veuillez réessayer ou me contacter via WhatsApp.",
+        title: "Erreur réseau",
+        description: "Impossible de joindre le serveur. Contactez-moi via WhatsApp.",
         variant: "destructive",
       });
     }
