@@ -440,37 +440,43 @@ export default function ServiceSelector({
           </p>
         </motion.div>
 
-        {/* Step 1 — Category cards: web featured, support secondary below */}
+        {/* Step 1 — Category cards: show both when none selected, only selected when one is active */}
         <div className="flex flex-col gap-5 mb-10">
 
-          {/* Web — featured full-width */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0 }}
-          >
-            <CategoryCard
-              category={webCategory}
-              isSelected={selectedCategoryId === "web"}
-              onClick={() => handleCategoryClick("web")}
-              featured
-            />
-          </motion.div>
+          <AnimatePresence initial={false}>
+            {(!selectedCategoryId || selectedCategoryId === "web") && (
+              <motion.div
+                key="web-card"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8, height: 0, marginBottom: 0 }}
+                transition={{ duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] }}
+              >
+                <CategoryCard
+                  category={webCategory}
+                  isSelected={selectedCategoryId === "web"}
+                  onClick={() => handleCategoryClick("web")}
+                  featured
+                />
+              </motion.div>
+            )}
 
-          {/* Support — secondary */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.08 }}
-          >
-            <CategoryCard
-              category={supportCategory}
-              isSelected={selectedCategoryId === "support"}
-              onClick={() => handleCategoryClick("support")}
-            />
-          </motion.div>
+            {(!selectedCategoryId || selectedCategoryId === "support") && (
+              <motion.div
+                key="support-card"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8, height: 0, marginBottom: 0 }}
+                transition={{ duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] }}
+              >
+                <CategoryCard
+                  category={supportCategory}
+                  isSelected={selectedCategoryId === "support"}
+                  onClick={() => handleCategoryClick("support")}
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
 
         {/* Step 2 — SubCategory (support) or Options (web) */}
