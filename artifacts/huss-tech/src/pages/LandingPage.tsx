@@ -33,23 +33,6 @@ export default function LandingPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Scroll blur mask — blurs content exiting the top of the viewport */}
-      <div
-        aria-hidden="true"
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          right: 0,
-          height: "120px",
-          backdropFilter: "blur(16px)",
-          WebkitBackdropFilter: "blur(16px)",
-          pointerEvents: "none",
-          zIndex: 39,
-          maskImage: "linear-gradient(to bottom, black 0%, black 28%, transparent 100%)",
-          WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 28%, transparent 100%)",
-        }}
-      />
       <Nav onServiceSelect={handleServiceSelect} onReset={handleReset} />
       <main className="flex-1">
         <div id="home">
