@@ -74,9 +74,7 @@ export default function Hero() {
           className="h-para text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-10"
           style={{ color: "rgba(255,255,255,0.48)" }}
         >
-          Présentez votre entreprise, vos prestations et facilitez le contact avec votre
-          clientèle grâce à un site web moderne, clair et conçu avec des outils récents, y
-          compris l'intelligence artificielle.
+          Présentez votre activité, vos services et vos coordonnées au même endroit. Un site professionnel permet à vos futurs clients de comprendre rapidement ce que vous faites et de vous contacter facilement
         </p>
 
         {/* CTAs */}

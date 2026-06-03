@@ -14,49 +14,55 @@ const situations = [
   {
     id: "landing",
     situation: "Je démarre une activité",
-    service: "Landing page",
+    service: "Présence Locale",
     description:
-      "Une page claire pour présenter rapidement votre activité, vos services et vos moyens de contact.",
+      "Vous avez besoin d'une présence en ligne simple pour présenter votre activité et permettre à vos clients de vous contacter facilement.",
+    pitch:
+      "Une solution simple pour être visible, présenter vos services et centraliser vos informations importantes.",
     includes: [
-      "Site 1 page",
-      "Design adapté mobile",
-      "Présentation de l'activité",
-      "Bouton WhatsApp / contact",
+      "Être visible en ligne rapidement",
+      "Présenter vos services clairement",
+      "Permettre aux clients de vous contacter",
+      "Adapté à tous les mobiles",
       "Paiement possible en 2 fois",
     ],
     whatsappMessage:
-      "Bonjour, je voudrais avoir plus d'informations pour une landing page pour mon activité.",
+      "Bonjour, je voudrais avoir plus d'informations pour créer une présence en ligne pour mon activité.",
   },
   {
     id: "vitrine",
-    situation: "Je veux développer ma présence",
-    service: "Site vitrine",
+    situation: "Je veux renforcer mon image professionnelle",
+    service: "Présence Professionnelle",
     description:
-      "Un site plus complet pour présenter votre entreprise, vos prestations et vos informations importantes sur plusieurs pages.",
+      "Présentez vos services, vos réalisations et les informations importantes de votre entreprise dans un espace professionnel complet.",
+    pitch:
+      "Une présence en ligne plus complète pour inspirer confiance et valoriser votre activité.",
     includes: [
-      "3 à 5 pages",
-      "Design adapté mobile",
-      "Pages services / contact",
+      "Image professionnelle soignée",
       "Présentation complète de l'activité",
+      "Pages services et réalisations",
+      "Adapté à tous les mobiles",
       "Paiement possible en 2 fois",
     ],
     whatsappMessage:
-      "Bonjour, je suis intéressé par un site vitrine pour mon commerce à Marseille.",
+      "Bonjour, je voudrais renforcer l'image professionnelle de mon commerce à Marseille avec un site complet.",
   },
   {
     id: "refonte",
-    situation: "J'ai déjà un site",
-    service: "Refonte / évolution de site web",
+    situation: "Mon site ne reflète plus mon activité",
+    service: "Modernisation de votre site",
     description:
-      "Votre site existe déjà mais il ne reflète plus votre activité ? Une refonte modernise son apparence, améliore ses performances et rend l'expérience plus claire.",
+      "Votre site existe déjà mais il ne correspond plus à votre image actuelle ou aux attentes de vos visiteurs.",
+    pitch:
+      "Modernisez votre image, améliorez l'expérience de vos visiteurs et adaptez votre site aux usages actuels.",
     includes: [
-      "Actualiser l'apparence du site",
-      "Améliorer la performance et la vitesse",
-      "Simplifier la navigation",
-      "Adapter l'expérience mobile",
+      "Actualiser votre image en ligne",
+      "Améliorer l'expérience de vos visiteurs",
+      "Optimiser la prise de contact",
+      "Adapter votre site aux usages actuels",
     ],
     whatsappMessage:
-      "Bonjour, je voudrais faire une refonte de mon site web existant.",
+      "Bonjour, mon site ne correspond plus à mon activité actuelle et je voudrais le moderniser.",
   },
 ];
 
@@ -206,11 +212,11 @@ export default function ServiceSelector({
           </p>
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4"
             style={{ color: "rgba(255,255,255,0.92)" }}>
-            Que souhaitez-vous améliorer&nbsp;?
+            Comment votre site peut aider votre activité&nbsp;?
           </h2>
           <p className="text-base max-w-xl mx-auto leading-relaxed"
             style={{ color: "rgba(255,255,255,0.42)" }}>
-            Choisissez la situation qui correspond à votre activité.
+            Choisissez la situation qui correspond le mieux à votre entreprise.
           </p>
         </motion.div>
 
@@ -264,9 +270,13 @@ export default function ServiceSelector({
                     >
                       <div className="px-6 pb-6 pt-3"
                         style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}>
-                        <p className="text-sm leading-relaxed mb-5"
+                        <p className="text-sm leading-relaxed mb-3"
                           style={{ color: "rgba(255,255,255,0.5)" }}>
                           {s.description}
+                        </p>
+                        <p className="text-xs leading-relaxed mb-5 italic"
+                          style={{ color: "rgba(200,55,55,0.75)" }}>
+                          {s.pitch}
                         </p>
                         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-5">
                           {s.includes.map((item) => (

@@ -1,0 +1,168 @@
+Update the Huss Tech services section and website positioning.
+
+Do NOT modify:
+
+* Hero section
+* Hero text
+* Existing animations
+* Existing layout structure
+* Existing visual design
+
+The objective is to stop selling website types and start selling business outcomes.
+
+Visitors should feel that Huss Tech helps them improve their visibility, professionalism and customer communication.
+
+==================================================
+REMOVE THESE TERMS FROM THE MAIN MARKETING CONTENT
+==================================================
+
+Reduce or completely hide:
+
+* Landing page
+* Site vitrine
+* Refonte
+
+These may remain internally in code, project logic or quotations, but they should no longer be the primary marketing message.
+
+==================================================
+SERVICES SECTION
+================
+
+Replace the current service naming with business-oriented solutions.
+
+Section title:
+
+Comment votre site peut aider votre activité ?
+
+Subtitle:
+
+Choisissez la situation qui correspond le mieux à votre entreprise.
+
+==================================================
+CARD 1
+======
+
+Title:
+
+Je démarre une activité
+
+Description:
+
+Vous avez besoin d'une présence en ligne simple pour présenter votre activité et permettre à vos clients de vous contacter facilement.
+
+Solution name:
+
+Présence Locale
+
+Additional text:
+
+Une solution simple pour être visible, présenter vos services et centraliser vos informations importantes.
+
+CTA:
+
+Discuter du projet
+
+==================================================
+CARD 2
+======
+
+Title:
+
+Je veux renforcer mon image professionnelle
+
+Description:
+
+Présentez vos services, vos réalisations et les informations importantes de votre entreprise dans un espace professionnel complet.
+
+Solution name:
+
+Présence Professionnelle
+
+Additional text:
+
+Une présence en ligne plus complète pour inspirer confiance et valoriser votre activité.
+
+CTA:
+
+Discuter du projet
+
+==================================================
+CARD 3
+======
+
+Title:
+
+Mon site ne reflète plus mon activité
+
+Description:
+
+Votre site existe déjà mais il ne correspond plus à votre image actuelle ou aux attentes de vos visiteurs.
+
+Solution name:
+
+Modernisation de votre site
+
+Additional text:
+
+Modernisez votre image, améliorez l'expérience utilisateur et adaptez votre site aux usages actuels.
+
+CTA:
+
+Discuter du projet
+
+==================================================
+WHEN A USER OPENS A SOLUTION
+============================
+
+Keep the existing internal logic if needed.
+
+However, the visible content should continue using:
+
+* Présence Locale
+* Présence Professionnelle
+* Modernisation de votre site
+
+Do not prominently display:
+
+* Landing page
+* Site vitrine
+* Refonte
+
+The user should always see the business-focused naming first.
+
+==================================================
+GLOBAL CONTENT RULE
+===================
+
+Across the entire website, increase references to:
+
+* visibilité
+* présence en ligne
+* image professionnelle
+* confiance
+* activité locale
+* informations claires
+* prise de contact
+* communication avec les clients
+
+Reduce references to:
+
+* pages
+* technologies
+* landing pages
+* site vitrine
+* refonte
+
+The website should feel like it helps local businesses attract and reassure customers, not like it sells website packages.
+
+==================================================
+FINAL POSITIONING
+=================
+
+A visitor should leave with this understanding:
+
+"Huss Tech helps local businesses in Marseille become easier to find, easier to understand and easier to contact."
+
+NOT:
+
+"Huss Tech sells landing pages and site vitrines."
