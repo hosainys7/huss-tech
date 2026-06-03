@@ -31,7 +31,13 @@ const steps = [
 
 export default function ProcessSection() {
   return (
-    <section id="processus" className="py-24 bg-card/50">
+    <section
+      id="processus"
+      className="py-24"
+      style={{
+        background: "radial-gradient(ellipse 70% 50% at 50% 0%, rgba(90,5,5,0.1) 0%, transparent 60%), #080808",
+      }}
+    >
       <div className="container mx-auto px-4 max-w-5xl">
 
         {/* Header */}
@@ -42,53 +48,71 @@ export default function ProcessSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-14"
         >
-          <p className="text-xs font-semibold text-primary uppercase tracking-widest mb-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] mb-4"
+            style={{ color: "rgba(90,5,5,0.9)" }}>
             Processus
           </p>
-          <h2 className="text-3xl md:text-4xl font-semibold text-foreground tracking-tight mb-4 leading-[1.15]">
+          <h2
+            className="text-3xl md:text-4xl font-semibold tracking-tight mb-4 leading-[1.15]"
+            style={{ color: "rgba(255,255,255,0.92)" }}
+          >
             Comment se déroule un projet&nbsp;?
           </h2>
-          <p className="text-muted-foreground text-base max-w-xl mx-auto leading-relaxed">
+          <p className="text-base max-w-xl mx-auto leading-relaxed"
+            style={{ color: "rgba(255,255,255,0.4)" }}>
             Un processus simple, clair et sans complication.
           </p>
         </motion.div>
 
         {/* Steps */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {steps.map((step, i) => (
             <motion.div
               key={step.number}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{
-                duration: 0.45,
-                delay: i * 0.09,
-                ease: [0.25, 0.46, 0.45, 0.94],
-              }}
+              transition={{ duration: 0.45, delay: i * 0.09, ease: [0.25, 0.46, 0.45, 0.94] }}
               whileHover={{ y: -4, transition: { duration: 0.2 } }}
-              className="relative bg-background border border-border/60 rounded-2xl p-6 shadow-sm cursor-default group"
+              className="relative rounded-2xl p-6 cursor-default group transition-all"
+              style={{
+                background: "rgba(255,255,255,0.04)",
+                border: "1px solid rgba(255,255,255,0.08)",
+              }}
+              onMouseEnter={e => {
+                (e.currentTarget as HTMLElement).style.borderColor = "rgba(90,5,5,0.4)";
+                (e.currentTarget as HTMLElement).style.boxShadow = "0 0 30px rgba(90,5,5,0.12)";
+              }}
+              onMouseLeave={e => {
+                (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.08)";
+                (e.currentTarget as HTMLElement).style.boxShadow = "none";
+              }}
             >
-              {/* Step number */}
-              <p className="text-xs font-bold text-primary/30 tracking-widest mb-4 uppercase">
+              <p className="text-xs font-bold tracking-widest mb-4 uppercase"
+                style={{ color: "rgba(90,5,5,0.6)" }}>
                 {step.number}
               </p>
 
-              {/* Icon */}
-              <div className="w-10 h-10 rounded-xl bg-primary/8 text-primary flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors duration-200">
+              <div
+                className="w-10 h-10 rounded-xl flex items-center justify-center mb-4 transition-all duration-200"
+                style={{ background: "rgba(90,5,5,0.15)", color: "rgba(255,255,255,0.6)" }}
+              >
                 {step.icon}
               </div>
 
-              <h3 className="text-sm font-semibold text-foreground mb-2 leading-snug">
+              <h3 className="text-sm font-semibold mb-2 leading-snug"
+                style={{ color: "rgba(255,255,255,0.85)" }}>
                 {step.title}
               </h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
+              <p className="text-xs leading-relaxed"
+                style={{ color: "rgba(255,255,255,0.38)" }}>
                 {step.text}
               </p>
 
-              {/* Connector line (not on last card) */}
+              {/* Connector */}
               {i < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 -right-3 -translate-y-1/2 w-6 h-px bg-border/60" />
+                <div className="hidden lg:block absolute top-1/2 -right-2.5 w-5 h-px"
+                  style={{ background: "rgba(255,255,255,0.1)" }} />
               )}
             </motion.div>
           ))}

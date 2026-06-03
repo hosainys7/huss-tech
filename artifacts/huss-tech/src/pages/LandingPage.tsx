@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
+import TickerBanner from "@/components/TickerBanner";
 import EcosystemSection from "@/components/EcosystemSection";
 import ServiceSelector from "@/components/ServiceSelector";
 import AboutHussTech from "@/components/AboutHussTech";
+import Realisations from "@/components/Realisations";
 import ProcessSection from "@/components/ProcessSection";
 import Contact from "@/components/Contact";
 import FAQ from "@/components/FAQ";
@@ -24,32 +26,6 @@ export default function LandingPage() {
     setSelectedOptionId(optionId);
   }
 
-  function handleCategorySelect(categoryId: string) {
-    if (selectedCategoryId === categoryId) {
-      setSelectedCategoryId(null);
-      setSelectedSubCategoryId(null);
-      setSelectedOptionId(null);
-      return;
-    }
-    setSelectedCategoryId(categoryId);
-    setSelectedSubCategoryId(null);
-    setSelectedOptionId(null);
-  }
-
-  function handleSubCategorySelect(subCategoryId: string) {
-    if (selectedSubCategoryId === subCategoryId) {
-      setSelectedSubCategoryId(null);
-      setSelectedOptionId(null);
-      return;
-    }
-    setSelectedSubCategoryId(subCategoryId);
-    setSelectedOptionId(null);
-  }
-
-  function handleOptionSelect(optionId: string) {
-    setSelectedOptionId(optionId || null);
-  }
-
   function handleReset() {
     setSelectedCategoryId(null);
     setSelectedSubCategoryId(null);
@@ -62,18 +38,17 @@ export default function LandingPage() {
       <main className="flex-1">
         <div id="home">
           <Hero />
+          <TickerBanner />
         </div>
         <EcosystemSection />
         <ServiceSelector
           selectedCategoryId={selectedCategoryId}
           selectedSubCategoryId={selectedSubCategoryId}
           selectedOptionId={selectedOptionId}
-          onCategorySelect={handleCategorySelect}
-          onSubCategorySelect={handleSubCategorySelect}
-          onOptionSelect={handleOptionSelect}
           onReset={handleReset}
         />
         <AboutHussTech />
+        <Realisations />
         <ProcessSection />
         <Contact />
         <FAQ />

@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Eye, Info, Star } from "lucide-react";
+import { Eye, Info, MessageCircle, Star } from "lucide-react";
 
 const benefits = [
   {
@@ -12,6 +12,11 @@ const benefits = [
     icon: <Info size={18} strokeWidth={1.8} />,
     title: "Informations claires",
     desc: "Services, horaires et coordonnées accessibles rapidement.",
+  },
+  {
+    icon: <MessageCircle size={18} strokeWidth={1.8} />,
+    title: "Contact simplifié",
+    desc: "WhatsApp ou formulaire de contact facilement accessibles depuis le site.",
   },
   {
     icon: <Star size={18} strokeWidth={1.8} />,
@@ -51,7 +56,7 @@ export default function AboutHussTech() {
               <p>
                 Huss Tech aide les entreprises locales à Marseille à construire une présence en ligne
                 simple, claire et professionnelle grâce à des sites modernes, adaptés aux besoins
-                réels du terrain.
+                réels du terrain et renforcés par des outils récents comme l'intelligence artificielle.
               </p>
               <p>
                 L'objectif est simple : permettre à vos futurs clients de comprendre rapidement ce
@@ -60,8 +65,8 @@ export default function AboutHussTech() {
             </div>
           </motion.div>
 
-          {/* Benefit cards */}
-          <div className="flex flex-col gap-4">
+          {/* Benefit cards — glass effect */}
+          <div className="flex flex-col gap-3">
             {benefits.map((item, i) => (
               <motion.div
                 key={item.title}
@@ -69,9 +74,24 @@ export default function AboutHussTech() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.08 * i }}
-                className="flex items-start gap-4 bg-card border border-border/60 rounded-2xl px-5 py-4 shadow-sm"
+                className="flex items-start gap-4 rounded-2xl px-5 py-4 transition-all duration-200 hover:-translate-y-0.5 cursor-default"
+                style={{
+                  background: "rgba(255,255,255,0.7)",
+                  backdropFilter: "blur(8px)",
+                  border: "1px solid rgba(0,0,0,0.07)",
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
+                }}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(90,5,5,0.2)";
+                  (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 24px rgba(90,5,5,0.08)";
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(0,0,0,0.07)";
+                  (e.currentTarget as HTMLElement).style.boxShadow = "0 2px 8px rgba(0,0,0,0.04)";
+                }}
               >
-                <div className="w-9 h-9 rounded-xl bg-primary/8 text-primary flex items-center justify-center shrink-0 mt-0.5">
+                <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 mt-0.5"
+                  style={{ background: "rgba(90,5,5,0.08)", color: "#5A0505" }}>
                   {item.icon}
                 </div>
                 <div>

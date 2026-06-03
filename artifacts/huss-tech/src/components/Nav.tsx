@@ -56,7 +56,7 @@ const servicesDropdown: DropdownGroup[] = [
   },
 ];
 
-const sectionIds = ["home", "services", "apropos", "processus", "contact", "faq"];
+const sectionIds = ["home", "services", "apropos", "realisations", "processus", "contact", "faq"];
 
 /* ─── Scroll helper ─────────────────────────────────────────── */
 
@@ -320,6 +320,10 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
               À propos
             </button>
 
+            <button onClick={() => scrollToId("realisations")} className={linkClass("realisations")}>
+              Réalisations
+            </button>
+
             <button onClick={() => scrollToId("processus")} className={linkClass("processus")}>
               Processus
             </button>
@@ -490,6 +494,13 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
                   className="text-left text-sm font-medium text-foreground/80 py-2.5 px-3 rounded-lg hover:bg-foreground/5 transition-colors"
                 >
                   À propos
+                </button>
+
+                <button
+                  onClick={() => { scrollToId("realisations"); setIsOpen(false); }}
+                  className="text-left text-sm font-medium text-foreground/80 py-2.5 px-3 rounded-lg hover:bg-foreground/5 transition-colors"
+                >
+                  Réalisations
                 </button>
 
                 <button

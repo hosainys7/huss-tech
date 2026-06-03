@@ -1,0 +1,498 @@
+Update the Huss Tech homepage with a premium interactive visual direction.
+
+Do NOT rebuild the website from zero.
+Keep the current brand:
+- Huss Tech
+- burgundy accent #5A0505
+- off-white #F2F0EF where needed
+- modern sans-serif typography
+- Apple-clean layout
+- local Marseille service positioning
+
+The goal:
+Make the website feel more premium, animated, and memorable while keeping the offer clear.
+
+Primary business focus:
+AI-powered website creation and online presence for local businesses in Marseille.
+
+Support informatique remains secondary.
+
+==================================================
+1. OVERALL VISUAL DIRECTION
+==================================================
+
+Do not make the whole website pure black.
+
+Use a mixed premium structure:
+
+Dark sections:
+- Hero
+- News ticker/banner
+- Circular ecosystem section
+- Process section
+
+Light sections:
+- Services
+- À propos
+- Réalisations
+- FAQ
+- Contact
+
+Dark background style:
+Use a deep satin/space black background, not flat black.
+
+It should feel:
+- premium
+- soft
+- subtle
+- elegant
+- slightly glowing
+
+Use dark colors like:
+- #050505
+- #080808
+- #0D0D0D
+
+Add subtle:
+- radial gradients
+- soft burgundy glow
+- satin/fabric-like depth
+- noise texture if possible
+- no cyberpunk
+- no neon overload
+
+==================================================
+2. HERO SECTION
+==================================================
+
+Redesign the hero content but keep the layout clean.
+
+No right-side card visual.
+
+Hero should be text-focused.
+
+Hero text:
+
+Main headline:
+Une présence en ligne simple et claire.
+
+Secondary headline:
+Attirer une clientèle locale.
+
+Paragraph:
+Présentez votre entreprise, vos prestations et facilitez le contact avec votre clientèle grâce à un site web moderne, clair et conçu avec des outils récents, y compris l’intelligence artificielle.
+
+CTA buttons:
+- Découvrir les solutions
+- Discuter du projet
+
+Hero style:
+- dark satin/space black background
+- large bold modern font
+- white / off-white text
+- burgundy accent on important words or button
+- centered or slightly left-aligned layout
+- clean spacing
+
+Typography animation:
+Use the uploaded “They trusted us / Why not you?” image as inspiration for the text effect.
+
+Do NOT copy the text.
+Use the effect only.
+
+Animation behavior:
+- headline starts slightly blurred and faded
+- as user scrolls / as it enters viewport, it becomes sharp and clear
+- subtle blur-to-clear transition
+- smooth fade
+- no excessive motion
+- no huge size changes
+- no flashy effects
+
+==================================================
+3. NEWS TICKER UNDER HERO
+==================================================
+
+Add a moving ticker/banner directly under the hero.
+
+It should mimic a TV news channel banner at the bottom.
+
+Style:
+- dark strip
+- continuous horizontal movement
+- white/off-white text
+- small burgundy separators or dots
+- smooth infinite animation
+- subtle glass/blur
+- premium, not cheap
+
+Ticker content should repeat:
+
+IA intégrée
+•
+Création de site web
+•
+Refonte de site
+•
+Landing page
+•
+Site vitrine
+•
+Mobile friendly
+•
+WhatsApp
+•
+Support informatique
+•
+Réparation tech
+•
+Marseille
+•
+Présence en ligne claire
+•
+
+Make it loop infinitely.
+
+==================================================
+4. CIRCULAR ECOSYSTEM SECTION
+==================================================
+
+Add a section under the ticker.
+
+Use the uploaded connected-circle image as layout inspiration.
+
+Do NOT copy the image exactly.
+Recreate it in Huss Tech style.
+
+Section title:
+Pourquoi une présence en ligne claire compte ?
+
+Section text:
+Chaque jour, de nouvelles entreprises se créent en France et à Marseille. Dans un marché local actif, un site clair permet à votre activité d’être trouvée plus facilement, de présenter vos services sans confusion et de faciliter le contact avec vos futurs clients.
+
+Visual:
+- circular connected network
+- center should contain the Huss Tech logo
+- surrounding circles/icons should represent:
+  - Site web
+  - IA
+  - Mobile
+  - Contact
+  - Visibilité
+
+Do NOT include:
+- Croissance
+
+Animation:
+- subtle moving dots on the circle path
+- gentle icon hover
+- slow floating motion
+- smooth and premium
+
+Style:
+- dark satin/space black background
+- white/off-white lines
+- subtle burgundy details
+- soft glow around circles
+- no colorful cartoon style
+- no blue SaaS look
+
+==================================================
+5. SERVICES SECTION
+==================================================
+
+Keep this section light using #F2F0EF.
+
+Rework the service logic visually around customer situations.
+
+Title:
+Que souhaitez-vous améliorer ?
+
+Subtitle:
+Choisissez la situation qui correspond à votre activité.
+
+Website creation should be the main area.
+
+Instead of presenting only service names first, show situation-based cards:
+
+Card 1:
+Title:
+Je démarre une activité
+
+Linked service:
+Landing page
+
+Description:
+Une page claire pour présenter rapidement votre activité, vos services et vos moyens de contact.
+
+CTA:
+Discuter du projet
+
+Card 2:
+Title:
+Je veux développer ma présence
+
+Linked service:
+Site vitrine
+
+Description:
+Un site plus complet pour présenter votre entreprise, vos prestations et vos informations importantes sur plusieurs pages.
+
+CTA:
+Discuter du projet
+
+Card 3:
+Title:
+J’ai déjà un site
+
+Linked service:
+Refonte / évolution de site web
+
+Description:
+Votre site existe déjà mais il ne reflète plus votre activité ? Une refonte permet de moderniser son apparence, d’améliorer ses performances et de rendre l’expérience plus claire pour vos visiteurs.
+
+Included points for refonte:
+- Actualiser l’apparence du site
+- Améliorer la performance et la vitesse
+- Simplifier la navigation
+- Adapter l’expérience mobile
+
+Important:
+Remove all prices completely.
+No price badges.
+No “à partir de”.
+No pricing table.
+
+Support informatique:
+Move it below website creation.
+It should feel secondary.
+
+Support title:
+Support informatique
+
+Support text:
+Un service local pour résoudre les problèmes courants : diagnostic, lenteurs, virus, réinstallation Windows ou remplacement de pièce.
+
+Support options:
+- Logiciel
+- Matériel
+
+Support CTA:
+Discuter du problème
+
+==================================================
+6. GLASS AND GLOW CARDS
+==================================================
+
+Update cards across the site.
+
+Cards should feel:
+- glassy
+- premium
+- soft glow
+- layered
+- modern
+
+Use:
+- translucent backgrounds
+- subtle border
+- soft shadows
+- blur
+- hover lift
+- gentle burgundy glow on hover
+
+Do NOT make it:
+- neon gaming
+- cyberpunk
+- too bright
+- cheap glow
+
+For dark sections:
+Use black glass cards with off-white text and subtle burgundy glow.
+
+For light sections:
+Use white/off-white glass cards with soft shadow and burgundy hover accent.
+
+==================================================
+7. À PROPOS SECTION
+==================================================
+
+Keep À propos light.
+
+Title:
+À propos de Huss Tech
+
+Content:
+Aujourd’hui, beaucoup de commerces, restaurants, hôtels et indépendants s’appuient principalement sur les réseaux sociaux pour présenter leur activité.
+
+Mais les informations importantes sont souvent dispersées, difficiles à retrouver ou incomplètes pour les clients.
+
+Huss Tech aide les entreprises locales à Marseille à construire une présence en ligne simple, claire et professionnelle grâce à des sites modernes, adaptés aux besoins réels du terrain et renforcés par des outils récents comme l’intelligence artificielle.
+
+L’objectif est simple : permettre à vos futurs clients de comprendre rapidement ce que vous proposez et de vous contacter facilement.
+
+Benefit cards:
+- Plus de visibilité
+- Informations claires
+- Contact simplifié
+- Image professionnelle
+
+Improve these cards with glass effect and subtle glow.
+
+==================================================
+8. PROCESS SECTION
+==================================================
+
+Add or update the process section after À propos.
+
+Use the uploaded process image as structural inspiration.
+
+Do NOT copy the blue SaaS style.
+
+Use dark satin/space black background.
+
+Title:
+Comment se déroule un projet ?
+
+Subtitle:
+Un processus simple, clair et sans complication.
+
+Steps:
+
+1. Diagnostic du besoin
+Text:
+On échange sur votre activité, vos objectifs et les informations à mettre en avant.
+
+2. Création
+Text:
+Huss Tech prépare la structure, le design et les contenus du site.
+
+3. Validation
+Text:
+Vous vérifiez le rendu, puis les ajustements nécessaires sont appliqués.
+
+4. Livraison clé en main
+Text:
+Votre site est finalisé, prêt à être utilisé et partagé avec vos clients.
+
+Visual style:
+- stacked process cards
+- numbered badges
+- smooth scroll reveal
+- slight bounce
+- hover lift
+- glass/glow dark cards
+- premium spacing
+
+==================================================
+9. RÉALISATIONS SECTION
+==================================================
+
+Add a “Réalisations” section.
+
+This should use the portfolio examples available.
+
+Title:
+Projets récents
+
+Subtitle:
+Quelques exemples de sites et interfaces réalisés.
+
+Create 3 cards:
+
+1. Huss Tech
+Description:
+Site de présentation pour une activité locale de création de sites web et support informatique.
+
+2. Répare-Tontel13 — Site vitrine
+Description:
+Interface moderne pour un service de réparation mobile à Marseille.
+
+3. Répare-Tontel13 — Système de réservation
+Description:
+Parcours de réservation interactif avec sélection du modèle, choix de réparation et demande de réservation.
+
+Style:
+- premium project cards
+- image/mockup placeholders or screenshots if available
+- glass effect
+- hover glow
+- no fake testimonials
+
+Do not pretend these are client testimonials.
+Present them as projects/examples.
+
+==================================================
+10. NAVIGATION UPDATE
+==================================================
+
+Update navbar links:
+
+- Accueil
+- Services
+- À propos
+- Processus
+- Réalisations
+- Contact
+- FAQ
+
+Make sure all links scroll smoothly to the correct section.
+
+When clicking Accueil or logo:
+- scroll to top
+- clear hash from URL
+- reset services selection if applicable
+
+==================================================
+11. CONTACT AND FAQ
+==================================================
+
+Keep contact and FAQ mostly unchanged.
+
+But make sure:
+- no phone number appears
+- WhatsApp uses +33773148264
+- CTA messages remain personalized
+- cards use the updated glass/glow style
+
+==================================================
+12. PERFORMANCE AND UX
+==================================================
+
+Animations should be smooth but restrained.
+
+Use:
+- CSS transitions
+- Framer Motion if already installed
+- intersection observer / whileInView if useful
+
+Avoid:
+- heavy animations everywhere
+- too much blur on body text
+- unreadable dark sections
+- low contrast
+- mobile clutter
+
+Mobile must remain clean and readable.
+
+==================================================
+FINAL GOAL
+==================================================
+
+The homepage should feel like:
+
+A premium AI-powered website creation service for local businesses in Marseille.
+
+It should feel:
+- modern
+- dark premium in key sections
+- clean and trustworthy
+- animated but controlled
+- more memorable than a basic freelancer website
+
+It should not feel:
+- generic agency
+- cyberpunk
+- gaming
+- cheap template
+- pure repair shop
