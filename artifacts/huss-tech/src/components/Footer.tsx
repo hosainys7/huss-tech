@@ -35,8 +35,7 @@ export default function Footer() {
               className="h-9 w-9 rounded-full flex items-center justify-center overflow-hidden shrink-0"
               style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.14)" }}
             >
-              <img src="/logo.png" alt="Huss Tech" className="h-5 w-5 object-contain"
-                style={{ filter: "brightness(0) invert(1)" }} />
+              <img src="/logo.png" alt="Huss Tech" className="h-5 w-5 object-contain" />
             </div>
             <div>
               <p className="text-sm font-semibold leading-none"
