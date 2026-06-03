@@ -9,7 +9,6 @@ import ProcessSection from "@/components/ProcessSection";
 import Contact from "@/components/Contact";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
-import ScrollBlurSection from "@/components/ScrollBlurSection";
 
 export default function LandingPage() {
   const [selectedCategoryId, setSelectedCategoryId] = useState<string | null>(null);
@@ -34,43 +33,43 @@ export default function LandingPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      {/*
+        Fixed gradient strip — sits just below the nav.
+        As content scrolls up it dissolves smoothly into the dark background.
+        Single effect, whole page, zero JS overhead.
+      */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: "fixed",
+          top: "75px",
+          left: 0,
+          right: 0,
+          height: "72px",
+          background:
+            "linear-gradient(to bottom, #080808 0%, rgba(8,8,8,0.82) 38%, rgba(8,8,8,0.38) 70%, transparent 100%)",
+          pointerEvents: "none",
+          zIndex: 38,
+        }}
+      />
+
       <Nav onServiceSelect={handleServiceSelect} onReset={handleReset} />
       <main className="flex-1">
-        <ScrollBlurSection>
-          <div id="home">
-            <Hero />
-            <TickerBanner />
-          </div>
-        </ScrollBlurSection>
-
-        <ScrollBlurSection>
-          <EcosystemSection />
-        </ScrollBlurSection>
-
-        <ScrollBlurSection>
-          <ServiceSelector
-            selectedCategoryId={selectedCategoryId}
-            selectedSubCategoryId={selectedSubCategoryId}
-            selectedOptionId={selectedOptionId}
-            onReset={handleReset}
-          />
-        </ScrollBlurSection>
-
-        <ScrollBlurSection>
-          <AboutHussTech />
-        </ScrollBlurSection>
-
-        <ScrollBlurSection>
-          <ProcessSection />
-        </ScrollBlurSection>
-
-        <ScrollBlurSection>
-          <Contact />
-        </ScrollBlurSection>
-
-        <ScrollBlurSection>
-          <FAQ />
-        </ScrollBlurSection>
+        <div id="home">
+          <Hero />
+          <TickerBanner />
+        </div>
+        <EcosystemSection />
+        <ServiceSelector
+          selectedCategoryId={selectedCategoryId}
+          selectedSubCategoryId={selectedSubCategoryId}
+          selectedOptionId={selectedOptionId}
+          onReset={handleReset}
+        />
+        <AboutHussTech />
+        <ProcessSection />
+        <Contact />
+        <FAQ />
       </main>
       <Footer />
     </div>
