@@ -10,29 +10,42 @@ function scrollToId(id: string) {
 }
 
 const navLinks = [
-  { label: "Accueil",       id: "home" },
-  { label: "Services",      id: "services" },
-  { label: "À propos",      id: "apropos" },
-  { label: "Processus",     id: "processus" },
-  { label: "Contact",       id: "contact" },
-  { label: "FAQ",           id: "faq" },
+  { label: "Accueil",    id: "home" },
+  { label: "Services",   id: "services" },
+  { label: "À propos",   id: "apropos" },
+  { label: "Processus",  id: "processus" },
+  { label: "Contact",    id: "contact" },
+  { label: "FAQ",        id: "faq" },
 ];
 
 export default function Footer() {
   return (
-    <footer className="bg-foreground/95 text-background py-12">
-      <div className="container mx-auto px-4 max-w-5xl">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-10">
+    <footer
+      style={{
+        background: "radial-gradient(ellipse 80% 60% at 50% 100%, rgba(90,5,5,0.14) 0%, transparent 65%), #080808",
+        borderTop: "1px solid rgba(255,255,255,0.07)",
+      }}
+    >
+      <div className="container mx-auto px-4 max-w-5xl py-14">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-10 mb-10">
 
           {/* Brand */}
           <div className="flex items-center gap-3">
-            <div className="h-8 w-8 rounded-full bg-background/10 flex items-center justify-center overflow-hidden">
-              <img src="/logo.png" alt="Huss Tech" className="h-5 w-5 object-contain" />
+            <div
+              className="h-9 w-9 rounded-full flex items-center justify-center overflow-hidden shrink-0"
+              style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.14)" }}
+            >
+              <img src="/logo.png" alt="Huss Tech" className="h-5 w-5 object-contain"
+                style={{ filter: "brightness(0) invert(1)" }} />
             </div>
             <div>
-              <p className="text-sm font-semibold text-background/90 leading-none">Huss Tech</p>
-              <p className="text-xs text-background/50 mt-0.5">
-                Solutions informatiques &amp; création de sites web à Marseille.
+              <p className="text-sm font-semibold leading-none"
+                style={{ color: "rgba(255,255,255,0.88)" }}>
+                Huss Tech
+              </p>
+              <p className="text-xs mt-1"
+                style={{ color: "rgba(255,255,255,0.38)" }}>
+                Création de sites web & support informatique à Marseille.
               </p>
             </div>
           </div>
@@ -50,7 +63,10 @@ export default function Footer() {
                     scrollToId(id);
                   }
                 }}
-                className="text-sm text-background/60 hover:text-background/90 transition-colors"
+                className="text-sm transition-colors"
+                style={{ color: "rgba(255,255,255,0.42)" }}
+                onMouseEnter={e => (e.currentTarget.style.color = "rgba(255,255,255,0.82)")}
+                onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.42)")}
               >
                 {label}
               </button>
@@ -58,23 +74,30 @@ export default function Footer() {
           </nav>
 
           {/* Contact */}
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2.5">
             <a
               href={`https://wa.me/33773148264?text=${encodeURIComponent("Bonjour, je voudrais avoir des informations sur vos services.")}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-background/60 hover:text-background/90 transition-colors"
+              className="inline-flex items-center gap-2 text-sm transition-colors"
+              style={{ color: "rgba(255,255,255,0.5)" }}
+              onMouseEnter={e => (e.currentTarget.style.color = "rgba(255,255,255,0.82)")}
+              onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.5)")}
             >
-              <FaWhatsapp size={15} className="text-[#25D366]" />
+              <FaWhatsapp size={15} style={{ color: "#25D366" }} />
               WhatsApp
             </a>
             <a
               href="mailto:contact@huss-tech.fr"
-              className="text-sm text-background/60 hover:text-background/90 transition-colors"
+              className="text-sm transition-colors"
+              style={{ color: "rgba(255,255,255,0.5)" }}
+              onMouseEnter={e => (e.currentTarget.style.color = "rgba(255,255,255,0.82)")}
+              onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.5)")}
             >
               contact@huss-tech.fr
             </a>
-            <span className="inline-flex items-center gap-1.5 text-sm text-background/40">
+            <span className="inline-flex items-center gap-1.5 text-sm"
+              style={{ color: "rgba(255,255,255,0.28)" }}>
               <MapPin size={13} />
               Marseille
             </span>
@@ -82,9 +105,14 @@ export default function Footer() {
 
         </div>
 
-        <div className="border-t border-background/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-background/40">© 2025 Huss Tech — Marseille</p>
-          <p className="text-xs text-background/40">Fait avec soin à Marseille</p>
+        <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-3"
+          style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}>
+          <p className="text-xs" style={{ color: "rgba(255,255,255,0.28)" }}>
+            © 2025 Huss Tech — Marseille
+          </p>
+          <p className="text-xs" style={{ color: "rgba(255,255,255,0.28)" }}>
+            Fait avec soin à Marseille
+          </p>
         </div>
       </div>
     </footer>

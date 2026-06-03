@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FaWhatsapp } from "react-icons/fa";
-import { Globe, Wrench, Laptop, HardDrive, Check, ChevronRight, ChevronDown } from "lucide-react";
+import { Wrench, Laptop, HardDrive, Check, ChevronRight, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const WA_NUMBER = "33773148264";
@@ -66,7 +66,7 @@ const supportSubCategories = [
   {
     id: "logiciel",
     title: "Logiciel",
-    icon: <Laptop size={20} strokeWidth={1.5} />,
+    icon: <Laptop size={18} strokeWidth={1.5} />,
     description: "Lenteurs, virus, bugs logiciels, réinstallation Windows.",
     options: [
       {
@@ -95,7 +95,7 @@ const supportSubCategories = [
   {
     id: "materiel",
     title: "Matériel",
-    icon: <HardDrive size={20} strokeWidth={1.5} />,
+    icon: <HardDrive size={18} strokeWidth={1.5} />,
     description: "Diagnostic et remplacement de composants défaillants.",
     options: [
       {
@@ -116,6 +116,24 @@ const supportSubCategories = [
   },
 ];
 
+/* ─── Card styles ───────────────────────────────────────────── */
+
+const cardBase: React.CSSProperties = {
+  background: "rgba(255,255,255,0.04)",
+  border: "1px solid rgba(255,255,255,0.09)",
+  borderRadius: "1rem",
+  overflow: "hidden",
+  transition: "border-color 0.2s, box-shadow 0.2s",
+};
+
+const cardOpen: React.CSSProperties = {
+  background: "rgba(255,255,255,0.06)",
+  border: "1px solid rgba(200,55,55,0.35)",
+  borderRadius: "1rem",
+  overflow: "hidden",
+  boxShadow: "0 0 28px rgba(90,5,5,0.15)",
+};
+
 /* ─── Props ─────────────────────────────────────────────────── */
 
 export type ServiceSelectorProps = {
@@ -132,30 +150,20 @@ export default function ServiceSelector({
   selectedSubCategoryId,
   selectedOptionId,
 }: ServiceSelectorProps) {
-  /* Web situation state */
   const [activeSituationId, setActiveSituationId] = useState<string | null>(null);
-
-  /* Support state */
   const [supportOpen, setSupportOpen] = useState(false);
   const [activeSubId, setActiveSubId] = useState<string | null>(null);
   const [activeSupportOptionId, setActiveSupportOptionId] = useState<string | null>(null);
-
-  const supportRef = useRef<HTMLDivElement>(null);
   const optionsRef = useRef<HTMLDivElement>(null);
 
-  /* Sync from Nav dropdown */
   useEffect(() => {
-    if (selectedCategoryId === "web" && selectedOptionId) {
-      setActiveSituationId(selectedOptionId);
-    }
+    if (selectedCategoryId === "web" && selectedOptionId) setActiveSituationId(selectedOptionId);
     if (selectedCategoryId === "support") {
       setSupportOpen(true);
       if (selectedSubCategoryId) setActiveSubId(selectedSubCategoryId);
       if (selectedOptionId) setActiveSupportOptionId(selectedOptionId);
     }
-    if (!selectedCategoryId) {
-      setActiveSituationId(null);
-    }
+    if (!selectedCategoryId) setActiveSituationId(null);
   }, [selectedCategoryId, selectedSubCategoryId, selectedOptionId]);
 
   function toggleSituation(id: string) {
@@ -175,7 +183,13 @@ export default function ServiceSelector({
   const activeSub = supportSubCategories.find((s) => s.id === activeSubId) ?? null;
 
   return (
-    <section id="services" className="py-24 bg-[#F2F0EF]">
+    <section
+      id="services"
+      className="py-24"
+      style={{
+        background: "radial-gradient(ellipse 90% 60% at 50% 0%, rgba(90,5,5,0.14) 0%, transparent 65%), #080808",
+      }}
+    >
       <div className="container mx-auto px-4 max-w-5xl">
 
         {/* Header */}
@@ -185,16 +199,22 @@ export default function ServiceSelector({
           viewport={{ once: true }}
           className="text-center mb-14"
         >
-          <h2 className="text-3xl md:text-4xl font-semibold text-foreground tracking-tight mb-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] mb-4"
+            style={{ color: "rgba(200,55,55,0.85)" }}>
+            Services
+          </p>
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4"
+            style={{ color: "rgba(255,255,255,0.92)" }}>
             Que souhaitez-vous améliorer&nbsp;?
           </h2>
-          <p className="text-muted-foreground text-base max-w-xl mx-auto leading-relaxed">
+          <p className="text-base max-w-xl mx-auto leading-relaxed"
+            style={{ color: "rgba(255,255,255,0.42)" }}>
             Choisissez la situation qui correspond à votre activité.
           </p>
         </motion.div>
 
         {/* ── Web situation cards ── */}
-        <div className="flex flex-col gap-4 mb-10">
+        <div className="flex flex-col gap-3 mb-8">
           {situations.map((s, i) => {
             const isOpen = activeSituationId === s.id;
             return (
@@ -204,47 +224,33 @@ export default function ServiceSelector({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.07 }}
-                className="rounded-2xl overflow-hidden transition-all duration-200"
-                style={{
-                  background: isOpen ? "rgba(255,255,255,0.95)" : "rgba(255,255,255,0.75)",
-                  backdropFilter: "blur(8px)",
-                  border: isOpen ? "1px solid rgba(90,5,5,0.2)" : "1px solid rgba(0,0,0,0.08)",
-                  boxShadow: isOpen
-                    ? "0 8px 32px rgba(90,5,5,0.08), 0 2px 8px rgba(0,0,0,0.06)"
-                    : "0 2px 8px rgba(0,0,0,0.04)",
-                }}
+                style={isOpen ? cardOpen : cardBase}
               >
-                {/* Card header */}
                 <button
                   onClick={() => toggleSituation(s.id)}
-                  className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 focus:outline-none group"
+                  className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 focus:outline-none"
                 >
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-3 mb-1">
-                      <span
-                        className="text-[10px] font-semibold uppercase tracking-widest px-2 py-0.5 rounded-full"
-                        style={{
-                          background: isOpen ? "rgba(90,5,5,0.1)" : "rgba(0,0,0,0.06)",
-                          color: isOpen ? "#5A0505" : "rgba(0,0,0,0.4)",
-                        }}
-                      >
-                        {s.service}
-                      </span>
-                    </div>
-                    <p className={`text-base font-semibold transition-colors ${isOpen ? "text-[#5A0505]" : "text-foreground group-hover:text-[#5A0505]"}`}>
+                    <span
+                      className="inline-block text-[10px] font-semibold uppercase tracking-widest px-2.5 py-0.5 rounded-full mb-2"
+                      style={{
+                        background: isOpen ? "rgba(200,55,55,0.18)" : "rgba(255,255,255,0.08)",
+                        color: isOpen ? "rgba(220,90,90,0.95)" : "rgba(255,255,255,0.35)",
+                      }}
+                    >
+                      {s.service}
+                    </span>
+                    <p className="text-base font-semibold"
+                      style={{ color: isOpen ? "rgba(220,90,90,0.95)" : "rgba(255,255,255,0.85)" }}>
                       {s.situation}
                     </p>
                   </div>
-                  <motion.span
-                    animate={{ rotate: isOpen ? 180 : 0 }}
-                    transition={{ duration: 0.2 }}
-                    className="shrink-0 text-muted-foreground"
-                  >
+                  <motion.span animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.2 }}
+                    style={{ color: "rgba(255,255,255,0.35)", flexShrink: 0 }}>
                     <ChevronDown size={18} />
                   </motion.span>
                 </button>
 
-                {/* Expanded content */}
                 <AnimatePresence initial={false}>
                   {isOpen && (
                     <motion.div
@@ -255,37 +261,39 @@ export default function ServiceSelector({
                       transition={{ duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] }}
                       className="overflow-hidden"
                     >
-                      <div className="px-6 pb-6 border-t border-black/5 pt-4">
-                        <p className="text-sm text-muted-foreground leading-relaxed mb-5">
+                      <div className="px-6 pb-6 pt-3"
+                        style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}>
+                        <p className="text-sm leading-relaxed mb-5"
+                          style={{ color: "rgba(255,255,255,0.5)" }}>
                           {s.description}
                         </p>
                         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-5">
                           {s.includes.map((item) => (
-                            <li key={item} className="flex items-center gap-2.5 text-xs text-foreground/75">
+                            <li key={item} className="flex items-center gap-2.5 text-xs"
+                              style={{ color: "rgba(255,255,255,0.65)" }}>
                               <span className="w-4 h-4 rounded-full flex items-center justify-center shrink-0"
-                                style={{ background: "rgba(90,5,5,0.1)" }}>
-                                <Check size={9} strokeWidth={3} style={{ color: "#5A0505" }} />
+                                style={{ background: "rgba(200,55,55,0.25)" }}>
+                                <Check size={9} strokeWidth={3} style={{ color: "rgba(220,90,90,0.9)" }} />
                               </span>
                               {item}
                             </li>
                           ))}
                         </ul>
                         <div className="flex flex-col sm:flex-row gap-2.5">
-                          <a
-                            href="#contact"
-                            className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-xs text-white transition-all hover:-translate-y-0.5 shadow-sm flex-1"
-                            style={{ background: "#5A0505" }}
-                          >
+                          <a href="#contact"
+                            className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-xs text-white transition-all hover:-translate-y-0.5 flex-1"
+                            style={{ background: "#5A0505", boxShadow: "0 0 16px rgba(90,5,5,0.4)" }}>
                             Discuter du projet
                             <ChevronRight size={13} />
                           </a>
-                          <a
-                            href={waUrl(s.whatsappMessage)}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center gap-2 bg-background border border-border text-foreground px-5 py-2.5 rounded-xl font-semibold text-xs hover:bg-foreground/5 transition-all hover:-translate-y-0.5 shadow-sm flex-1"
-                          >
-                            <FaWhatsapp size={14} className="text-[#25D366]" />
+                          <a href={waUrl(s.whatsappMessage)} target="_blank" rel="noopener noreferrer"
+                            className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-xs transition-all hover:-translate-y-0.5 flex-1"
+                            style={{
+                              background: "rgba(255,255,255,0.06)",
+                              border: "1px solid rgba(255,255,255,0.12)",
+                              color: "rgba(255,255,255,0.75)",
+                            }}>
+                            <FaWhatsapp size={14} style={{ color: "#25D366" }} />
                             WhatsApp
                           </a>
                         </div>
@@ -303,47 +311,40 @@ export default function ServiceSelector({
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          ref={supportRef}
         >
-          {/* Support header */}
           <button
             onClick={() => { setSupportOpen((v) => !v); setActiveSubId(null); setActiveSupportOptionId(null); }}
-            className="w-full text-left rounded-2xl px-6 py-5 flex items-center justify-between gap-4 transition-all focus:outline-none group mb-3"
-            style={{
-              background: supportOpen ? "rgba(255,255,255,0.95)" : "rgba(255,255,255,0.6)",
-              backdropFilter: "blur(8px)",
-              border: supportOpen ? "1px solid rgba(90,5,5,0.15)" : "1px solid rgba(0,0,0,0.08)",
-            }}
+            className="w-full text-left rounded-2xl px-6 py-5 flex items-center justify-between gap-4 focus:outline-none mb-3 transition-all"
+            style={supportOpen
+              ? { background: "rgba(255,255,255,0.06)", border: "1px solid rgba(200,55,55,0.3)", boxShadow: "0 0 24px rgba(90,5,5,0.12)" }
+              : { background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }
+            }
           >
             <div className="flex items-center gap-4">
-              <div
-                className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-colors"
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all"
                 style={{
-                  background: supportOpen ? "rgba(90,5,5,0.1)" : "rgba(0,0,0,0.05)",
-                  color: supportOpen ? "#5A0505" : "rgba(0,0,0,0.4)",
-                }}
-              >
+                  background: supportOpen ? "rgba(200,55,55,0.18)" : "rgba(255,255,255,0.07)",
+                  color: supportOpen ? "rgba(220,90,90,0.9)" : "rgba(255,255,255,0.45)",
+                }}>
                 <Wrench size={18} strokeWidth={1.5} />
               </div>
               <div>
-                <p className={`text-base font-semibold transition-colors ${supportOpen ? "text-[#5A0505]" : "text-foreground group-hover:text-[#5A0505]"}`}>
+                <p className="text-base font-semibold"
+                  style={{ color: supportOpen ? "rgba(220,90,90,0.95)" : "rgba(255,255,255,0.85)" }}>
                   Support informatique
                 </p>
-                <p className="text-xs text-muted-foreground mt-0.5">
+                <p className="text-xs mt-0.5"
+                  style={{ color: "rgba(255,255,255,0.38)" }}>
                   Diagnostic, lenteurs, virus, réinstallation Windows ou remplacement de pièce.
                 </p>
               </div>
             </div>
-            <motion.span
-              animate={{ rotate: supportOpen ? 180 : 0 }}
-              transition={{ duration: 0.2 }}
-              className="shrink-0 text-muted-foreground"
-            >
+            <motion.span animate={{ rotate: supportOpen ? 180 : 0 }} transition={{ duration: 0.2 }}
+              style={{ color: "rgba(255,255,255,0.35)", flexShrink: 0 }}>
               <ChevronDown size={18} />
             </motion.span>
           </button>
 
-          {/* Support content */}
           <AnimatePresence initial={false}>
             {supportOpen && (
               <motion.div
@@ -358,39 +359,41 @@ export default function ServiceSelector({
                   {supportSubCategories.map((sub) => {
                     const isActive = activeSubId === sub.id;
                     return (
-                      <button
-                        key={sub.id}
+                      <button key={sub.id}
                         onClick={() => toggleSub(sub.id)}
                         className="w-full text-left rounded-2xl p-5 transition-all focus:outline-none hover:-translate-y-0.5"
-                        style={{
-                          background: isActive ? "rgba(255,255,255,0.95)" : "rgba(255,255,255,0.7)",
-                          border: isActive ? "1px solid rgba(90,5,5,0.2)" : "1px solid rgba(0,0,0,0.07)",
-                        }}
-                      >
+                        style={isActive ? {
+                          background: "rgba(255,255,255,0.06)",
+                          border: "1px solid rgba(200,55,55,0.3)",
+                        } : {
+                          background: "rgba(255,255,255,0.03)",
+                          border: "1px solid rgba(255,255,255,0.07)",
+                        }}>
                         <div className="flex items-center gap-3 mb-2">
                           <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
                             style={{
-                              background: isActive ? "rgba(90,5,5,0.1)" : "rgba(0,0,0,0.05)",
-                              color: isActive ? "#5A0505" : "rgba(0,0,0,0.4)",
+                              background: isActive ? "rgba(200,55,55,0.18)" : "rgba(255,255,255,0.07)",
+                              color: isActive ? "rgba(220,90,90,0.9)" : "rgba(255,255,255,0.4)",
                             }}>
                             {sub.icon}
                           </div>
-                          <p className={`text-sm font-semibold ${isActive ? "text-[#5A0505]" : "text-foreground"}`}>
+                          <p className="text-sm font-semibold"
+                            style={{ color: isActive ? "rgba(220,90,90,0.95)" : "rgba(255,255,255,0.82)" }}>
                             {sub.title}
                           </p>
                         </div>
-                        <p className="text-xs text-muted-foreground leading-relaxed">{sub.description}</p>
+                        <p className="text-xs leading-relaxed"
+                          style={{ color: "rgba(255,255,255,0.38)" }}>
+                          {sub.description}
+                        </p>
                       </button>
                     );
                   })}
                 </div>
 
-                {/* Support options */}
                 <AnimatePresence mode="wait">
                   {activeSub && (
-                    <motion.div
-                      key={activeSub.id}
-                      ref={optionsRef}
+                    <motion.div key={activeSub.id} ref={optionsRef}
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 6 }}
@@ -400,64 +403,65 @@ export default function ServiceSelector({
                       {activeSub.options
                         .filter((opt) => !activeSupportOptionId || activeSupportOptionId === opt.id)
                         .map((opt) => {
-                          const isSelected = activeSupportOptionId === opt.id;
+                          const isSel = activeSupportOptionId === opt.id;
                           return (
-                            <div
-                              key={opt.id}
-                              className="rounded-2xl overflow-hidden transition-all duration-200"
-                              style={{
-                                background: isSelected ? "rgba(255,255,255,0.95)" : "rgba(255,255,255,0.75)",
-                                border: isSelected ? "1px solid rgba(90,5,5,0.2)" : "1px solid rgba(0,0,0,0.07)",
-                              }}
-                            >
-                              <button
-                                onClick={() => toggleSupportOption(opt.id)}
-                                className="w-full text-left p-5 focus:outline-none"
-                              >
-                                <p className={`text-sm font-semibold mb-1 ${isSelected ? "text-[#5A0505]" : "text-foreground"}`}>
+                            <div key={opt.id} className="rounded-2xl overflow-hidden transition-all"
+                              style={isSel ? {
+                                background: "rgba(255,255,255,0.06)",
+                                border: "1px solid rgba(200,55,55,0.3)",
+                              } : {
+                                background: "rgba(255,255,255,0.03)",
+                                border: "1px solid rgba(255,255,255,0.07)",
+                              }}>
+                              <button onClick={() => toggleSupportOption(opt.id)}
+                                className="w-full text-left p-5 focus:outline-none">
+                                <p className="text-sm font-semibold mb-1"
+                                  style={{ color: isSel ? "rgba(220,90,90,0.95)" : "rgba(255,255,255,0.82)" }}>
                                   {opt.title}
                                 </p>
-                                <p className="text-xs text-muted-foreground leading-relaxed">{opt.description}</p>
+                                <p className="text-xs leading-relaxed"
+                                  style={{ color: "rgba(255,255,255,0.4)" }}>
+                                  {opt.description}
+                                </p>
                               </button>
-
                               <AnimatePresence initial={false}>
-                                {isSelected && (
-                                  <motion.div
-                                    key="opt-expanded"
+                                {isSel && (
+                                  <motion.div key="opt-exp"
                                     initial={{ height: 0, opacity: 0 }}
                                     animate={{ height: "auto", opacity: 1 }}
                                     exit={{ height: 0, opacity: 0 }}
                                     transition={{ duration: 0.22 }}
                                     className="overflow-hidden"
                                   >
-                                    <div className="px-5 pb-5 border-t border-black/5 pt-3">
+                                    <div className="px-5 pb-5 pt-3"
+                                      style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}>
                                       <ul className="flex flex-col gap-1.5 mb-4">
                                         {opt.includes.map((item) => (
-                                          <li key={item} className="flex items-center gap-2 text-xs text-foreground/75">
+                                          <li key={item} className="flex items-center gap-2 text-xs"
+                                            style={{ color: "rgba(255,255,255,0.62)" }}>
                                             <span className="w-4 h-4 rounded-full flex items-center justify-center shrink-0"
-                                              style={{ background: "rgba(90,5,5,0.1)" }}>
-                                              <Check size={9} strokeWidth={3} style={{ color: "#5A0505" }} />
+                                              style={{ background: "rgba(200,55,55,0.22)" }}>
+                                              <Check size={9} strokeWidth={3} style={{ color: "rgba(220,90,90,0.9)" }} />
                                             </span>
                                             {item}
                                           </li>
                                         ))}
                                       </ul>
                                       <div className="flex flex-col sm:flex-row gap-2">
-                                        <a
-                                          href="#contact"
-                                          className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-xs text-white transition-all hover:-translate-y-0.5 shadow-sm flex-1"
-                                          style={{ background: "#5A0505" }}
-                                        >
+                                        <a href="#contact"
+                                          className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-xs text-white transition-all hover:-translate-y-0.5 flex-1"
+                                          style={{ background: "#5A0505", boxShadow: "0 0 14px rgba(90,5,5,0.35)" }}>
                                           Discuter du problème
                                           <ChevronRight size={12} />
                                         </a>
-                                        <a
-                                          href={waUrl(opt.whatsappMessage)}
-                                          target="_blank"
-                                          rel="noopener noreferrer"
-                                          className="inline-flex items-center justify-center gap-2 bg-background border border-border text-foreground px-4 py-2.5 rounded-xl font-semibold text-xs hover:bg-foreground/5 transition-all hover:-translate-y-0.5 shadow-sm flex-1"
-                                        >
-                                          <FaWhatsapp size={13} className="text-[#25D366]" />
+                                        <a href={waUrl(opt.whatsappMessage)} target="_blank" rel="noopener noreferrer"
+                                          className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-xs transition-all hover:-translate-y-0.5 flex-1"
+                                          style={{
+                                            background: "rgba(255,255,255,0.06)",
+                                            border: "1px solid rgba(255,255,255,0.12)",
+                                            color: "rgba(255,255,255,0.75)",
+                                          }}>
+                                          <FaWhatsapp size={13} style={{ color: "#25D366" }} />
                                           WhatsApp
                                         </a>
                                       </div>

@@ -27,7 +27,13 @@ const benefits = [
 
 export default function AboutHussTech() {
   return (
-    <section id="apropos" className="py-24 bg-background">
+    <section
+      id="apropos"
+      className="py-24"
+      style={{
+        background: "radial-gradient(ellipse 80% 55% at 20% 50%, rgba(90,5,5,0.1) 0%, transparent 65%), #0D0D0D",
+      }}
+    >
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-14 items-start">
 
@@ -38,13 +44,16 @@ export default function AboutHussTech() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="text-xs font-semibold text-primary uppercase tracking-widest mb-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] mb-4"
+              style={{ color: "rgba(200,55,55,0.85)" }}>
               À propos
             </p>
-            <h2 className="text-3xl md:text-4xl font-semibold text-foreground tracking-tight mb-6 leading-[1.15]">
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-6 leading-[1.15]"
+              style={{ color: "rgba(255,255,255,0.92)" }}>
               À propos de Huss Tech
             </h2>
-            <div className="flex flex-col gap-4 text-muted-foreground text-sm leading-relaxed">
+            <div className="flex flex-col gap-4 text-sm leading-relaxed"
+              style={{ color: "rgba(255,255,255,0.45)" }}>
               <p>
                 Aujourd'hui, beaucoup de commerces, restaurants, hôtels et indépendants s'appuient
                 principalement sur les réseaux sociaux pour présenter leur activité.
@@ -65,7 +74,7 @@ export default function AboutHussTech() {
             </div>
           </motion.div>
 
-          {/* Benefit cards — glass effect */}
+          {/* Benefit cards */}
           <div className="flex flex-col gap-3">
             {benefits.map((item, i) => (
               <motion.div
@@ -76,27 +85,31 @@ export default function AboutHussTech() {
                 transition={{ duration: 0.4, delay: 0.08 * i }}
                 className="flex items-start gap-4 rounded-2xl px-5 py-4 transition-all duration-200 hover:-translate-y-0.5 cursor-default"
                 style={{
-                  background: "rgba(255,255,255,0.7)",
-                  backdropFilter: "blur(8px)",
-                  border: "1px solid rgba(0,0,0,0.07)",
-                  boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
+                  background: "rgba(255,255,255,0.04)",
+                  border: "1px solid rgba(255,255,255,0.08)",
                 }}
                 onMouseEnter={e => {
-                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(90,5,5,0.2)";
-                  (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 24px rgba(90,5,5,0.08)";
+                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(200,55,55,0.3)";
+                  (e.currentTarget as HTMLElement).style.boxShadow = "0 0 24px rgba(90,5,5,0.14)";
                 }}
                 onMouseLeave={e => {
-                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(0,0,0,0.07)";
-                  (e.currentTarget as HTMLElement).style.boxShadow = "0 2px 8px rgba(0,0,0,0.04)";
+                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.08)";
+                  (e.currentTarget as HTMLElement).style.boxShadow = "none";
                 }}
               >
                 <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 mt-0.5"
-                  style={{ background: "rgba(90,5,5,0.08)", color: "#5A0505" }}>
+                  style={{ background: "rgba(200,55,55,0.15)", color: "rgba(210,75,75,0.9)" }}>
                   {item.icon}
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-foreground mb-1">{item.title}</p>
-                  <p className="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
+                  <p className="text-sm font-semibold mb-1"
+                    style={{ color: "rgba(255,255,255,0.85)" }}>
+                    {item.title}
+                  </p>
+                  <p className="text-xs leading-relaxed"
+                    style={{ color: "rgba(255,255,255,0.42)" }}>
+                    {item.desc}
+                  </p>
                 </div>
               </motion.div>
             ))}

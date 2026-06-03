@@ -33,43 +33,43 @@ export default function Contact() {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
-    toast({
-      title: "Message envoyé !",
-      description: "Je vous réponds rapidement.",
-    });
+    toast({ title: "Message envoyé !", description: "Je vous réponds rapidement." });
     form.reset();
     setOpen(false);
   }
 
-  /* Lock body scroll when modal is open */
   useEffect(() => {
-    if (open) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.style.overflow = open ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [open]);
 
   return (
     <>
       {/* ── Section ── */}
-      <section id="contact" className="py-24 bg-background">
+      <section
+        id="contact"
+        className="py-24"
+        style={{
+          background: "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(90,5,5,0.18) 0%, transparent 65%), #080808",
+        }}
+      >
         <div className="container mx-auto px-4 max-w-5xl">
-
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-center flex flex-col items-center gap-7"
           >
-            <p className="text-xs font-semibold text-primary uppercase tracking-widest">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em]"
+              style={{ color: "rgba(200,55,55,0.85)" }}>
               Contact
             </p>
-            <h2 className="text-3xl md:text-4xl font-semibold text-foreground tracking-tight leading-[1.15] max-w-xl">
-              Besoin d'un site ou d'un dépannage ?
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight leading-[1.15] max-w-xl"
+              style={{ color: "rgba(255,255,255,0.92)" }}>
+              Besoin d'un site ou d'un dépannage&nbsp;?
             </h2>
-            <p className="text-muted-foreground text-base max-w-md leading-relaxed">
+            <p className="text-base max-w-md leading-relaxed"
+              style={{ color: "rgba(255,255,255,0.42)" }}>
               Expliquez-moi votre besoin. Je vous réponds avec une solution claire.
             </p>
 
@@ -78,12 +78,15 @@ export default function Contact() {
               whileHover={{ scale: 1.03, y: -2 }}
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.18 }}
-              className="bg-primary text-white px-10 py-4 rounded-2xl font-semibold text-base shadow-md hover:bg-primary/90 transition-colors"
+              className="px-10 py-4 rounded-2xl font-semibold text-base text-white transition-colors"
+              style={{
+                background: "#5A0505",
+                boxShadow: "0 0 32px rgba(90,5,5,0.45), 0 4px 16px rgba(0,0,0,0.3)",
+              }}
             >
               On y va !
             </motion.button>
           </motion.div>
-
         </div>
       </section>
 
@@ -91,18 +94,15 @@ export default function Contact() {
       <AnimatePresence>
         {open && (
           <>
-            {/* Backdrop */}
             <motion.div
               key="backdrop"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.22 }}
-              className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm"
+              className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm"
               onClick={() => setOpen(false)}
             />
-
-            {/* Panel */}
             <motion.div
               key="modal"
               initial={{ opacity: 0, scale: 0.95, y: 24 }}
@@ -112,22 +112,29 @@ export default function Contact() {
               className="fixed inset-0 z-50 flex items-center justify-center px-4 py-8 pointer-events-none"
             >
               <div
-                className="relative w-full max-w-lg bg-background rounded-2xl shadow-2xl border border-border/50 p-8 pointer-events-auto max-h-[90vh] overflow-y-auto"
+                className="relative w-full max-w-lg rounded-2xl shadow-2xl p-8 pointer-events-auto max-h-[90vh] overflow-y-auto"
+                style={{
+                  background: "#111114",
+                  border: "1px solid rgba(255,255,255,0.1)",
+                  boxShadow: "0 24px 64px rgba(0,0,0,0.6)",
+                }}
                 onClick={(e) => e.stopPropagation()}
               >
-                {/* Close */}
                 <button
                   onClick={() => setOpen(false)}
-                  className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full text-foreground/50 hover:text-foreground hover:bg-foreground/8 transition-colors"
+                  className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full transition-colors"
+                  style={{ color: "rgba(255,255,255,0.4)", background: "rgba(255,255,255,0.06)" }}
                   aria-label="Fermer"
                 >
                   <X size={16} />
                 </button>
 
-                <h3 className="text-xl font-semibold text-foreground mb-1">
+                <h3 className="text-xl font-semibold mb-1"
+                  style={{ color: "rgba(255,255,255,0.92)" }}>
                   Parlez-moi de votre projet
                 </h3>
-                <p className="text-sm text-muted-foreground mb-6">
+                <p className="text-sm mb-6"
+                  style={{ color: "rgba(255,255,255,0.42)" }}>
                   Je vous réponds rapidement avec une solution claire.
                 </p>
 
@@ -139,11 +146,19 @@ export default function Contact() {
                         name="nom"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-sm font-medium text-foreground">Nom</FormLabel>
+                            <FormLabel className="text-sm font-medium"
+                              style={{ color: "rgba(255,255,255,0.65)" }}>
+                              Nom
+                            </FormLabel>
                             <FormControl>
                               <Input
                                 placeholder="Votre nom"
-                                className="rounded-xl bg-background border-border/60 focus-visible:ring-primary h-11"
+                                className="rounded-xl h-11"
+                                style={{
+                                  background: "rgba(255,255,255,0.06)",
+                                  border: "1px solid rgba(255,255,255,0.12)",
+                                  color: "rgba(255,255,255,0.85)",
+                                }}
                                 {...field}
                               />
                             </FormControl>
@@ -156,12 +171,20 @@ export default function Contact() {
                         name="email"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-sm font-medium text-foreground">Email</FormLabel>
+                            <FormLabel className="text-sm font-medium"
+                              style={{ color: "rgba(255,255,255,0.65)" }}>
+                              Email
+                            </FormLabel>
                             <FormControl>
                               <Input
                                 type="email"
                                 placeholder="votre@email.com"
-                                className="rounded-xl bg-background border-border/60 focus-visible:ring-primary h-11"
+                                className="rounded-xl h-11"
+                                style={{
+                                  background: "rgba(255,255,255,0.06)",
+                                  border: "1px solid rgba(255,255,255,0.12)",
+                                  color: "rgba(255,255,255,0.85)",
+                                }}
                                 {...field}
                               />
                             </FormControl>
@@ -176,11 +199,19 @@ export default function Contact() {
                       name="message"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-sm font-medium text-foreground">Message</FormLabel>
+                          <FormLabel className="text-sm font-medium"
+                            style={{ color: "rgba(255,255,255,0.65)" }}>
+                            Message
+                          </FormLabel>
                           <FormControl>
                             <Textarea
                               placeholder="Décrivez votre besoin..."
-                              className="rounded-xl bg-background border-border/60 min-h-[130px] resize-none focus-visible:ring-primary"
+                              className="rounded-xl min-h-[130px] resize-none"
+                              style={{
+                                background: "rgba(255,255,255,0.06)",
+                                border: "1px solid rgba(255,255,255,0.12)",
+                                color: "rgba(255,255,255,0.85)",
+                              }}
                               {...field}
                             />
                           </FormControl>
@@ -191,7 +222,11 @@ export default function Contact() {
 
                     <button
                       type="submit"
-                      className="w-full bg-primary text-white py-3.5 rounded-xl font-semibold text-sm hover:bg-primary/90 transition-colors shadow-sm"
+                      className="w-full py-3.5 rounded-xl font-semibold text-sm text-white transition-all hover:-translate-y-0.5"
+                      style={{
+                        background: "#5A0505",
+                        boxShadow: "0 0 20px rgba(90,5,5,0.4)",
+                      }}
                     >
                       Envoyer le message
                     </button>
