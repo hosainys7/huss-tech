@@ -77,15 +77,16 @@ export default function ProcessSection() {
               className="relative rounded-2xl p-6 cursor-default group transition-all"
               style={{
                 background: "rgba(255,255,255,0.04)",
-                border: "1px solid rgba(255,255,255,0.08)",
+                border: "1px solid rgba(200,55,55,0.18)",
+                boxShadow: "0 0 22px rgba(90,5,5,0.18)",
               }}
               onMouseEnter={e => {
-                (e.currentTarget as HTMLElement).style.borderColor = "rgba(90,5,5,0.4)";
-                (e.currentTarget as HTMLElement).style.boxShadow = "0 0 30px rgba(90,5,5,0.12)";
+                (e.currentTarget as HTMLElement).style.borderColor = "rgba(200,55,55,0.4)";
+                (e.currentTarget as HTMLElement).style.boxShadow = "0 0 36px rgba(90,5,5,0.3)";
               }}
               onMouseLeave={e => {
-                (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.08)";
-                (e.currentTarget as HTMLElement).style.boxShadow = "none";
+                (e.currentTarget as HTMLElement).style.borderColor = "rgba(200,55,55,0.18)";
+                (e.currentTarget as HTMLElement).style.boxShadow = "0 0 22px rgba(90,5,5,0.18)";
               }}
             >
               <p className="text-2xl font-bold tracking-tight mb-4"

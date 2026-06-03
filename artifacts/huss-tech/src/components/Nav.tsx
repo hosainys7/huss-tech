@@ -293,30 +293,14 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
             <span className="font-semibold tracking-tight text-sm" style={{ color: "rgba(255,255,255,0.9)" }}>Huss Tech</span>
           </button>
 
-          {/* Desktop nav — Services last */}
+          {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-1">
 
             <button onClick={handleReset} className={linkClass("home")}>
               Accueil
             </button>
 
-            <button onClick={() => scrollToId("apropos")} className={linkClass("apropos")}>
-              À propos
-            </button>
-
-            <button onClick={() => scrollToId("processus")} className={linkClass("processus")}>
-              Processus
-            </button>
-
-            <button onClick={() => scrollToId("contact")} className={linkClass("contact")}>
-              Contact
-            </button>
-
-            <button onClick={() => scrollToId("faq")} className={linkClass("faq")}>
-              FAQ
-            </button>
-
-            {/* Services dropdown — last */}
+            {/* Services dropdown — second */}
             <div
               ref={dropdownRef}
               className="relative"
@@ -365,6 +349,22 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
               </AnimatePresence>
             </div>
 
+            <button onClick={() => scrollToId("apropos")} className={linkClass("apropos")}>
+              À propos
+            </button>
+
+            <button onClick={() => scrollToId("processus")} className={linkClass("processus")}>
+              Processus
+            </button>
+
+            <button onClick={() => scrollToId("contact")} className={linkClass("contact")}>
+              Contact
+            </button>
+
+            <button onClick={() => scrollToId("faq")} className={linkClass("faq")}>
+              FAQ
+            </button>
+
           </nav>
 
           {/* Mobile burger */}
@@ -402,7 +402,7 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
           </button>
         </div>
 
-        {/* Mobile menu — Services last */}
+        {/* Mobile menu */}
         <AnimatePresence initial={false}>
           {isOpen && (
             <motion.div
@@ -423,39 +423,7 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
                   Accueil
                 </button>
 
-                <button
-                  onClick={() => { scrollToId("apropos"); setIsOpen(false); }}
-                  className="text-left text-sm font-medium py-2.5 px-3 rounded-lg hover:bg-white/8 transition-colors"
-                  style={{ color: "rgba(255,255,255,0.75)" }}
-                >
-                  À propos
-                </button>
-
-                <button
-                  onClick={() => { scrollToId("processus"); setIsOpen(false); }}
-                  className="text-left text-sm font-medium py-2.5 px-3 rounded-lg hover:bg-white/8 transition-colors"
-                  style={{ color: "rgba(255,255,255,0.75)" }}
-                >
-                  Processus
-                </button>
-
-                <button
-                  onClick={() => { scrollToId("contact"); setIsOpen(false); }}
-                  className="text-left text-sm font-medium py-2.5 px-3 rounded-lg hover:bg-white/8 transition-colors"
-                  style={{ color: "rgba(255,255,255,0.75)" }}
-                >
-                  Contact
-                </button>
-
-                <button
-                  onClick={() => { scrollToId("faq"); setIsOpen(false); }}
-                  className="text-left text-sm font-medium py-2.5 px-3 rounded-lg hover:bg-white/8 transition-colors"
-                  style={{ color: "rgba(255,255,255,0.75)" }}
-                >
-                  FAQ
-                </button>
-
-                {/* Mobile Services accordion — last */}
+                {/* Mobile Services accordion — second */}
                 <div>
                   <button
                     className="w-full text-left flex items-center justify-between text-sm font-medium py-2.5 px-3 rounded-lg hover:bg-white/8 transition-colors"
@@ -570,6 +538,38 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
                     )}
                   </AnimatePresence>
                 </div>
+
+                <button
+                  onClick={() => { scrollToId("apropos"); setIsOpen(false); }}
+                  className="text-left text-sm font-medium py-2.5 px-3 rounded-lg hover:bg-white/8 transition-colors"
+                  style={{ color: "rgba(255,255,255,0.75)" }}
+                >
+                  À propos
+                </button>
+
+                <button
+                  onClick={() => { scrollToId("processus"); setIsOpen(false); }}
+                  className="text-left text-sm font-medium py-2.5 px-3 rounded-lg hover:bg-white/8 transition-colors"
+                  style={{ color: "rgba(255,255,255,0.75)" }}
+                >
+                  Processus
+                </button>
+
+                <button
+                  onClick={() => { scrollToId("contact"); setIsOpen(false); }}
+                  className="text-left text-sm font-medium py-2.5 px-3 rounded-lg hover:bg-white/8 transition-colors"
+                  style={{ color: "rgba(255,255,255,0.75)" }}
+                >
+                  Contact
+                </button>
+
+                <button
+                  onClick={() => { scrollToId("faq"); setIsOpen(false); }}
+                  className="text-left text-sm font-medium py-2.5 px-3 rounded-lg hover:bg-white/8 transition-colors"
+                  style={{ color: "rgba(255,255,255,0.75)" }}
+                >
+                  FAQ
+                </button>
 
               </div>
             </motion.div>

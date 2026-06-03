@@ -120,18 +120,19 @@ const supportSubCategories = [
 
 const cardBase: React.CSSProperties = {
   background: "rgba(255,255,255,0.04)",
-  border: "1px solid rgba(255,255,255,0.09)",
+  border: "1px solid rgba(200,55,55,0.18)",
   borderRadius: "1rem",
   overflow: "hidden",
+  boxShadow: "0 0 22px rgba(90,5,5,0.18)",
   transition: "border-color 0.2s, box-shadow 0.2s",
 };
 
 const cardOpen: React.CSSProperties = {
   background: "rgba(255,255,255,0.06)",
-  border: "1px solid rgba(200,55,55,0.35)",
+  border: "1px solid rgba(200,55,55,0.42)",
   borderRadius: "1rem",
   overflow: "hidden",
-  boxShadow: "0 0 28px rgba(90,5,5,0.15)",
+  boxShadow: "0 0 36px rgba(90,5,5,0.32)",
 };
 
 /* ─── Props ─────────────────────────────────────────────────── */

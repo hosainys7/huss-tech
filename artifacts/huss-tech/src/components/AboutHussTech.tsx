@@ -86,15 +86,16 @@ export default function AboutHussTech() {
                 className="flex items-start gap-4 rounded-2xl px-5 py-4 transition-all duration-200 hover:-translate-y-0.5 cursor-default"
                 style={{
                   background: "rgba(255,255,255,0.04)",
-                  border: "1px solid rgba(255,255,255,0.08)",
+                  border: "1px solid rgba(200,55,55,0.18)",
+                  boxShadow: "0 0 20px rgba(90,5,5,0.18)",
                 }}
                 onMouseEnter={e => {
-                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(200,55,55,0.3)";
-                  (e.currentTarget as HTMLElement).style.boxShadow = "0 0 24px rgba(90,5,5,0.14)";
+                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(200,55,55,0.38)";
+                  (e.currentTarget as HTMLElement).style.boxShadow = "0 0 32px rgba(90,5,5,0.3)";
                 }}
                 onMouseLeave={e => {
-                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.08)";
-                  (e.currentTarget as HTMLElement).style.boxShadow = "none";
+                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(200,55,55,0.18)";
+                  (e.currentTarget as HTMLElement).style.boxShadow = "0 0 20px rgba(90,5,5,0.18)";
                 }}
               >
                 <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 mt-0.5"

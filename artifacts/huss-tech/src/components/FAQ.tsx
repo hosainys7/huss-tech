@@ -75,11 +75,12 @@ export default function FAQ() {
               className="rounded-2xl overflow-hidden transition-all duration-200"
               style={openIndex === i ? {
                 background: "rgba(255,255,255,0.06)",
-                border: "1px solid rgba(200,55,55,0.3)",
-                boxShadow: "0 0 22px rgba(90,5,5,0.12)",
+                border: "1px solid rgba(200,55,55,0.42)",
+                boxShadow: "0 0 32px rgba(90,5,5,0.3)",
               } : {
                 background: "rgba(255,255,255,0.04)",
-                border: "1px solid rgba(255,255,255,0.08)",
+                border: "1px solid rgba(200,55,55,0.18)",
+                boxShadow: "0 0 20px rgba(90,5,5,0.18)",
               }}
             >
               <button
