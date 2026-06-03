@@ -14,8 +14,8 @@ export default function ScrollBlurSection({ children, className }: Props) {
     offset: ["start start", "end start"],
   });
 
-  const blurPx  = useTransform(scrollYProgress, [0, 0.32], [0, 6]);
-  const opacity = useTransform(scrollYProgress, [0, 0.32], [1, 0.5]);
+  const blurPx  = useTransform(scrollYProgress, [0.5, 0.85], [0, 6]);
+  const opacity = useTransform(scrollYProgress, [0.5, 0.85], [1, 0.45]);
   const filter  = useMotionTemplate`blur(${blurPx}px)`;
 
   return (
