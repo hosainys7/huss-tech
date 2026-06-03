@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Eye, Info, MessageCircle, Star } from "lucide-react";
+import { Eye, Info, Star } from "lucide-react";
 
 const benefits = [
   {
@@ -12,11 +12,6 @@ const benefits = [
     icon: <Info size={18} strokeWidth={1.8} />,
     title: "Informations claires",
     desc: "Services, horaires et coordonnées accessibles rapidement.",
-  },
-  {
-    icon: <MessageCircle size={18} strokeWidth={1.8} />,
-    title: "Contact simplifié",
-    desc: "WhatsApp, téléphone ou formulaire de contact facilement accessibles.",
   },
   {
     icon: <Star size={18} strokeWidth={1.8} />,
