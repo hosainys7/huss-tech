@@ -47,7 +47,6 @@ export default function Contact() {
         }),
       });
       const data = await res.json();
-      console.log("[Web3Forms]", res.status, data);
       if (data.success) {
         toast({ title: "Message envoyé !", description: "Je vous réponds rapidement." });
         form.reset();
