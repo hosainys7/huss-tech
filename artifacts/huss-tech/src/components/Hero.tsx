@@ -12,14 +12,14 @@ export default function Hero() {
     >
       <style>{`
         @keyframes hero-in {
-          from { opacity: 0; filter: blur(14px); transform: translateY(20px); }
+          from { opacity: 0; filter: blur(28px); transform: translateY(22px); }
           to   { opacity: 1; filter: blur(0px);  transform: translateY(0);   }
         }
-        .h-eyebrow  { animation: hero-in 0.7s cubic-bezier(0.25,0.46,0.45,0.94) 0.05s both; }
-        .h-headline { animation: hero-in 1.0s cubic-bezier(0.25,0.46,0.45,0.94) 0.18s both; }
-        .h-sub      { animation: hero-in 0.85s cubic-bezier(0.25,0.46,0.45,0.94) 0.5s  both; }
-        .h-para     { animation: hero-in 0.75s cubic-bezier(0.25,0.46,0.45,0.94) 0.68s both; }
-        .h-cta      { animation: hero-in 0.65s cubic-bezier(0.25,0.46,0.45,0.94) 0.85s both; }
+        .h-eyebrow  { animation: hero-in 1.3s cubic-bezier(0.22,1,0.36,1) 0.1s  both; }
+        .h-headline { animation: hero-in 1.7s cubic-bezier(0.22,1,0.36,1) 0.28s both; }
+        .h-sub      { animation: hero-in 1.5s cubic-bezier(0.22,1,0.36,1) 0.68s both; }
+        .h-para     { animation: hero-in 1.4s cubic-bezier(0.22,1,0.36,1) 0.92s both; }
+        .h-cta      { animation: hero-in 1.2s cubic-bezier(0.22,1,0.36,1) 1.15s both; }
       `}</style>
 
       {/* Subtle noise overlay */}
