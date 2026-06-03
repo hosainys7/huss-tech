@@ -9,6 +9,7 @@ import ProcessSection from "@/components/ProcessSection";
 import Contact from "@/components/Contact";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
+import ScrollBlurSection from "@/components/ScrollBlurSection";
 
 export default function LandingPage() {
   const [selectedCategoryId, setSelectedCategoryId] = useState<string | null>(null);
@@ -35,21 +36,41 @@ export default function LandingPage() {
     <div className="flex flex-col min-h-screen">
       <Nav onServiceSelect={handleServiceSelect} onReset={handleReset} />
       <main className="flex-1">
-        <div id="home">
-          <Hero />
-          <TickerBanner />
-        </div>
-        <EcosystemSection />
-        <ServiceSelector
-          selectedCategoryId={selectedCategoryId}
-          selectedSubCategoryId={selectedSubCategoryId}
-          selectedOptionId={selectedOptionId}
-          onReset={handleReset}
-        />
-        <AboutHussTech />
-        <ProcessSection />
-        <Contact />
-        <FAQ />
+        <ScrollBlurSection>
+          <div id="home">
+            <Hero />
+            <TickerBanner />
+          </div>
+        </ScrollBlurSection>
+
+        <ScrollBlurSection>
+          <EcosystemSection />
+        </ScrollBlurSection>
+
+        <ScrollBlurSection>
+          <ServiceSelector
+            selectedCategoryId={selectedCategoryId}
+            selectedSubCategoryId={selectedSubCategoryId}
+            selectedOptionId={selectedOptionId}
+            onReset={handleReset}
+          />
+        </ScrollBlurSection>
+
+        <ScrollBlurSection>
+          <AboutHussTech />
+        </ScrollBlurSection>
+
+        <ScrollBlurSection>
+          <ProcessSection />
+        </ScrollBlurSection>
+
+        <ScrollBlurSection>
+          <Contact />
+        </ScrollBlurSection>
+
+        <ScrollBlurSection>
+          <FAQ />
+        </ScrollBlurSection>
       </main>
       <Footer />
     </div>

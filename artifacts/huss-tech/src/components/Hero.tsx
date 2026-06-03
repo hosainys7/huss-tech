@@ -1,12 +1,7 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
-import { motion, useScroll, useTransform, useMotionTemplate } from "framer-motion";
 
 export default function Hero() {
-  const { scrollY } = useScroll();
-  const blurPx  = useTransform(scrollY, [0, 340], [0, 18]);
-  const opacity = useTransform(scrollY, [0, 340], [1, 0.12]);
-  const filter  = useMotionTemplate`blur(${blurPx}px)`;
 
   return (
     <section
@@ -45,11 +40,8 @@ export default function Hero() {
         style={{ background: "linear-gradient(to bottom, transparent, #080808)" }}
       />
 
-      {/* Content — blurs + fades as user scrolls down */}
-      <motion.div
-        className="relative z-10 container mx-auto px-4 max-w-4xl py-28 text-center"
-        style={{ filter, opacity }}
-      >
+      {/* Content */}
+      <div className="relative z-10 container mx-auto px-4 max-w-4xl py-28 text-center">
 
         {/* Eyebrow */}
         <p
@@ -113,7 +105,7 @@ export default function Hero() {
             Discuter du projet
           </a>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }
