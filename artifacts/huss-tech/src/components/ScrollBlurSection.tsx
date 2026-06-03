@@ -8,18 +8,28 @@ type Props = {
 
 export default function ScrollBlurSection({ children, className }: Props) {
   const ref = useRef<HTMLDivElement>(null);
+  const { scrollY } = useScroll();
 
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
+  // Blur starts 60px after section top exits viewport top,
+  // reaches max 6px over the next 220px — identical for every section
+  const blurPx = useTransform(scrollY, () => {
+    if (!ref.current) return 0;
+    const top = ref.current.getBoundingClientRect().top;
+    const pixels = Math.max(0, -top - 60);
+    return Math.min(6, (pixels / 220) * 6);
   });
 
-  const blurPx  = useTransform(scrollYProgress, [0.5, 0.85], [0, 6]);
-  const opacity = useTransform(scrollYProgress, [0.5, 0.85], [1, 0.45]);
-  const filter  = useMotionTemplate`blur(${blurPx}px)`;
+  const opacity = useTransform(scrollY, () => {
+    if (!ref.current) return 1;
+    const top = ref.current.getBoundingClientRect().top;
+    const pixels = Math.max(0, -top - 60);
+    return Math.max(0.45, 1 - (pixels / 220) * 0.55);
+  });
+
+  const filter = useMotionTemplate`blur(${blurPx}px)`;
 
   return (
-    <div ref={ref} className={className} style={{ position: "relative" }}>
+    <div ref={ref} style={{ position: "relative" }} className={className}>
       <motion.div style={{ filter, opacity }}>
         {children}
       </motion.div>
