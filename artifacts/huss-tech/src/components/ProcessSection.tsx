@@ -88,8 +88,8 @@ export default function ProcessSection() {
                 (e.currentTarget as HTMLElement).style.boxShadow = "none";
               }}
             >
-              <p className="text-xs font-bold tracking-widest mb-4 uppercase"
-                style={{ color: "rgba(90,5,5,0.6)" }}>
+              <p className="text-2xl font-bold tracking-tight mb-4"
+                style={{ color: "rgba(200,55,55,0.75)" }}>
                 {step.number}
               </p>
 
