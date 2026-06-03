@@ -35,7 +35,7 @@ function AnimatedDot({ angle, delay }: { angle: number; delay: number }) {
         opacity: [0, 0.9, 0.9, 0],
       }}
       transition={{
-        duration: 9,
+        duration: 3.8,
         repeat: Infinity,
         delay,
         ease: [0.25, 0.1, 0.25, 1],
