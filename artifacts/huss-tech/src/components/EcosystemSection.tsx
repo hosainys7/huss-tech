@@ -26,20 +26,20 @@ function AnimatedDot({ angle, delay }: { angle: number; delay: number }) {
   const { x: tx, y: ty } = nodePosition(angle);
   return (
     <motion.circle
-      r={3.5}
-      fill="rgba(200,55,55,0.95)"
+      r={1.2}
+      fill="rgba(200,55,55,0.9)"
       initial={{ cx: "50%", cy: "50%", opacity: 0 }}
       animate={{
         cx: [`50%`, `${tx}%`],
         cy: [`50%`, `${ty}%`],
-        opacity: [0, 1, 1, 0],
+        opacity: [0, 0.9, 0.9, 0],
       }}
       transition={{
-        duration: 2.2,
+        duration: 4.5,
         repeat: Infinity,
         delay,
-        ease: "easeInOut",
-        times: [0, 0.15, 0.82, 1],
+        ease: [0.45, 0, 0.55, 1],
+        times: [0, 0.12, 0.88, 1],
       }}
     />
   );

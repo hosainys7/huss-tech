@@ -28,9 +28,9 @@ const servicesDropdown: DropdownGroup[] = [
     group: "Sites web",
     icon: <Globe size={13} strokeWidth={1.8} />,
     items: [
-      { label: "Landing page",        categoryId: "web", subCategoryId: null, optionId: "landing" },
-      { label: "Site vitrine",        categoryId: "web", subCategoryId: null, optionId: "vitrine" },
-      { label: "Refonte de site web", categoryId: "web", subCategoryId: null, optionId: "refonte" },
+      { label: "Je démarre une activité",       categoryId: "web", subCategoryId: null, optionId: "landing" },
+      { label: "Je veux développer ma présence", categoryId: "web", subCategoryId: null, optionId: "vitrine" },
+      { label: "J'ai déjà un site",             categoryId: "web", subCategoryId: null, optionId: "refonte" },
     ],
   },
   {
