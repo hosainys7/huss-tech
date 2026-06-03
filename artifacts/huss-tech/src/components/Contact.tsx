@@ -84,7 +84,7 @@ export default function Contact() {
                 boxShadow: "0 0 32px rgba(90,5,5,0.45), 0 4px 16px rgba(0,0,0,0.3)",
               }}
             >
-              On y va !
+              Discuter du projet !
             </motion.button>
           </motion.div>
         </div>

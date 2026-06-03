@@ -28,9 +28,9 @@ const servicesDropdown: DropdownGroup[] = [
     group: "Sites web",
     icon: <Globe size={13} strokeWidth={1.8} />,
     items: [
-      { label: "Je démarre une activité",       categoryId: "web", subCategoryId: null, optionId: "landing" },
-      { label: "Je veux développer ma présence", categoryId: "web", subCategoryId: null, optionId: "vitrine" },
-      { label: "J'ai déjà un site",             categoryId: "web", subCategoryId: null, optionId: "refonte" },
+      { label: "Landing page",        categoryId: "web", subCategoryId: null, optionId: "landing" },
+      { label: "Site vitrine",        categoryId: "web", subCategoryId: null, optionId: "vitrine" },
+      { label: "Refonte de site web", categoryId: "web", subCategoryId: null, optionId: "refonte" },
     ],
   },
   {
@@ -160,13 +160,17 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
         : "text-white/52 hover:text-white/90 hover:bg-white/8"
     }`;
 
-  /* Render a flat list of items for each dropdown group */
+  /* ── Dark dropdown content ── */
   function renderDropdownContent() {
     return servicesDropdown.map((group) => (
       <div key={group.group}>
-        <div className="flex items-center gap-1.5 mb-1.5 px-1">
-          <span className="text-primary">{group.icon}</span>
-          <span className="text-xs font-semibold text-foreground/45 uppercase tracking-widest">
+        {/* Group header */}
+        <div className="flex items-center gap-1.5 mb-1.5 px-2">
+          <span style={{ color: "rgba(200,55,55,0.85)" }}>{group.icon}</span>
+          <span
+            className="text-[10px] font-semibold uppercase tracking-widest"
+            style={{ color: "rgba(255,255,255,0.3)" }}
+          >
             {group.group}
           </span>
         </div>
@@ -178,7 +182,16 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
               <button
                 key={item.optionId}
                 onClick={() => handleDropdownItem(item)}
-                className="text-left text-sm text-foreground/75 hover:text-primary hover:bg-primary/6 px-3 py-2 rounded-xl transition-all w-full"
+                className="text-left text-sm px-3 py-2 rounded-xl transition-all w-full"
+                style={{ color: "rgba(255,255,255,0.65)" }}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLElement).style.color = "rgba(220,90,90,0.95)";
+                  (e.currentTarget as HTMLElement).style.background = "rgba(200,55,55,0.1)";
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.65)";
+                  (e.currentTarget as HTMLElement).style.background = "transparent";
+                }}
               >
                 {item.label}
               </button>
@@ -188,18 +201,19 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
 
         {/* Sub-grouped items (support) — accordion */}
         {group.subGroups && (
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-0.5">
             {group.subGroups.map((sub) => {
               const isExpanded = activeDesktopSub === sub.label;
               return (
                 <div key={sub.label}>
                   <button
                     onClick={() => setActiveDesktopSub(isExpanded ? null : sub.label)}
-                    className={`w-full text-left flex items-center justify-between px-3 py-2 rounded-xl text-sm transition-all ${
-                      isExpanded
-                        ? "text-primary bg-primary/6 font-medium"
-                        : "text-foreground/65 hover:text-foreground hover:bg-foreground/5"
-                    }`}
+                    className="w-full text-left flex items-center justify-between px-3 py-2 rounded-xl text-sm transition-all"
+                    style={{
+                      color: isExpanded ? "rgba(220,90,90,0.95)" : "rgba(255,255,255,0.55)",
+                      background: isExpanded ? "rgba(200,55,55,0.1)" : "transparent",
+                      fontWeight: isExpanded ? 500 : 400,
+                    }}
                   >
                     {sub.label}
                     <motion.span
@@ -225,7 +239,16 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
                             <button
                               key={`${item.subCategoryId}-${item.optionId}`}
                               onClick={() => handleDropdownItem(item)}
-                              className="text-left text-sm text-foreground/70 hover:text-primary hover:bg-primary/6 px-3 py-1.5 rounded-xl transition-all w-full"
+                              className="text-left text-sm px-3 py-1.5 rounded-xl transition-all w-full"
+                              style={{ color: "rgba(255,255,255,0.52)" }}
+                              onMouseEnter={e => {
+                                (e.currentTarget as HTMLElement).style.color = "rgba(220,90,90,0.9)";
+                                (e.currentTarget as HTMLElement).style.background = "rgba(200,55,55,0.1)";
+                              }}
+                              onMouseLeave={e => {
+                                (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.52)";
+                                (e.currentTarget as HTMLElement).style.background = "transparent";
+                              }}
                             >
                               {item.label}
                             </button>
@@ -270,15 +293,30 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
             <span className="font-semibold tracking-tight text-sm" style={{ color: "rgba(255,255,255,0.9)" }}>Huss Tech</span>
           </button>
 
-          {/* Desktop nav */}
+          {/* Desktop nav — Services last */}
           <nav className="hidden md:flex items-center gap-1">
 
             <button onClick={handleReset} className={linkClass("home")}>
               Accueil
             </button>
 
-            {/* Services + dropdown */}
+            <button onClick={() => scrollToId("apropos")} className={linkClass("apropos")}>
+              À propos
+            </button>
 
+            <button onClick={() => scrollToId("processus")} className={linkClass("processus")}>
+              Processus
+            </button>
+
+            <button onClick={() => scrollToId("contact")} className={linkClass("contact")}>
+              Contact
+            </button>
+
+            <button onClick={() => scrollToId("faq")} className={linkClass("faq")}>
+              FAQ
+            </button>
+
+            {/* Services dropdown — last */}
             <div
               ref={dropdownRef}
               className="relative"
@@ -308,7 +346,14 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -4, scale: 0.97 }}
                     transition={{ duration: 0.18, ease: [0.25, 0.46, 0.45, 0.94] }}
-                    className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-72 bg-background/95 backdrop-blur-xl border border-border/60 rounded-2xl shadow-xl p-4 z-50"
+                    className="absolute top-full right-0 mt-2 w-64 rounded-2xl shadow-2xl p-4 z-50"
+                    style={{
+                      background: "rgba(22,22,28,0.97)",
+                      backdropFilter: "blur(24px)",
+                      WebkitBackdropFilter: "blur(24px)",
+                      border: "1px solid rgba(255,255,255,0.1)",
+                      boxShadow: "0 16px 48px rgba(0,0,0,0.55)",
+                    }}
                     onMouseEnter={openDropdown}
                     onMouseLeave={closeDropdown}
                   >
@@ -319,22 +364,6 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
                 )}
               </AnimatePresence>
             </div>
-
-            <button onClick={() => scrollToId("apropos")} className={linkClass("apropos")}>
-              À propos
-            </button>
-
-            <button onClick={() => scrollToId("processus")} className={linkClass("processus")}>
-              Processus
-            </button>
-
-            <button onClick={() => scrollToId("contact")} className={linkClass("contact")}>
-              Contact
-            </button>
-
-            <button onClick={() => scrollToId("faq")} className={linkClass("faq")}>
-              FAQ
-            </button>
 
           </nav>
 
@@ -373,7 +402,7 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
           </button>
         </div>
 
-        {/* Mobile menu */}
+        {/* Mobile menu — Services last */}
         <AnimatePresence initial={false}>
           {isOpen && (
             <motion.div
@@ -393,103 +422,6 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
                 >
                   Accueil
                 </button>
-
-                {/* Mobile Services accordion */}
-                <div>
-                  <button
-                    className="w-full text-left flex items-center justify-between text-sm font-medium text-foreground/80 py-2.5 px-3 rounded-lg hover:bg-foreground/5 transition-colors"
-                    onClick={() => setMobileServicesOpen((v) => !v)}
-                  >
-                    Services
-                    <motion.span
-                      animate={{ rotate: mobileServicesOpen ? 180 : 0 }}
-                      transition={{ duration: 0.2 }}
-                      className="inline-flex"
-                    >
-                      <ChevronDown size={14} />
-                    </motion.span>
-                  </button>
-
-                  <AnimatePresence initial={false}>
-                    {mobileServicesOpen && (
-                      <motion.div
-                        key="mobile-services"
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.22, ease: "easeInOut" }}
-                        className="overflow-hidden"
-                      >
-                        <div className="pl-2 mt-1 flex flex-col gap-2 pb-1">
-                          {servicesDropdown.map((group) => (
-                            <div key={group.group}>
-                              <div className="flex items-center gap-1.5 px-3 py-1">
-                                <span className="text-primary">{group.icon}</span>
-                                <span className="text-xs font-semibold text-foreground/45 uppercase tracking-widest">
-                                  {group.group}
-                                </span>
-                              </div>
-
-                              {/* Flat items */}
-                              {group.items && group.items.map((item) => (
-                                <button
-                                  key={item.optionId}
-                                  onClick={() => handleDropdownItem(item)}
-                                  className="w-full text-left text-sm text-foreground/70 hover:text-primary py-2 px-4 rounded-lg hover:bg-primary/6 transition-all"
-                                >
-                                  {item.label}
-                                </button>
-                              ))}
-
-                              {/* Sub-grouped */}
-                              {group.subGroups && group.subGroups.map((sub) => (
-                                <div key={sub.label}>
-                                  <button
-                                    className="w-full text-left flex items-center justify-between text-xs font-medium text-foreground/50 py-1.5 px-4 rounded-lg hover:bg-foreground/5 transition-colors"
-                                    onClick={() => setActiveMobileSub(
-                                      activeMobileSub === sub.label ? null : sub.label
-                                    )}
-                                  >
-                                    {sub.label}
-                                    <motion.span
-                                      animate={{ rotate: activeMobileSub === sub.label ? 180 : 0 }}
-                                      transition={{ duration: 0.18 }}
-                                      className="inline-flex"
-                                    >
-                                      <ChevronDown size={11} />
-                                    </motion.span>
-                                  </button>
-                                  <AnimatePresence initial={false}>
-                                    {activeMobileSub === sub.label && (
-                                      <motion.div
-                                        key={sub.label}
-                                        initial={{ height: 0, opacity: 0 }}
-                                        animate={{ height: "auto", opacity: 1 }}
-                                        exit={{ height: 0, opacity: 0 }}
-                                        transition={{ duration: 0.18 }}
-                                        className="overflow-hidden"
-                                      >
-                                        {sub.items.map((item) => (
-                                          <button
-                                            key={`${item.subCategoryId}-${item.optionId}`}
-                                            onClick={() => handleDropdownItem(item)}
-                                            className="w-full text-left text-sm text-foreground/70 hover:text-primary py-2 px-6 rounded-lg hover:bg-primary/6 transition-all"
-                                          >
-                                            {item.label}
-                                          </button>
-                                        ))}
-                                      </motion.div>
-                                    )}
-                                  </AnimatePresence>
-                                </div>
-                              ))}
-                            </div>
-                          ))}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
 
                 <button
                   onClick={() => { scrollToId("apropos"); setIsOpen(false); }}
@@ -522,6 +454,123 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
                 >
                   FAQ
                 </button>
+
+                {/* Mobile Services accordion — last */}
+                <div>
+                  <button
+                    className="w-full text-left flex items-center justify-between text-sm font-medium py-2.5 px-3 rounded-lg hover:bg-white/8 transition-colors"
+                    style={{ color: "rgba(255,255,255,0.75)" }}
+                    onClick={() => setMobileServicesOpen((v) => !v)}
+                  >
+                    Services
+                    <motion.span
+                      animate={{ rotate: mobileServicesOpen ? 180 : 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="inline-flex"
+                    >
+                      <ChevronDown size={14} />
+                    </motion.span>
+                  </button>
+
+                  <AnimatePresence initial={false}>
+                    {mobileServicesOpen && (
+                      <motion.div
+                        key="mobile-services"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.22, ease: "easeInOut" }}
+                        className="overflow-hidden"
+                      >
+                        <div className="pl-2 mt-1 flex flex-col gap-2 pb-1">
+                          {servicesDropdown.map((group) => (
+                            <div key={group.group}>
+                              <div className="flex items-center gap-1.5 px-3 py-1">
+                                <span style={{ color: "rgba(200,55,55,0.85)" }}>{group.icon}</span>
+                                <span className="text-[10px] font-semibold uppercase tracking-widest"
+                                  style={{ color: "rgba(255,255,255,0.3)" }}>
+                                  {group.group}
+                                </span>
+                              </div>
+
+                              {group.items && group.items.map((item) => (
+                                <button
+                                  key={item.optionId}
+                                  onClick={() => handleDropdownItem(item)}
+                                  className="w-full text-left text-sm py-2 px-4 rounded-lg transition-all"
+                                  style={{ color: "rgba(255,255,255,0.6)" }}
+                                  onMouseEnter={e => {
+                                    (e.currentTarget as HTMLElement).style.color = "rgba(220,90,90,0.9)";
+                                    (e.currentTarget as HTMLElement).style.background = "rgba(200,55,55,0.1)";
+                                  }}
+                                  onMouseLeave={e => {
+                                    (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.6)";
+                                    (e.currentTarget as HTMLElement).style.background = "transparent";
+                                  }}
+                                >
+                                  {item.label}
+                                </button>
+                              ))}
+
+                              {group.subGroups && group.subGroups.map((sub) => (
+                                <div key={sub.label}>
+                                  <button
+                                    className="w-full text-left flex items-center justify-between text-xs font-medium py-1.5 px-4 rounded-lg hover:bg-white/8 transition-colors"
+                                    style={{ color: "rgba(255,255,255,0.45)" }}
+                                    onClick={() => setActiveMobileSub(
+                                      activeMobileSub === sub.label ? null : sub.label
+                                    )}
+                                  >
+                                    {sub.label}
+                                    <motion.span
+                                      animate={{ rotate: activeMobileSub === sub.label ? 180 : 0 }}
+                                      transition={{ duration: 0.18 }}
+                                      className="inline-flex"
+                                    >
+                                      <ChevronDown size={11} />
+                                    </motion.span>
+                                  </button>
+                                  <AnimatePresence initial={false}>
+                                    {activeMobileSub === sub.label && (
+                                      <motion.div
+                                        key={sub.label}
+                                        initial={{ height: 0, opacity: 0 }}
+                                        animate={{ height: "auto", opacity: 1 }}
+                                        exit={{ height: 0, opacity: 0 }}
+                                        transition={{ duration: 0.18 }}
+                                        className="overflow-hidden"
+                                      >
+                                        {sub.items.map((item) => (
+                                          <button
+                                            key={`${item.subCategoryId}-${item.optionId}`}
+                                            onClick={() => handleDropdownItem(item)}
+                                            className="w-full text-left text-sm py-2 px-6 rounded-lg transition-all"
+                                            style={{ color: "rgba(255,255,255,0.55)" }}
+                                            onMouseEnter={e => {
+                                              (e.currentTarget as HTMLElement).style.color = "rgba(220,90,90,0.9)";
+                                              (e.currentTarget as HTMLElement).style.background = "rgba(200,55,55,0.1)";
+                                            }}
+                                            onMouseLeave={e => {
+                                              (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.55)";
+                                              (e.currentTarget as HTMLElement).style.background = "transparent";
+                                            }}
+                                          >
+                                            {item.label}
+                                          </button>
+                                        ))}
+                                      </motion.div>
+                                    )}
+                                  </AnimatePresence>
+                                </div>
+                              ))}
+                            </div>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
               </div>
             </motion.div>
           )}
