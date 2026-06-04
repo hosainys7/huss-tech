@@ -22,7 +22,7 @@ export default function Footer() {
   return (
     <footer
       style={{
-        background: "radial-gradient(ellipse 80% 60% at 50% 100%, rgba(90,5,5,0.14) 0%, transparent 65%), #080808",
+        background: "radial-gradient(ellipse 80% 60% at 50% 100%, rgba(67,8,8,0.14) 0%, transparent 65%), #080808",
         borderTop: "1px solid rgba(255,255,255,0.07)",
       }}
     >

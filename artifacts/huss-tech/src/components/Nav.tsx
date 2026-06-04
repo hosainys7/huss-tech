@@ -172,7 +172,7 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
     return servicesDropdown.map((group) => (
       <div key={group.group}>
         <div className="flex items-center gap-1.5 mb-1.5 px-2">
-          <span style={{ color: "rgba(200,55,55,0.85)" }}>{group.icon}</span>
+          <span style={{ color: "rgba(218,150,31,0.85)" }}>{group.icon}</span>
           <span className="text-[10px] font-semibold uppercase tracking-widest"
             style={{ color: "rgba(255,255,255,0.3)" }}>
             {group.group}
@@ -188,8 +188,8 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
                 className="text-left text-sm px-3 py-2 rounded-xl transition-all w-full"
                 style={{ color: "rgba(255,255,255,0.65)" }}
                 onMouseEnter={e => {
-                  (e.currentTarget as HTMLElement).style.color = "rgba(220,90,90,0.95)";
-                  (e.currentTarget as HTMLElement).style.background = "rgba(200,55,55,0.1)";
+                  (e.currentTarget as HTMLElement).style.color = "rgba(230,170,55,0.95)";
+                  (e.currentTarget as HTMLElement).style.background = "rgba(218,150,31,0.1)";
                 }}
                 onMouseLeave={e => {
                   (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.65)";
@@ -212,8 +212,8 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
                     onClick={() => setActiveDesktopSub(isExpanded ? null : sub.label)}
                     className="w-full text-left flex items-center justify-between px-3 py-2 rounded-xl text-sm transition-all"
                     style={{
-                      color: isExpanded ? "rgba(220,90,90,0.95)" : "rgba(255,255,255,0.55)",
-                      background: isExpanded ? "rgba(200,55,55,0.1)" : "transparent",
+                      color: isExpanded ? "rgba(230,170,55,0.95)" : "rgba(255,255,255,0.55)",
+                      background: isExpanded ? "rgba(218,150,31,0.1)" : "transparent",
                       fontWeight: isExpanded ? 500 : 400,
                     }}
                   >
@@ -240,8 +240,8 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
                               className="text-left text-sm px-3 py-1.5 rounded-xl transition-all w-full"
                               style={{ color: "rgba(255,255,255,0.52)" }}
                               onMouseEnter={e => {
-                                (e.currentTarget as HTMLElement).style.color = "rgba(220,90,90,0.9)";
-                                (e.currentTarget as HTMLElement).style.background = "rgba(200,55,55,0.1)";
+                                (e.currentTarget as HTMLElement).style.color = "rgba(230,170,55,0.9)";
+                                (e.currentTarget as HTMLElement).style.background = "rgba(218,150,31,0.1)";
                               }}
                               onMouseLeave={e => {
                                 (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.52)";
@@ -425,7 +425,7 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
                           {servicesDropdown.map((group) => (
                             <div key={group.group} className="mb-2 last:mb-0">
                               <div className="flex items-center gap-1.5 px-2 py-1 mb-1">
-                                <span style={{ color: "rgba(200,55,55,0.85)" }}>{group.icon}</span>
+                                <span style={{ color: "rgba(218,150,31,0.85)" }}>{group.icon}</span>
                                 <span className="text-[10px] font-semibold uppercase tracking-widest"
                                   style={{ color: "rgba(255,255,255,0.3)" }}>
                                   {group.group}
@@ -439,8 +439,8 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
                                   className="w-full text-left text-sm py-2.5 px-3 rounded-lg transition-all"
                                   style={{ color: "rgba(255,255,255,0.62)" }}
                                   onMouseEnter={e => {
-                                    (e.currentTarget as HTMLElement).style.color = "rgba(220,90,90,0.9)";
-                                    (e.currentTarget as HTMLElement).style.background = "rgba(200,55,55,0.1)";
+                                    (e.currentTarget as HTMLElement).style.color = "rgba(230,170,55,0.9)";
+                                    (e.currentTarget as HTMLElement).style.background = "rgba(218,150,31,0.1)";
                                   }}
                                   onMouseLeave={e => {
                                     (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.62)";
@@ -480,8 +480,8 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
                                             className="w-full text-left text-sm py-2 px-5 rounded-lg transition-all"
                                             style={{ color: "rgba(255,255,255,0.5)" }}
                                             onMouseEnter={e => {
-                                              (e.currentTarget as HTMLElement).style.color = "rgba(220,90,90,0.9)";
-                                              (e.currentTarget as HTMLElement).style.background = "rgba(200,55,55,0.1)";
+                                              (e.currentTarget as HTMLElement).style.color = "rgba(230,170,55,0.9)";
+                                              (e.currentTarget as HTMLElement).style.background = "rgba(218,150,31,0.1)";
                                             }}
                                             onMouseLeave={e => {
                                               (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.5)";

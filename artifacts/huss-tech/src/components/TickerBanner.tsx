@@ -51,7 +51,7 @@ export default function TickerBanner() {
             </span>
             <span
               className="w-1 h-1 rounded-full shrink-0"
-              style={{ background: "rgba(160,40,40,0.8)" }}
+              style={{ background: "rgba(130,90,10,0.8)" }}
             />
           </span>
         ))}

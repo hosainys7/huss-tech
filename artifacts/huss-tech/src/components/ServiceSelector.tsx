@@ -144,19 +144,19 @@ const supportSubCategories = [
 
 const cardBase: React.CSSProperties = {
   background: "rgba(255,255,255,0.04)",
-  border: "1px solid rgba(200,55,55,0.18)",
+  border: "1px solid rgba(218,150,31,0.18)",
   borderRadius: "1rem",
   overflow: "hidden",
-  boxShadow: "0 0 22px rgba(90,5,5,0.18)",
+  boxShadow: "0 0 22px rgba(67,8,8,0.18)",
   transition: "border-color 0.2s, box-shadow 0.2s",
 };
 
 const cardOpen: React.CSSProperties = {
   background: "rgba(255,255,255,0.06)",
-  border: "1px solid rgba(200,55,55,0.42)",
+  border: "1px solid rgba(218,150,31,0.42)",
   borderRadius: "1rem",
   overflow: "hidden",
-  boxShadow: "0 0 36px rgba(90,5,5,0.32)",
+  boxShadow: "0 0 36px rgba(67,8,8,0.32)",
 };
 
 /* ─── Props ─────────────────────────────────────────────────── */
@@ -212,7 +212,7 @@ export default function ServiceSelector({
       id="services"
       className="py-24"
       style={{
-        background: "radial-gradient(ellipse 90% 60% at 50% 0%, rgba(90,5,5,0.14) 0%, transparent 65%), #080808",
+        background: "radial-gradient(ellipse 90% 60% at 50% 0%, rgba(67,8,8,0.14) 0%, transparent 65%), #080808",
       }}
     >
       <div className="container mx-auto px-4 max-w-5xl">
@@ -225,7 +225,7 @@ export default function ServiceSelector({
           className="text-center mb-14"
         >
           <p className="text-xs font-semibold uppercase tracking-[0.2em] mb-4"
-            style={{ color: "rgba(200,55,55,0.85)" }}>
+            style={{ color: "rgba(218,150,31,0.85)" }}>
             Services
           </p>
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4"
@@ -259,14 +259,14 @@ export default function ServiceSelector({
                     <span
                       className="inline-block text-[10px] font-semibold uppercase tracking-widest px-2.5 py-0.5 rounded-full mb-2"
                       style={{
-                        background: isOpen ? "rgba(200,55,55,0.18)" : "rgba(255,255,255,0.08)",
-                        color: isOpen ? "rgba(220,90,90,0.95)" : "rgba(255,255,255,0.35)",
+                        background: isOpen ? "rgba(218,150,31,0.18)" : "rgba(255,255,255,0.08)",
+                        color: isOpen ? "rgba(230,170,55,0.95)" : "rgba(255,255,255,0.35)",
                       }}
                     >
                       {s.service}
                     </span>
                     <p className="text-base font-semibold"
-                      style={{ color: isOpen ? "rgba(220,90,90,0.95)" : "rgba(255,255,255,0.85)" }}>
+                      style={{ color: isOpen ? "rgba(230,170,55,0.95)" : "rgba(255,255,255,0.85)" }}>
                       {s.situation}
                     </p>
                   </div>
@@ -293,7 +293,7 @@ export default function ServiceSelector({
                           {s.description}
                         </p>
                         <p className="text-xs leading-relaxed mb-5 italic"
-                          style={{ color: "rgba(200,55,55,0.75)" }}>
+                          style={{ color: "rgba(218,150,31,0.75)" }}>
                           {s.pitch}
                         </p>
                         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-5">
@@ -301,8 +301,8 @@ export default function ServiceSelector({
                             <li key={item} className="flex items-center gap-2.5 text-xs"
                               style={{ color: "rgba(255,255,255,0.65)" }}>
                               <span className="w-4 h-4 rounded-full flex items-center justify-center shrink-0"
-                                style={{ background: "rgba(200,55,55,0.25)" }}>
-                                <Check size={9} strokeWidth={3} style={{ color: "rgba(220,90,90,0.9)" }} />
+                                style={{ background: "rgba(218,150,31,0.25)" }}>
+                                <Check size={9} strokeWidth={3} style={{ color: "rgba(230,170,55,0.9)" }} />
                               </span>
                               {item}
                             </li>
@@ -311,7 +311,7 @@ export default function ServiceSelector({
                         <div className="flex flex-col sm:flex-row gap-2.5">
                           <a href="#contact"
                             className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-xs text-white transition-all hover:-translate-y-0.5 flex-1"
-                            style={{ background: "#5A0505", boxShadow: "0 0 16px rgba(90,5,5,0.4)" }}>
+                            style={{ background: "#430808", boxShadow: "0 0 16px rgba(67,8,8,0.4)" }}>
                             Discuter du projet
                             <ChevronRight size={13} />
                           </a>
@@ -345,21 +345,21 @@ export default function ServiceSelector({
             onClick={() => { setSupportOpen((v) => !v); setActiveSubId(null); setActiveSupportOptionId(null); }}
             className="w-full text-left rounded-2xl px-6 py-5 flex items-center justify-between gap-4 focus:outline-none mb-3 transition-all"
             style={supportOpen
-              ? { background: "rgba(255,255,255,0.06)", border: "1px solid rgba(200,55,55,0.3)", boxShadow: "0 0 24px rgba(90,5,5,0.12)" }
+              ? { background: "rgba(255,255,255,0.06)", border: "1px solid rgba(218,150,31,0.3)", boxShadow: "0 0 24px rgba(67,8,8,0.12)" }
               : { background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }
             }
           >
             <div className="flex items-center gap-4">
               <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all"
                 style={{
-                  background: supportOpen ? "rgba(200,55,55,0.18)" : "rgba(255,255,255,0.07)",
-                  color: supportOpen ? "rgba(220,90,90,0.9)" : "rgba(255,255,255,0.45)",
+                  background: supportOpen ? "rgba(218,150,31,0.18)" : "rgba(255,255,255,0.07)",
+                  color: supportOpen ? "rgba(230,170,55,0.9)" : "rgba(255,255,255,0.45)",
                 }}>
                 <Wrench size={18} strokeWidth={1.5} />
               </div>
               <div>
                 <p className="text-base font-semibold"
-                  style={{ color: supportOpen ? "rgba(220,90,90,0.95)" : "rgba(255,255,255,0.85)" }}>
+                  style={{ color: supportOpen ? "rgba(230,170,55,0.95)" : "rgba(255,255,255,0.85)" }}>
                   Support informatique
                 </p>
                 <p className="text-xs mt-0.5"
@@ -393,7 +393,7 @@ export default function ServiceSelector({
                         className="w-full text-left rounded-2xl p-5 transition-all focus:outline-none hover:-translate-y-0.5"
                         style={isActive ? {
                           background: "rgba(255,255,255,0.06)",
-                          border: "1px solid rgba(200,55,55,0.3)",
+                          border: "1px solid rgba(218,150,31,0.3)",
                         } : {
                           background: "rgba(255,255,255,0.03)",
                           border: "1px solid rgba(255,255,255,0.07)",
@@ -401,13 +401,13 @@ export default function ServiceSelector({
                         <div className="flex items-center gap-3 mb-2">
                           <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
                             style={{
-                              background: isActive ? "rgba(200,55,55,0.18)" : "rgba(255,255,255,0.07)",
-                              color: isActive ? "rgba(220,90,90,0.9)" : "rgba(255,255,255,0.4)",
+                              background: isActive ? "rgba(218,150,31,0.18)" : "rgba(255,255,255,0.07)",
+                              color: isActive ? "rgba(230,170,55,0.9)" : "rgba(255,255,255,0.4)",
                             }}>
                             {sub.icon}
                           </div>
                           <p className="text-sm font-semibold"
-                            style={{ color: isActive ? "rgba(220,90,90,0.95)" : "rgba(255,255,255,0.82)" }}>
+                            style={{ color: isActive ? "rgba(230,170,55,0.95)" : "rgba(255,255,255,0.82)" }}>
                             {sub.title}
                           </p>
                         </div>
@@ -437,7 +437,7 @@ export default function ServiceSelector({
                             <div key={opt.id} className="rounded-2xl overflow-hidden transition-all"
                               style={isSel ? {
                                 background: "rgba(255,255,255,0.06)",
-                                border: "1px solid rgba(200,55,55,0.3)",
+                                border: "1px solid rgba(218,150,31,0.3)",
                               } : {
                                 background: "rgba(255,255,255,0.03)",
                                 border: "1px solid rgba(255,255,255,0.07)",
@@ -445,7 +445,7 @@ export default function ServiceSelector({
                               <button onClick={() => toggleSupportOption(opt.id)}
                                 className="w-full text-left p-5 focus:outline-none">
                                 <p className="text-sm font-semibold mb-1"
-                                  style={{ color: isSel ? "rgba(220,90,90,0.95)" : "rgba(255,255,255,0.82)" }}>
+                                  style={{ color: isSel ? "rgba(230,170,55,0.95)" : "rgba(255,255,255,0.82)" }}>
                                   {opt.title}
                                 </p>
                                 <p className="text-xs leading-relaxed"
@@ -469,8 +469,8 @@ export default function ServiceSelector({
                                           <li key={item} className="flex items-center gap-2 text-xs"
                                             style={{ color: "rgba(255,255,255,0.62)" }}>
                                             <span className="w-4 h-4 rounded-full flex items-center justify-center shrink-0"
-                                              style={{ background: "rgba(200,55,55,0.22)" }}>
-                                              <Check size={9} strokeWidth={3} style={{ color: "rgba(220,90,90,0.9)" }} />
+                                              style={{ background: "rgba(218,150,31,0.22)" }}>
+                                              <Check size={9} strokeWidth={3} style={{ color: "rgba(230,170,55,0.9)" }} />
                                             </span>
                                             {item}
                                           </li>
@@ -479,7 +479,7 @@ export default function ServiceSelector({
                                       <div className="flex flex-col sm:flex-row gap-2">
                                         <a href="#contact"
                                           className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-xs text-white transition-all hover:-translate-y-0.5 flex-1"
-                                          style={{ background: "#5A0505", boxShadow: "0 0 14px rgba(90,5,5,0.35)" }}>
+                                          style={{ background: "#430808", boxShadow: "0 0 14px rgba(67,8,8,0.35)" }}>
                                           Discuter du problème
                                           <ChevronRight size={12} />
                                         </a>

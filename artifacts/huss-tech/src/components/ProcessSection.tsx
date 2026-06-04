@@ -35,7 +35,7 @@ export default function ProcessSection() {
       id="processus"
       className="py-24"
       style={{
-        background: "radial-gradient(ellipse 70% 50% at 50% 0%, rgba(90,5,5,0.1) 0%, transparent 60%), #080808",
+        background: "radial-gradient(ellipse 70% 50% at 50% 0%, rgba(67,8,8,0.1) 0%, transparent 60%), #080808",
       }}
     >
       <div className="container mx-auto px-4 max-w-5xl">
@@ -49,7 +49,7 @@ export default function ProcessSection() {
           className="text-center mb-14"
         >
           <p className="text-xs font-semibold uppercase tracking-[0.2em] mb-4"
-            style={{ color: "rgba(90,5,5,0.9)" }}>
+            style={{ color: "rgba(67,8,8,0.9)" }}>
             Processus
           </p>
           <h2
@@ -77,19 +77,19 @@ export default function ProcessSection() {
               className="relative rounded-2xl p-6 cursor-default"
               style={{
                 background: "rgba(255,255,255,0.04)",
-                border: "1px solid rgba(200,55,55,0.18)",
-                boxShadow: "0 0 22px rgba(90,5,5,0.18)",
+                border: "1px solid rgba(218,150,31,0.18)",
+                boxShadow: "0 0 22px rgba(67,8,8,0.18)",
                 willChange: "transform",
               }}
             >
               <p className="text-2xl font-bold tracking-tight mb-4"
-                style={{ color: "rgba(200,55,55,0.75)" }}>
+                style={{ color: "rgba(218,150,31,0.75)" }}>
                 {step.number}
               </p>
 
               <div
                 className="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
-                style={{ background: "rgba(90,5,5,0.15)", color: "rgba(255,255,255,0.6)" }}
+                style={{ background: "rgba(67,8,8,0.15)", color: "rgba(255,255,255,0.6)" }}
               >
                 {step.icon}
               </div>

@@ -27,7 +27,7 @@ function AnimatedDot({ angle, delay }: { angle: number; delay: number }) {
   return (
     <motion.circle
       r={1.2}
-      fill="rgba(200,55,55,0.9)"
+      fill="rgba(218,150,31,0.9)"
       initial={{ cx: "50%", cy: "50%", opacity: 0 }}
       animate={{
         cx: [`50%`, `${tx}%`],
@@ -51,7 +51,7 @@ export default function EcosystemSection() {
       className="py-24"
       style={{
         background:
-          "radial-gradient(ellipse 80% 60% at 50% 100%, rgba(90,5,5,0.1) 0%, transparent 70%), #0D0D0D",
+          "radial-gradient(ellipse 80% 60% at 50% 100%, rgba(67,8,8,0.1) 0%, transparent 70%), #0D0D0D",
       }}
     >
       <div className="container mx-auto px-4 max-w-5xl">
@@ -65,7 +65,7 @@ export default function EcosystemSection() {
             transition={{ duration: 0.5 }}
           >
             <p className="text-xs font-semibold uppercase tracking-[0.2em] mb-5"
-              style={{ color: "rgba(200,55,55,0.85)" }}>
+              style={{ color: "rgba(218,150,31,0.85)" }}>
               Pourquoi ça compte
             </p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-6 leading-[1.15]"
@@ -139,8 +139,8 @@ export default function EcosystemSection() {
                   left: "50%",
                   transform: "translate(-50%, -50%)",
                   background: "rgba(255,255,255,0.05)",
-                  border: "1px solid rgba(200,55,55,0.3)",
-                  boxShadow: "0 0 18px rgba(90,5,5,0.2)",
+                  border: "1px solid rgba(218,150,31,0.3)",
+                  boxShadow: "0 0 18px rgba(67,8,8,0.2)",
                 }}
               >
                 <img
@@ -178,8 +178,8 @@ export default function EcosystemSection() {
                         minWidth: 40,
                         minHeight: 40,
                         background: "rgba(255,255,255,0.04)",
-                        border: "1px solid rgba(200,55,55,0.25)",
-                        color: "rgba(210,75,75,0.9)",
+                        border: "1px solid rgba(218,150,31,0.25)",
+                        color: "rgba(218,150,31,0.9)",
                       }}
                     >
                       <Icon size={15} strokeWidth={1.7} />

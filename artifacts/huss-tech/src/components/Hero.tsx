@@ -8,7 +8,7 @@ export default function Hero() {
       className="relative overflow-hidden min-h-[92vh] flex items-center justify-center"
       style={{
         background:
-          "radial-gradient(ellipse 100% 75% at 50% -10%, rgba(90,5,5,0.45) 0%, rgba(90,5,5,0.12) 45%, transparent 72%), #080808",
+          "radial-gradient(ellipse 100% 75% at 50% -10%, rgba(67,8,8,0.45) 0%, rgba(67,8,8,0.12) 45%, transparent 72%), #080808",
       }}
     >
       <style>{`
@@ -83,8 +83,8 @@ export default function Hero() {
             href="#services"
             className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-semibold text-sm text-white transition-transform hover:-translate-y-0.5 active:scale-95"
             style={{
-              background: "#5A0505",
-              boxShadow: "0 0 28px rgba(90,5,5,0.5), 0 4px 12px rgba(0,0,0,0.3)",
+              background: "#430808",
+              boxShadow: "0 0 28px rgba(67,8,8,0.5), 0 4px 12px rgba(0,0,0,0.3)",
             }}
           >
             Découvrir les solutions
