@@ -58,7 +58,7 @@ export default function Hero() {
         >
           Une présence en ligne
           <br />
-          <span style={{ color: "rgba(255,255,255,0.48)" }}>simple et claire.</span>
+          <span style={{ color: "rgba(255,255,255,0.48)" }}>simple et claire</span>
         </h1>
 
         {/* Secondary line */}
@@ -66,7 +66,7 @@ export default function Hero() {
           className="h-sub text-lg md:text-xl font-normal mb-6"
           style={{ color: "rgba(255,255,255,0.35)" }}
         >
-          Attirer une clientèle locale.
+          Attirer une clientèle locale
         </p>
 
         {/* Paragraph */}
