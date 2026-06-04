@@ -30,7 +30,7 @@ export default function AboutHussTech() {
       }}
     >
       <div className="container mx-auto px-4 max-w-5xl">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-14 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-14 items-start">
 
           {/* Text */}
           <motion.div
