@@ -60,7 +60,7 @@ export default function AboutHussTech() {
               <p>
                 Huss Tech aide les entreprises locales à Marseille à construire une présence en ligne
                 simple, claire et professionnelle grâce à des sites modernes, adaptés aux besoins
-                réels du terrain et renforcés par des outils récents comme l'intelligence artificielle.
+                réels du terrain, sans jargon ni complication.
               </p>
               <p>
                 L'objectif est simple : permettre à vos futurs clients de comprendre rapidement ce
