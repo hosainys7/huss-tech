@@ -46,7 +46,7 @@ export default function Hero() {
         {/* Eyebrow */}
         <p
           className="h-eyebrow text-xs font-semibold uppercase tracking-[0.22em] mb-8"
-          style={{ color: "rgba(255,255,255,0.32)" }}
+          style={{ color: "rgba(180,120,20,0.75)" }}
         >
           Plus qu'un prestataire. Un partenaire.
         </p>
