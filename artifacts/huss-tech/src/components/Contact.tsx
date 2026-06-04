@@ -79,7 +79,7 @@ export default function Contact() {
         id="contact"
         className="py-24"
         style={{
-          background: "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(67,8,8,0.18) 0%, transparent 65%), #080808",
+          background: "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(90,5,5,0.18) 0%, transparent 65%), #080808",
         }}
       >
         <div className="container mx-auto px-4 max-w-5xl">
@@ -90,7 +90,7 @@ export default function Contact() {
             className="text-center flex flex-col items-center gap-7"
           >
             <p className="text-xs font-semibold uppercase tracking-[0.2em]"
-              style={{ color: "rgba(218,150,31,0.85)" }}>
+              style={{ color: "rgba(200,55,55,0.85)" }}>
               Contact
             </p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight leading-[1.15] max-w-xl"
@@ -109,8 +109,8 @@ export default function Contact() {
               transition={{ duration: 0.18 }}
               className="px-10 py-4 rounded-2xl font-semibold text-base text-white transition-colors"
               style={{
-                background: "#430808",
-                boxShadow: "0 0 32px rgba(67,8,8,0.45), 0 4px 16px rgba(0,0,0,0.3)",
+                background: "#5A0505",
+                boxShadow: "0 0 32px rgba(90,5,5,0.45), 0 4px 16px rgba(0,0,0,0.3)",
               }}
             >
               Discuter du projet !
@@ -254,8 +254,8 @@ export default function Contact() {
                       disabled={form.formState.isSubmitting}
                       className="w-full py-3.5 rounded-xl font-semibold text-sm text-white transition-transform hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0"
                       style={{
-                        background: "#430808",
-                        boxShadow: "0 0 20px rgba(67,8,8,0.4)",
+                        background: "#5A0505",
+                        boxShadow: "0 0 20px rgba(90,5,5,0.4)",
                       }}
                     >
                       {form.formState.isSubmitting ? "Envoi en cours…" : "Envoyer le message"}

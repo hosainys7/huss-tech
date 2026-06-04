@@ -26,7 +26,7 @@ export default function AboutHussTech() {
       id="apropos"
       className="py-24"
       style={{
-        background: "radial-gradient(ellipse 80% 55% at 20% 50%, rgba(67,8,8,0.1) 0%, transparent 65%), #0D0D0D",
+        background: "radial-gradient(ellipse 80% 55% at 20% 50%, rgba(90,5,5,0.1) 0%, transparent 65%), #0D0D0D",
       }}
     >
       <div className="container mx-auto px-4 max-w-5xl">
@@ -40,7 +40,7 @@ export default function AboutHussTech() {
             transition={{ duration: 0.5 }}
           >
             <p className="text-xs font-semibold uppercase tracking-[0.2em] mb-4"
-              style={{ color: "rgba(218,150,31,0.85)" }}>
+              style={{ color: "rgba(200,55,55,0.85)" }}>
               À propos
             </p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-6 leading-[1.15]"
@@ -82,13 +82,13 @@ export default function AboutHussTech() {
                 className="flex items-start gap-4 rounded-2xl px-5 py-4 cursor-default"
                 style={{
                   background: "rgba(255,255,255,0.04)",
-                  border: "1px solid rgba(218,150,31,0.18)",
-                  boxShadow: "0 0 20px rgba(67,8,8,0.18)",
+                  border: "1px solid rgba(200,55,55,0.18)",
+                  boxShadow: "0 0 20px rgba(90,5,5,0.18)",
                   willChange: "transform",
                 }}
               >
                 <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 mt-0.5"
-                  style={{ background: "rgba(218,150,31,0.15)", color: "rgba(218,150,31,0.9)" }}>
+                  style={{ background: "rgba(200,55,55,0.15)", color: "rgba(200,55,55,0.9)" }}>
                   {item.icon}
                 </div>
                 <div>
