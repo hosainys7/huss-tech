@@ -2,15 +2,12 @@ import React from "react";
 
 const items = [
   "Présence en ligne",
-  "IA",
+  "Replit AI",
   "Visibilité",
   "Image professionnelle",
   "Conversion",
-  "Diagnostic informatique",
-  "Réparation PC portable",
+  "Réparation Ordinateur",
   "Dépannage logiciel",
-  "Réinstallation Windows",
-  "Remplacement de composants",
   "Marseille",
 ];
 
