@@ -54,7 +54,7 @@ export default function ProcessSection() {
           </p>
           <h2
             className="text-3xl md:text-4xl font-semibold tracking-tight mb-4 leading-[1.15]"
-            style={{ color: "rgba(255,255,255,0.92)" }}
+            style={{ color: "rgba(255,255,255,0.48)" }}
           >
             Comment se déroule un projet&nbsp;?
           </h2>

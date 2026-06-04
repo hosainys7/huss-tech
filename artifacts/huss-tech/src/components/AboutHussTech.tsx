@@ -44,7 +44,7 @@ export default function AboutHussTech() {
               À propos
             </p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-6 leading-[1.15]"
-              style={{ color: "rgba(255,255,255,0.92)" }}>
+              style={{ color: "rgba(255,255,255,0.48)" }}>
               À propos de Huss Tech
             </h2>
             <div className="flex flex-col gap-4 text-sm leading-relaxed"

@@ -55,7 +55,7 @@ export default function FAQ() {
             FAQ
           </p>
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4"
-            style={{ color: "rgba(255,255,255,0.92)" }}>
+            style={{ color: "rgba(255,255,255,0.48)" }}>
             Questions fréquentes
           </h2>
           <p className="text-base max-w-md mx-auto leading-relaxed"

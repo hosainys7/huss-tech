@@ -94,7 +94,7 @@ export default function Contact() {
               Contact
             </p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight leading-[1.15] max-w-xl"
-              style={{ color: "rgba(255,255,255,0.92)" }}>
+              style={{ color: "rgba(255,255,255,0.48)" }}>
               Besoin d'un site ou d'un dépannage&nbsp;?
             </h2>
             <p className="text-base max-w-md leading-relaxed"
