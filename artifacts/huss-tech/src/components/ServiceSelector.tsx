@@ -12,45 +12,63 @@ function waUrl(msg: string) {
 
 const situations = [
   {
-    id: "landing",
-    situation: "Je démarre une activité",
-    service: "Présence Locale",
+    id: "vitrine",
+    situation: "Je n'ai pas encore de site",
+    service: "Site vitrine",
     description:
-      "Vous avez besoin d'une présence en ligne simple pour présenter votre activité et permettre à vos clients de vous contacter facilement.",
+      "Présentez votre activité, vos services et vos coordonnées dans un site clair et professionnel, accessible à tous vos clients.",
     pitch:
-      "Une solution simple pour être visible, présenter vos services et centraliser vos informations importantes.",
+      "Votre vitrine permanente sur internet — disponible 24h/24 pour vos clients.",
     includes: [
-      "Être visible en ligne rapidement",
-      "Présenter vos services clairement",
-      "Permettre aux clients de vous contacter",
-      "Adapté à tous les mobiles",
+      "Design adapté mobile",
+      "Présentation de vos services",
+      "Formulaire de contact",
+      "Vos horaires et adresse",
       "Paiement possible en 2 fois",
     ],
     whatsappMessage:
-      "Bonjour, je voudrais avoir plus d'informations pour créer une présence en ligne pour mon activité.",
+      "Bonjour, je voudrais créer un site vitrine pour présenter mon activité.",
   },
   {
-    id: "vitrine",
-    situation: "Je veux renforcer mon image professionnelle",
-    service: "Présence Professionnelle",
+    id: "portfolio",
+    situation: "Je veux montrer mes réalisations",
+    service: "Site portfolio",
     description:
-      "Présentez vos services, vos réalisations et les informations importantes de votre entreprise dans un espace professionnel complet.",
+      "Mettez en valeur vos réalisations, vos photos et votre savoir-faire pour convaincre vos clients avant même qu'ils vous contactent.",
     pitch:
-      "Une présence en ligne plus complète pour inspirer confiance et valoriser votre activité.",
+      "Vos meilleurs travaux en avant — pour inspirer confiance au premier regard.",
     includes: [
-      "Image professionnelle soignée",
-      "Présentation complète de l'activité",
-      "Pages services et réalisations",
-      "Adapté à tous les mobiles",
+      "Galerie photos de vos réalisations",
+      "Design adapté mobile",
+      "Mise en valeur de votre travail",
+      "Formulaire de contact",
       "Paiement possible en 2 fois",
     ],
     whatsappMessage:
-      "Bonjour, je voudrais renforcer l'image professionnelle de mon commerce à Marseille avec un site complet.",
+      "Bonjour, je voudrais créer un site portfolio pour mettre en valeur mes réalisations.",
+  },
+  {
+    id: "ecommerce",
+    situation: "Je veux vendre mes produits en ligne",
+    service: "Site e-commerce",
+    description:
+      "Vendez vos produits directement depuis votre site, avec un système de paiement sécurisé et une gestion simple de vos commandes.",
+    pitch:
+      "Votre boutique ouverte 24h/24 — sans commissions de marketplace.",
+    includes: [
+      "Catalogue produits en ligne",
+      "Paiement sécurisé en ligne",
+      "Gestion des commandes",
+      "Design adapté mobile",
+      "Devis personnalisé",
+    ],
+    whatsappMessage:
+      "Bonjour, je voudrais créer un site e-commerce pour vendre mes produits en ligne.",
   },
   {
     id: "refonte",
     situation: "Mon site ne reflète plus mon activité",
-    service: "Modernisation de votre site",
+    service: "Modernisation",
     description:
       "Votre site existe déjà mais il ne correspond plus à votre image actuelle ou aux attentes de vos visiteurs.",
     pitch:

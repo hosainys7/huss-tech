@@ -1,11 +1,11 @@
 import React from "react";
 
 const items = [
-  "IA intégrée",
   "Création de site web",
-  "Refonte de site",
-  "Landing page",
   "Site vitrine",
+  "Site portfolio",
+  "Site e-commerce",
+  "Modernisation de site",
   "Mobile friendly",
   "WhatsApp",
   "Support informatique",
