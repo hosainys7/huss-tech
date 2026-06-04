@@ -160,11 +160,19 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
     setTimeout(() => scrollToId("services"), 60);
   }
 
+  const goldGradient: React.CSSProperties = {
+    background: "linear-gradient(90deg, rgba(130,85,10,1) 0%, rgba(218,165,40,1) 55%, rgba(255,215,100,1) 100%)",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+    backgroundClip: "text",
+    display: "inline",
+  };
+
   const linkClass = (section: string) =>
     `text-sm font-medium px-3 py-1.5 rounded-lg transition-all ${
       activeSection === section
-        ? "text-white bg-white/12"
-        : "text-white/52 hover:text-white/90 hover:bg-white/8"
+        ? "bg-white/12"
+        : "hover:bg-white/8"
     }`;
 
   /* ── Dark dropdown content (desktop) ── */
@@ -297,7 +305,7 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
 
             {/* Desktop nav */}
             <nav className="hidden md:flex items-center gap-1">
-              <button onClick={handleReset} className={linkClass("home")}>Accueil</button>
+              <button onClick={handleReset} className={linkClass("home")}><span style={goldGradient}>Accueil</span></button>
 
               {/* Services dropdown */}
               <div ref={dropdownRef} className="relative" onMouseEnter={openDropdown} onMouseLeave={closeDropdown}>
@@ -306,8 +314,8 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
                   onClick={() => { setDropdownOpen(false); scrollToId("services"); }}
                   aria-expanded={dropdownOpen}
                 >
-                  Services
-                  <motion.span animate={{ rotate: dropdownOpen ? 180 : 0 }} transition={{ duration: 0.2 }} className="inline-flex">
+                  <span style={goldGradient}>Services</span>
+                  <motion.span animate={{ rotate: dropdownOpen ? 180 : 0 }} transition={{ duration: 0.2 }} className="inline-flex" style={{ color: "rgba(218,165,40,0.8)" }}>
                     <ChevronDown size={14} />
                   </motion.span>
                 </button>
@@ -336,10 +344,10 @@ export default function Nav({ onServiceSelect, onReset }: NavProps) {
                 </AnimatePresence>
               </div>
 
-              <button onClick={() => scrollToId("apropos")} className={linkClass("apropos")}>À propos</button>
-              <button onClick={() => scrollToId("processus")} className={linkClass("processus")}>Processus</button>
-              <button onClick={() => scrollToId("contact")} className={linkClass("contact")}>Contact</button>
-              <button onClick={() => scrollToId("faq")} className={linkClass("faq")}>FAQ</button>
+              <button onClick={() => scrollToId("apropos")} className={linkClass("apropos")}><span style={goldGradient}>À propos</span></button>
+              <button onClick={() => scrollToId("processus")} className={linkClass("processus")}><span style={goldGradient}>Processus</span></button>
+              <button onClick={() => scrollToId("contact")} className={linkClass("contact")}><span style={goldGradient}>Contact</span></button>
+              <button onClick={() => scrollToId("faq")} className={linkClass("faq")}><span style={goldGradient}>FAQ</span></button>
             </nav>
 
             {/* Mobile burger */}
