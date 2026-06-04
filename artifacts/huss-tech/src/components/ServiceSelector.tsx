@@ -239,7 +239,12 @@ export default function ServiceSelector({
         </motion.div>
 
         {/* ── Web situation cards ── */}
-        <div className="flex flex-col gap-3 mb-8">
+        <div className="flex items-center gap-3 mb-5">
+          <span className="text-xs font-semibold uppercase tracking-[0.18em]"
+            style={{ color: "rgba(255,255,255,0.28)" }}>Sites web</span>
+          <div className="flex-1 h-px" style={{ background: "rgba(255,255,255,0.07)" }} />
+        </div>
+        <div className="flex flex-col gap-3 mb-10">
           {situations
             .filter((s) => !activeSituationId || activeSituationId === s.id)
             .map((s, i) => {
@@ -272,7 +277,7 @@ export default function ServiceSelector({
                       {s.situation}
                     </p>
                   </div>
-                  <motion.span animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.2 }}
+                  <motion.span animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.35 }}
                     style={{ color: isOpen ? "rgba(220,90,90,0.7)" : "rgba(255,255,255,0.35)", flexShrink: 0 }}>
                     <ChevronDown size={18} />
                   </motion.span>
@@ -285,7 +290,7 @@ export default function ServiceSelector({
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] }}
+                      transition={{ duration: 0.42, ease: [0.25, 0.46, 0.45, 0.94] }}
                       className="overflow-hidden"
                     >
                       <div className="px-6 pb-6 pt-3"
@@ -338,6 +343,11 @@ export default function ServiceSelector({
         </div>
 
         {/* ── Support informatique ── */}
+        <div className="flex items-center gap-3 mb-5">
+          <span className="text-xs font-semibold uppercase tracking-[0.18em]"
+            style={{ color: "rgba(255,255,255,0.28)" }}>Support informatique</span>
+          <div className="flex-1 h-px" style={{ background: "rgba(255,255,255,0.07)" }} />
+        </div>
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -376,7 +386,7 @@ export default function ServiceSelector({
                         {sub.title} — {sub.description}
                       </p>
                     </div>
-                    <motion.span animate={{ rotate: isSubOpen ? 180 : 0 }} transition={{ duration: 0.2 }}
+                    <motion.span animate={{ rotate: isSubOpen ? 180 : 0 }} transition={{ duration: 0.35 }}
                       style={{ color: isSubOpen ? "rgba(220,90,90,0.7)" : "rgba(255,255,255,0.35)", flexShrink: 0 }}>
                       <ChevronDown size={18} />
                     </motion.span>
@@ -389,7 +399,7 @@ export default function ServiceSelector({
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] }}
+                        transition={{ duration: 0.42, ease: [0.25, 0.46, 0.45, 0.94] }}
                         className="overflow-hidden"
                       >
                         <div className="px-6 pb-6 pt-3 flex flex-col gap-3"
@@ -422,7 +432,7 @@ export default function ServiceSelector({
                                         {opt.description}
                                       </p>
                                     </div>
-                                    <motion.span animate={{ rotate: isSel ? 180 : 0 }} transition={{ duration: 0.2 }}
+                                    <motion.span animate={{ rotate: isSel ? 180 : 0 }} transition={{ duration: 0.35 }}
                                       style={{ color: isSel ? "rgba(220,90,90,0.7)" : "rgba(255,255,255,0.3)", flexShrink: 0 }}>
                                       <ChevronDown size={15} />
                                     </motion.span>
@@ -433,7 +443,7 @@ export default function ServiceSelector({
                                         initial={{ height: 0, opacity: 0 }}
                                         animate={{ height: "auto", opacity: 1 }}
                                         exit={{ height: 0, opacity: 0 }}
-                                        transition={{ duration: 0.22 }}
+                                        transition={{ duration: 0.38, ease: [0.25, 0.46, 0.45, 0.94] }}
                                         className="overflow-hidden"
                                       >
                                         <div className="px-5 pb-5 pt-3"
