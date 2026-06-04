@@ -1,22 +1,22 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Eye, Info, Star } from "lucide-react";
+import { LayoutList, Phone, ShieldCheck } from "lucide-react";
 
 const benefits = [
   {
-    icon: <Eye size={18} strokeWidth={1.8} />,
-    title: "Plus de visibilité",
-    desc: "Vos clients trouvent plus facilement votre activité et vos informations.",
+    icon: <LayoutList size={18} strokeWidth={1.8} />,
+    title: "Présenter ses services clairement",
+    desc: "Expliquez ce que vous faites sans répéter les mêmes informations à chaque appel.",
   },
   {
-    icon: <Info size={18} strokeWidth={1.8} />,
-    title: "Informations claires",
-    desc: "Services, horaires et coordonnées accessibles rapidement.",
+    icon: <Phone size={18} strokeWidth={1.8} />,
+    title: "Faciliter la prise de contact",
+    desc: "WhatsApp, téléphone ou formulaire accessibles en quelques secondes.",
   },
   {
-    icon: <Star size={18} strokeWidth={1.8} />,
-    title: "Image professionnelle",
-    desc: "Une présence en ligne cohérente qui inspire davantage confiance.",
+    icon: <ShieldCheck size={18} strokeWidth={1.8} />,
+    title: "Renforcer la confiance",
+    desc: "Une présence professionnelle qui rassure les visiteurs avant même le premier contact.",
   },
 ];
 
