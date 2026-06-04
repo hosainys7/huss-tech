@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FaWhatsapp } from "react-icons/fa";
-import { Wrench, Laptop, HardDrive, Check, ChevronRight, ChevronDown } from "lucide-react";
+import { Wrench, Laptop, HardDrive, Check, ChevronRight, ChevronDown, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const WA_NUMBER = "33773148264";
@@ -240,7 +240,9 @@ export default function ServiceSelector({
 
         {/* ── Web situation cards ── */}
         <div className="flex flex-col gap-3 mb-8">
-          {situations.map((s, i) => {
+          {situations
+            .filter((s) => !activeSituationId || activeSituationId === s.id)
+            .map((s, i) => {
             const isOpen = activeSituationId === s.id;
             return (
               <motion.div
@@ -270,10 +272,16 @@ export default function ServiceSelector({
                       {s.situation}
                     </p>
                   </div>
-                  <motion.span animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.2 }}
-                    style={{ color: "rgba(255,255,255,0.35)", flexShrink: 0 }}>
-                    <ChevronDown size={18} />
-                  </motion.span>
+                  {isOpen ? (
+                    <span className="w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-all"
+                      style={{ background: "rgba(200,55,55,0.18)", color: "rgba(220,90,90,0.9)" }}>
+                      <X size={14} strokeWidth={2.5} />
+                    </span>
+                  ) : (
+                    <span style={{ color: "rgba(255,255,255,0.35)", flexShrink: 0 }}>
+                      <ChevronDown size={18} />
+                    </span>
+                  )}
                 </button>
 
                 <AnimatePresence initial={false}>
@@ -385,7 +393,9 @@ export default function ServiceSelector({
                 className="overflow-hidden"
               >
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
-                  {supportSubCategories.map((sub) => {
+                  {supportSubCategories
+                    .filter((sub) => !activeSubId || activeSubId === sub.id)
+                    .map((sub) => {
                     const isActive = activeSubId === sub.id;
                     return (
                       <button key={sub.id}
@@ -406,10 +416,16 @@ export default function ServiceSelector({
                             }}>
                             {sub.icon}
                           </div>
-                          <p className="text-sm font-semibold"
+                          <p className="text-sm font-semibold flex-1"
                             style={{ color: isActive ? "rgba(220,90,90,0.95)" : "rgba(255,255,255,0.82)" }}>
                             {sub.title}
                           </p>
+                          {isActive && (
+                            <span className="w-6 h-6 rounded-full flex items-center justify-center shrink-0"
+                              style={{ background: "rgba(200,55,55,0.18)", color: "rgba(220,90,90,0.9)" }}>
+                              <X size={12} strokeWidth={2.5} />
+                            </span>
+                          )}
                         </div>
                         <p className="text-xs leading-relaxed"
                           style={{ color: "rgba(255,255,255,0.38)" }}>
@@ -443,15 +459,23 @@ export default function ServiceSelector({
                                 border: "1px solid rgba(255,255,255,0.07)",
                               }}>
                               <button onClick={() => toggleSupportOption(opt.id)}
-                                className="w-full text-left p-5 focus:outline-none">
-                                <p className="text-sm font-semibold mb-1"
-                                  style={{ color: isSel ? "rgba(220,90,90,0.95)" : "rgba(255,255,255,0.82)" }}>
-                                  {opt.title}
-                                </p>
-                                <p className="text-xs leading-relaxed"
-                                  style={{ color: "rgba(255,255,255,0.4)" }}>
-                                  {opt.description}
-                                </p>
+                                className="w-full text-left p-5 focus:outline-none flex items-start justify-between gap-3">
+                                <div className="flex-1 min-w-0">
+                                  <p className="text-sm font-semibold mb-1"
+                                    style={{ color: isSel ? "rgba(220,90,90,0.95)" : "rgba(255,255,255,0.82)" }}>
+                                    {opt.title}
+                                  </p>
+                                  <p className="text-xs leading-relaxed"
+                                    style={{ color: "rgba(255,255,255,0.4)" }}>
+                                    {opt.description}
+                                  </p>
+                                </div>
+                                {isSel && (
+                                  <span className="w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-0.5"
+                                    style={{ background: "rgba(200,55,55,0.18)", color: "rgba(220,90,90,0.9)" }}>
+                                    <X size={12} strokeWidth={2.5} />
+                                  </span>
+                                )}
                               </button>
                               <AnimatePresence initial={false}>
                                 {isSel && (
