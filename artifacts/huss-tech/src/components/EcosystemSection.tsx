@@ -27,7 +27,7 @@ function AnimatedDot({ angle, delay }: { angle: number; delay: number }) {
   return (
     <motion.circle
       r={1.2}
-      fill="rgba(218,150,31,0.9)"
+      fill="rgba(200,55,55,0.9)"
       initial={{ cx: "50%", cy: "50%", opacity: 0 }}
       animate={{
         cx: [`50%`, `${tx}%`],
@@ -104,7 +104,7 @@ export default function EcosystemSection() {
                 <circle
                   cx="50" cy="50" r={ORBIT_PCT}
                   fill="none"
-                  stroke="rgba(255,255,255,0.1)"
+                  stroke="rgba(218,150,31,0.22)"
                   strokeWidth="0.5"
                 />
 
@@ -116,7 +116,7 @@ export default function EcosystemSection() {
                       key={n.label}
                       x1="50" y1="50"
                       x2={x} y2={y}
-                      stroke="rgba(255,255,255,0.07)"
+                      stroke="rgba(218,150,31,0.18)"
                       strokeWidth="0.4"
                       strokeDasharray="2 3"
                     />
