@@ -104,7 +104,7 @@ export default function EcosystemSection() {
                 <circle
                   cx="50" cy="50" r={ORBIT_PCT}
                   fill="none"
-                  stroke="rgba(218,150,31,0.22)"
+                  stroke="rgba(255,255,255,0.1)"
                   strokeWidth="0.5"
                 />
 
@@ -116,7 +116,7 @@ export default function EcosystemSection() {
                       key={n.label}
                       x1="50" y1="50"
                       x2={x} y2={y}
-                      stroke="rgba(218,150,31,0.18)"
+                      stroke="rgba(255,255,255,0.07)"
                       strokeWidth="0.4"
                       strokeDasharray="2 3"
                     />
