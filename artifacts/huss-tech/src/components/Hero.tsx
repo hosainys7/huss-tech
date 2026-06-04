@@ -43,14 +43,6 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 max-w-4xl py-28 text-center">
 
-        {/* Eyebrow */}
-        <p
-          className="h-eyebrow text-xs font-semibold uppercase tracking-[0.22em] mb-8"
-          style={{ color: "rgba(255,255,255,0.32)" }}
-        >
-          Huss Tech — Marseille
-        </p>
-
         {/* Headline */}
         <h1
           className="h-headline text-4xl md:text-5xl lg:text-[3.6rem] font-semibold leading-[1.08] tracking-tight mb-5"
