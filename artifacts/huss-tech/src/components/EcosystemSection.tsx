@@ -68,8 +68,8 @@ export default function EcosystemSection() {
               style={{ color: "rgba(200,55,55,0.85)" }}>
               Pourquoi ça compte
             </p>
-            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-6 leading-[1.08]"
-              style={{ color: "rgba(255,255,255,0.93)" }}>
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-6 leading-[1.15]"
+              style={{ color: "rgba(255,255,255,0.48)" }}>
               Pourquoi une présence en ligne claire compte&nbsp;?
             </h2>
             <p className="text-base leading-relaxed"
