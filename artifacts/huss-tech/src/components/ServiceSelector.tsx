@@ -12,24 +12,6 @@ function waUrl(msg: string) {
 
 const situations = [
   {
-    id: "vitrine",
-    situation: "Je n'ai pas encore de site",
-    service: "Site vitrine",
-    description:
-      "Présentez votre activité, vos services et vos coordonnées dans un site clair et professionnel, accessible à tous vos clients.",
-    pitch:
-      "Votre vitrine permanente sur internet — disponible 24h/24 pour vos clients.",
-    includes: [
-      "Design adapté mobile",
-      "Présentation de vos services",
-      "Formulaire de contact",
-      "Vos horaires et adresse",
-      "Paiement possible en 2 fois",
-    ],
-    whatsappMessage:
-      "Bonjour, je voudrais créer un site vitrine pour présenter mon activité.",
-  },
-  {
     id: "portfolio",
     situation: "Je veux montrer mes réalisations",
     service: "Site portfolio",
@@ -46,6 +28,24 @@ const situations = [
     ],
     whatsappMessage:
       "Bonjour, je voudrais créer un site portfolio pour mettre en valeur mes réalisations.",
+  },
+  {
+    id: "vitrine",
+    situation: "Je n'ai pas encore de site",
+    service: "Site vitrine",
+    description:
+      "Présentez votre activité, vos services et vos coordonnées dans un site clair et professionnel, accessible à tous vos clients.",
+    pitch:
+      "Votre vitrine permanente sur internet — disponible 24h/24 pour vos clients.",
+    includes: [
+      "Design adapté mobile",
+      "Présentation de vos services",
+      "Formulaire de contact",
+      "Vos horaires et adresse",
+      "Paiement possible en 2 fois",
+    ],
+    whatsappMessage:
+      "Bonjour, je voudrais créer un site vitrine pour présenter mon activité.",
   },
   {
     id: "ecommerce",
