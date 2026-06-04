@@ -301,8 +301,8 @@ export default function ServiceSelector({
                             <li key={item} className="flex items-center gap-2.5 text-xs"
                               style={{ color: "rgba(255,255,255,0.65)" }}>
                               <span className="w-4 h-4 rounded-full flex items-center justify-center shrink-0"
-                                style={{ background: "rgba(200,55,55,0.25)" }}>
-                                <Check size={9} strokeWidth={3} style={{ color: "rgba(220,90,90,0.9)" }} />
+                                style={{ background: "rgba(218,150,31,0.2)" }}>
+                                <Check size={9} strokeWidth={3} style={{ color: "rgba(218,150,31,0.95)" }} />
                               </span>
                               {item}
                             </li>
@@ -469,8 +469,8 @@ export default function ServiceSelector({
                                           <li key={item} className="flex items-center gap-2 text-xs"
                                             style={{ color: "rgba(255,255,255,0.62)" }}>
                                             <span className="w-4 h-4 rounded-full flex items-center justify-center shrink-0"
-                                              style={{ background: "rgba(200,55,55,0.22)" }}>
-                                              <Check size={9} strokeWidth={3} style={{ color: "rgba(220,90,90,0.9)" }} />
+                                              style={{ background: "rgba(218,150,31,0.2)" }}>
+                                              <Check size={9} strokeWidth={3} style={{ color: "rgba(218,150,31,0.95)" }} />
                                             </span>
                                             {item}
                                           </li>

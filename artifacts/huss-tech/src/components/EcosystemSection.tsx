@@ -27,7 +27,7 @@ function AnimatedDot({ angle, delay }: { angle: number; delay: number }) {
   return (
     <motion.circle
       r={1.2}
-      fill="rgba(200,55,55,0.9)"
+      fill="rgba(218,150,31,0.9)"
       initial={{ cx: "50%", cy: "50%", opacity: 0 }}
       animate={{
         cx: [`50%`, `${tx}%`],
