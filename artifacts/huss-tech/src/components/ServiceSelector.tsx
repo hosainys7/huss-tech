@@ -228,8 +228,8 @@ export default function ServiceSelector({
             style={{ color: "rgba(200,55,55,0.85)" }}>
             Services
           </p>
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4"
-            style={{ color: "rgba(255,255,255,0.92)" }}>
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-4 leading-[1.08]"
+            style={{ color: "rgba(255,255,255,0.93)" }}>
             Comment votre site peut aider votre activité&nbsp;?
           </h2>
           <p className="text-base max-w-xl mx-auto leading-relaxed"
