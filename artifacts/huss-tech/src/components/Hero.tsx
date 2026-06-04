@@ -44,16 +44,16 @@ export default function Hero() {
       <div className="relative z-10 container mx-auto px-4 max-w-4xl py-28 text-center">
 
         {/* Eyebrow */}
-        <p
-          className="h-eyebrow text-[10px] font-semibold uppercase tracking-[0.25em] mb-8"
-          style={{
+        <p className="h-eyebrow text-[10px] font-semibold uppercase tracking-[0.25em] mb-8">
+          <span style={{
             background: "linear-gradient(90deg, rgba(130,85,10,1) 0%, rgba(218,165,40,1) 55%, rgba(255,215,100,1) 100%)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             backgroundClip: "text",
-          }}
-        >
-          Plus qu'un prestataire. Un partenaire.
+            display: "inline",
+          }}>
+            Plus qu'un prestataire. Un partenaire.
+          </span>
         </p>
 
         {/* Headline */}
