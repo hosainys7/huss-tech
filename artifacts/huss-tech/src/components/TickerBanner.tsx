@@ -1,17 +1,17 @@
 import React from "react";
 
 const items = [
-  "Création de site web",
-  "Site vitrine",
-  "Site portfolio",
-  "Site e-commerce",
-  "Modernisation de site",
-  "Mobile friendly",
-  "WhatsApp",
-  "Support informatique",
-  "Réparation tech",
+  "Présence en ligne",
+  "IA",
+  "Visibilité",
+  "Image professionnelle",
+  "Conversion",
+  "Diagnostic informatique",
+  "Réparation PC portable",
+  "Dépannage logiciel",
+  "Réinstallation Windows",
+  "Remplacement de composants",
   "Marseille",
-  "Présence en ligne claire",
 ];
 
 export default function TickerBanner() {
