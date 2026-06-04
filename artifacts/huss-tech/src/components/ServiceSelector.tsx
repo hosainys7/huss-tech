@@ -242,7 +242,7 @@ export default function ServiceSelector({
         <div className="flex items-center gap-3 mb-5">
           <span className="text-xs font-semibold uppercase tracking-[0.18em]"
             style={{ color: "rgba(255,255,255,0.28)" }}>Sites web</span>
-          <div className="flex-1 h-px" style={{ background: "rgba(255,255,255,0.07)" }} />
+          <div className="flex-1 h-px" style={{ background: "rgba(218,150,31,0.35)" }} />
         </div>
         <div className="flex flex-col gap-3 mb-10">
           {situations
@@ -346,7 +346,7 @@ export default function ServiceSelector({
         <div className="flex items-center gap-3 mb-5">
           <span className="text-xs font-semibold uppercase tracking-[0.18em]"
             style={{ color: "rgba(255,255,255,0.28)" }}>Support informatique</span>
-          <div className="flex-1 h-px" style={{ background: "rgba(255,255,255,0.07)" }} />
+          <div className="flex-1 h-px" style={{ background: "rgba(218,150,31,0.35)" }} />
         </div>
         <motion.div
           initial={{ opacity: 0, y: 16 }}
