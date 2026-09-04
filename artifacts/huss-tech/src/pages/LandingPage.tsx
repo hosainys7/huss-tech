@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import TickerBanner from "@/components/TickerBanner";
@@ -10,10 +10,22 @@ import Contact from "@/components/Contact";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 
-export default function LandingPage() {
+type LandingPageProps = {
+  initialSection?: string;
+};
+
+export default function LandingPage({ initialSection }: LandingPageProps) {
   const [selectedCategoryId, setSelectedCategoryId] = useState<string | null>(null);
   const [selectedSubCategoryId, setSelectedSubCategoryId] = useState<string | null>(null);
   const [selectedOptionId, setSelectedOptionId] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!initialSection) return;
+    const section = document.getElementById(initialSection);
+    if (section) {
+      window.requestAnimationFrame(() => section.scrollIntoView());
+    }
+  }, [initialSection]);
 
   function handleServiceSelect(
     categoryId: string,
