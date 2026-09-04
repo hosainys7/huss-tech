@@ -1,8 +1,21 @@
 uploads = []
-outputs = []
 
 [[generated]]
 id = "bUUk0BxFJH-f5W2L3ZfsE"
 uri = "file://artifacts/huss-tech/public/hero-workspace.png"
 type = "image"
 title = "generated_image"
+
+[[outputs]]
+id = "QspvQZd4ZhGeK8eVVqa28"
+uri = "file://exports/huss-tech-lws.zip"
+type = "unspecified"
+title = "Huss Tech — LWS upload package"
+description = "Production-ready website files. Extract this ZIP directly inside the LWS htdocs folder, preserving the route folders."
+logical_id = "d9ba1a85-49de-4ad3-be13-8960312784ce"
+content_hash = "sha256:94ad3539454d7a78505ab0c1d0596ae7e94f54b549520b7982565b6b76cf5042"
+size = 2280071
+mtime_ms = 1788547966611
+storage_uri = "gcs://replit-rams-assets-worf/rams/assets/repl:a642a02c-beca-41cb-8f5e-c7d181f646df/d9ba1a85-49de-4ad3-be13-8960312784ce/71271ff2-3ccb-41a4-bf24-83c1dff112fb"
+storage_version_token = "1788547972040366"
+content_type = "application/octet-stream"
